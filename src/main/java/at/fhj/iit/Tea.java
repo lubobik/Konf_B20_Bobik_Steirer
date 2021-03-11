@@ -19,7 +19,7 @@ public class Tea extends Drink {
         super(name);
         this.t = t;
     }
-
+ 
     /**
      * Creates a Tea object with given name, liquid and sugar
      *
@@ -34,8 +34,10 @@ public class Tea extends Drink {
         this.sugar = sugar;
         this.milk = milk;
     }
+
     /**
      * Tells if the tea has milk or not
+     *
      * @return true, if there is milk in the tea
      */
     public boolean getMilk() {
@@ -44,6 +46,7 @@ public class Tea extends Drink {
 
     /**
      * Tells if the tea has sugar or not
+     *
      * @return true, if there is sugar in the tea
      */
     public boolean getSugar() {
@@ -52,6 +55,7 @@ public class Tea extends Drink {
 
     /**
      * Returns volume of liquid
+     *
      * @return the volume of drink in litre
      */
     @Override
@@ -66,6 +70,7 @@ public class Tea extends Drink {
 
     /**
      * Gives information if drink is alcoholic or not
+     *
      * @return always false, we dont allow tea with "schuss"
      */
     @Override
@@ -81,7 +86,9 @@ public class Tea extends Drink {
             text += " sugar";
         } else if (milk) {
             text += " milk";
-        }else{text+="out milk or sugar";}
+        } else {
+            text += "out milk or sugar";
+        }
         return text;
     }
 

@@ -16,7 +16,7 @@ public class SoftDrink extends Liquid {
         super(name, volume, 0.0);
         this.brand = brand;
     }
-
+ 
     @Override
     public String getName() {
         return super.getName();

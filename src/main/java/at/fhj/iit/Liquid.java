@@ -12,7 +12,7 @@ public class Liquid {
      * volume of liquid (in liter)
      */
     private double volume;
-
+ 
     /**
      * alcoholPercent of liquid (in percent eg. 42)
      */
@@ -22,8 +22,8 @@ public class Liquid {
      * Creates new liquid with given name, volume and
      * alcoholPercent
      *
-     * @param name name of liquid
-     * @param volume volume of liquid
+     * @param name           name of liquid
+     * @param volume         volume of liquid
      * @param alcoholPercent of liquid
      */
     public Liquid(String name, double volume, double alcoholPercent) {
