@@ -37,10 +37,20 @@ public class SoftDrink extends Liquid {
         super.setVolume(volume);
     }
 
+    /**
+     * Returns the brand of the soft drink
+     *
+     * @return the brand enumeration of the soft drink
+     */
     public Brand getBrand() {
         return brand;
     }
 
+    /**
+     * Setter for Brand enumeration
+     *
+     * @param brand the new Brand value
+     */
     public void setBrand(Brand brand) {
         this.brand = brand;
     }
