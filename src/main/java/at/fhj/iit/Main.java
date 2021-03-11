@@ -11,17 +11,21 @@ public class Main {
         Drink d = new SimpleDrink("Rotwein", l);
         System.out.println(d);
 
-        System.out.println("-".repeat(80));
+        printSeparator();
         System.out.println("END OF ALREADY SPECIFIED CODE");
-        System.out.println("-".repeat(80));
+        printSeparator();
 
         SoftDrink softDrink = new SoftDrink("Orange juice", 0.5, Brand.COCA_COLA);
         System.out.println(softDrink);
-        System.out.println("-".repeat(80));
-        Liquid w= new Liquid("Water", 0.3, 0);
-        boolean sugar=true;
-        boolean milk=true;
-        Drink t = new Tea("Early Grey", w, sugar, milk);
+
+        printSeparator();
+
+        Liquid w = new Liquid("Water", 0.3, 0);
+        Drink t = new Tea("Early Grey", w, true, true);
         System.out.println(t);
+    }
+
+    private static void printSeparator() {
+        System.out.println("-".repeat(80));
     }
 }
