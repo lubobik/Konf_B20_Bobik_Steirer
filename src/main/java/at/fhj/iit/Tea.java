@@ -19,7 +19,7 @@ public class Tea extends Drink {
         super(name);
         this.t = t;
     }
- 
+
     /**
      * Creates a Tea object with given name, liquid and sugar
      *

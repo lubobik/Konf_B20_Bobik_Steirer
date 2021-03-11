@@ -5,7 +5,8 @@ public class Fruit {
 
     /**
      * Creates new fruit
-     * @param name           name of liquid
+     *
+     * @param name name of liquid
      */
     public Fruit(String name) {
         this.name = name;
@@ -13,6 +14,7 @@ public class Fruit {
 
     /**
      * Getter for name
+     *
      * @return name of fruit
      */
     public String getName() {
@@ -21,6 +23,7 @@ public class Fruit {
 
     /**
      * Setter for name
+     *
      * @param name fruitname
      */
     public void setName(String name) {

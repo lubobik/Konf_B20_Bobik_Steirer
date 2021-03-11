@@ -40,10 +40,10 @@ public class Main {
 
         printSeparator();
 
-        List<Fruit>smoothieFruits =List.of(new Fruit("Strawberry"), new Fruit("Banana"), new Fruit("Ananas"));
-        Liquid m = new Liquid("Milk", 0.5,0);
+        List<Fruit> smoothieFruits = List.of(new Fruit("Strawberry"), new Fruit("Banana"), new Fruit("Ananas"));
+        Liquid m = new Liquid("Milk", 0.5, 0);
         boolean sugar = false;
-        Smoothie milkshake =new Smoothie("Milkshake", m, smoothieFruits, sugar);
+        Smoothie milkshake = new Smoothie("Milkshake", m, smoothieFruits, sugar);
         System.out.println(milkshake);
     }
 
