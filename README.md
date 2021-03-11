@@ -41,19 +41,25 @@ but also to get used to technologies like Maven, etc.
 1. **Commit**: minor changes to SimpleDrink class  
    Some formatting clean-up and simplification of an expression.
 
-1. **Commit**: add .gitignore file to disable change tracking for the specified files  
+1. **Commit**: add .gitignore file to disable change tracking for the specified files    
    Introduce a .gitignore file to the root of the project, 
    to get rid of the annoying generated IDE and build files in our changelist.
    
-1. **Commit**: add description to Brand getter / setter in SoftDrink 
+1. **Commit**: add description to Brand getter / setter in SoftDrink  
    Introduce a description to the two extra specified methods because of the Brand implementation.
    
-1. **Commit**: update structure of README
+1. **Commit**: update structure of README  
    Clean-up and extend structure of `README`. Introduce mark-up syntax and some general information.
    
-1. **Commit**: minor changes to Brand enum (do not use same naming like base implementation)
+1. **Commit**: minor changes to Brand enum (do not use same naming like base implementation)  
    Prevent a misuse / shadow of the main `name` definition of an enumeration. We now use `title` instead.
    
-1. **Commit**: update README with commit- and changelog-history and minor formatting changes
+1. **Commit**: update README with commit- and changelog-history and minor formatting changes  
    Extend the already defined structure with all the changes I applied to the project.
    Apply auto-formatting to all project files.
+   
+1. **Commit**: minor changes to toString method of SoftDrink  
+   Update the `toString` method in terms of formulation.
+   
+1. **Commit**: clean-up in Main class
+   Minor clean-up work to prevent too much code duplication.
