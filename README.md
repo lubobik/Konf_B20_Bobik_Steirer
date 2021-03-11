@@ -16,7 +16,11 @@ The main purpose of it is getting to know GIT and all its commands, but also to 
 ## Changelog
 
 ### Changes of Lukas Bobik
-- add new Tea class
+- added new Tea class
+	- Tea can be with or without milk and/or sugar
+-	- is non alcoholic
+- added a new Liquid (water) to main, created a new tea
+- merged Main class over github, but directly inside Intellij
 
 ### Changes of Andreas Steirer
 - TBA 
