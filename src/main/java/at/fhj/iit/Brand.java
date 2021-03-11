@@ -8,14 +8,14 @@ public enum Brand {
     OTHER("Other"),
     ;
 
-    private final String name;
+    private final String title;
 
-    Brand(String name) {
-        this.name = name;
+    Brand(String title) {
+        this.title = title;
     }
 
     @Override
     public String toString() {
-        return name;
+        return title;
     }
 }
