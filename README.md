@@ -83,4 +83,15 @@ but also to get used to technologies like Maven, etc.
    Minor clean-up work to prevent too much code duplication.
    
 1. **Commit**: fix mismatch in SoftDrink toString formulation  
-   Again fix the formulation of SoftDrink method as there were errors.
+   Again fix the formulation of `SoftDrink` method as there were errors.
+   
+1. **Commit**: update description of SoftDrink  
+   Fix some wrong descriptions inside `SoftDrink` class.
+
+1. **Commit**: add Cocktail class which extends from Drink and add corresponding Main demonstration  
+   Implement a second class / beverage called `Cocktail` to make sure, 
+   that I do not act against the task description (inherit from `Drink` / `SimpleDrink`) :D
+   The new `Cocktail` class and later on its objects contain information about its name and included liquids.
+   The implementation of the inherited methods uses information of the object
+   to compute values such as the total alcohol percentage and the volume of the whole `Cocktail`. 
+   It also states if the `Cocktail` includes alcohol or not as a little shortcut.
