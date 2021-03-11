@@ -19,10 +19,10 @@ but also to get used to technologies like Maven, etc.
 ### Changes of Lukas Bobik
 1. **Commit**: add new `Tea` class
    Add a new tea and print tea to main method
-   Add sugar as attribute
+   Add "sugar" as attribute
    
 1. **Commit**: merge
-  Merge Main class, dont in IntelliJ directly
+  Merge Main class, done in IntelliJ directly
    
 1. **Commit**: 
    Add a new attribute to Tea "Milk"
@@ -30,11 +30,15 @@ but also to get used to technologies like Maven, etc.
    
 3. **Commit**: 
    Add setter
-   updates to method description and small code changes
+   updates to some method description and small code changes
    changes to toString
 
 4. **Commit**: 
    Updates to README.md
+   
+5. **Commit**: 
+    Small readme changes
+ 
    
 
 ### Changes of Andreas Steirer
