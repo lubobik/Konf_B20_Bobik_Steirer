@@ -1,5 +1,7 @@
 package at.fhj.iit;
 
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -23,6 +25,18 @@ public class Main {
         Liquid w = new Liquid("Water", 0.3, 0);
         Drink t = new Tea("Early Grey", w, true, true);
         System.out.println(t);
+
+        printSeparator();
+
+        List<Liquid> maiTaiLiquids = List.of(
+                new Liquid("Rum", 2.0, 40.0),
+                new Liquid("Cointreau", 0.5, 35.0),
+                new Liquid("Orgeat Syrup", 0.5, 0.0),
+                new Liquid("Lime Juice", 0.5, 0.0),
+                new Liquid("Water", 2, 0.0)
+        );
+        Cocktail maiTai = new Cocktail("Mai Tai", maiTaiLiquids);
+        System.out.println(maiTai);
     }
 
     private static void printSeparator() {
