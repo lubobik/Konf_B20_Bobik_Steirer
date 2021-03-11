@@ -27,7 +27,7 @@ but also to get used to technologies like Maven, etc.
    Add a new tea and print tea to main method
    Add "sugar" as attribute
    
-1. **Commit**: merge
+1. **Commit**: merge  
   Merge Main class, done in IntelliJ directly
    
 1. **Commit**: 
@@ -35,15 +35,24 @@ but also to get used to technologies like Maven, etc.
    Changes to toString Method
    
 3. **Commit**: 
-   Add setter
-   updates to some method description and small code changes
-   changes to toString
+   Add setter  
+   updates to some method description and small code changes  
+   changes to toString  
 
 4. **Commit**: 
    Updates to README.md
    
 5. **Commit**: 
     Small readme changes
+  
+6. **Commit**: adds a new drink subclass "Smoothie" and a "Fruit" class as ingredients 
+   Add corresponding new Smoothie to main method. 
+   (also adds a small gimmick that praises the superiority of milkshakes over normal smoothies if milk is chosen as liquid)
+   
+7. **Commit**: update descriptions and format
+
+    
+    
  
    
 
