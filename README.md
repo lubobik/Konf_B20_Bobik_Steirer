@@ -63,3 +63,6 @@ but also to get used to technologies like Maven, etc.
    
 1. **Commit**: clean-up in Main class
    Minor clean-up work to prevent too much code duplication.
+   
+1. **Commit**: fix mismatch in SoftDrink toString formulation
+   Again fix the formulation of SoftDrink method as there were errors.
