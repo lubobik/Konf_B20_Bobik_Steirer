@@ -2,11 +2,10 @@ package at.fhj.iit;
 
 public class SoftDrink extends Liquid {
 
-    private Brand brand;
+    protected Brand brand;
 
     /**
-     * Creates new liquid with given name, volume and
-     * alcoholPercent
+     * Creates a new SoftDrink with given name, volume and brand
      *
      * @param name   a name of a soft drink
      * @param volume a volume of a soft drink
