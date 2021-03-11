@@ -1,0 +1,1 @@
+# Konf_B20_Bobik_Steirer
