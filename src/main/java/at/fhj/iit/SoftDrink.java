@@ -16,7 +16,7 @@ public class SoftDrink extends Liquid {
         super(name, volume, 0.0);
         this.brand = brand;
     }
- 
+
     @Override
     public String getName() {
         return super.getName();
@@ -57,6 +57,6 @@ public class SoftDrink extends Liquid {
 
     @Override
     public String toString() {
-        return "This SoftDrink is named: '" + getName() + "' is from the brand '" + brand + "' and got a volume of " + getVolume() + " liters.";
+        return "The SoftDrink '" + getName() + "' is from the manufactured by '" + brand + "' and got a standard volume of " + getVolume() + " liters.";
     }
 }
