@@ -16,6 +16,12 @@ but also to get used to technologies like Maven, etc.
 
 ## Changelog
 
+### Added classes
+- Brand
+- SoftDrink
+- Tea
+- Cocktail
+
 ### Changes of Lukas Bobik
 1. **Commit**: add new `Tea` class
    Add a new tea and print tea to main method
