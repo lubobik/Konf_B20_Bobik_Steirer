@@ -17,11 +17,25 @@ but also to get used to technologies like Maven, etc.
 ## Changelog
 
 ### Changes of Lukas Bobik
-1. Added new `Tea` class
-	- `Tea` can be with or without milk and/or sugar
-	- is non alcoholic
-1. Added a new `Liquid` (water) to `Main`, created a new `Tea`
-1. Merged `Main` class over github, but directly inside Intellij
+1. **Commit**: add new `Tea` class
+   Add a new tea and print tea to main method
+   Add sugar as attribute
+   
+1. **Commit**: merge
+  Merge Main class, dont in IntelliJ directly
+   
+1. **Commit**: 
+   Add a new attribute to Tea "Milk"
+   Changes to toString Method
+   
+3. **Commit**: 
+   Add setter
+   updates to method description and small code changes
+   changes to toString
+
+4. **Commit**: 
+   Updates to README.md
+   
 
 ### Changes of Andreas Steirer
 1. **Commit**: add Brand enum  
