@@ -57,6 +57,6 @@ public class SoftDrink extends Liquid {
 
     @Override
     public String toString() {
-        return "The SoftDrink '" + getName() + "' is from the manufactured by '" + brand + "' and got a standard volume of " + getVolume() + " liters.";
+        return "The SoftDrink '" + getName() + "' is manufactured by '" + brand + "' and got a standard volume of " + getVolume() + " liters.";
     }
 }
