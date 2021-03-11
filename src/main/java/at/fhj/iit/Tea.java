@@ -1,19 +1,21 @@
 package at.fhj.iit;
 
-public class Tea extends Drink{
+public class Tea extends Drink {
 
     /**
-     * uses only one liquid
+     * uses one liquid, and possibly milk and/or sugar
      */
     protected Liquid t;
     protected Boolean sugar;
+    protected Boolean milk;
 
     /**
      * Creates a Tea object with given name and liquid
+     *
      * @param name name of drink
-     * @param t only one liquid in drink, because it's a simple drink an not e.g. a cocktail
+     * @param t    only one liquid in drink, because it's a simple drink an not e.g. a cocktail
      */
-    Tea(String name, Liquid t){
+    Tea(String name, Liquid t) {
         super(name);
         this.t = t;
     }
@@ -21,15 +23,18 @@ public class Tea extends Drink{
     /**
      * Creates a Tea object with given name, liquid and sugar
      *
-     * @param name name of drink
-     * @param t only one liquid in drink, because it's a simple drink an not e.g. a cocktail
+     * @param name  name of drink
+     * @param t     only one liquid in drink, because it's a simple drink an not e.g. a cocktail
      * @param sugar tells if the tea is with or without sugar
+     * @param milk  tells if the tea is with or without milk
      */
-    Tea(String name, Liquid t, Boolean sugar){
+    Tea(String name, Liquid t, Boolean sugar, Boolean milk) {
         super(name);
         this.t = t;
-        this.sugar=sugar;
+        this.sugar = sugar;
+        this.milk = milk;
     }
+
     /**
      * Returns volume of liquid l
      *
@@ -49,34 +54,29 @@ public class Tea extends Drink{
         return t.getVolume();
     }
 
-    /**
-     * Returns alcohol volume percent of liquid l
-     *
-     * @return alcohol volume percent
-     */
     @Override
     public double getAlcoholPercent() {
-        return t.getAlcoholPercent();
+        return 0;
     }
 
-    /**
-     * Gives information if drink is alcoholic or not
-     *
-     * @return true when alcoholic liquids are present, otherwise false
-     */
     @Override
     public boolean isAlcoholic() {
-        if(t.getAlcoholPercent() > 0){
-            return true;
-        }
         return false;
     }
 
-    public String toString(){
-        if (sugar){
 
-            return "Tea " + name + " with " + t.getAlcoholPercent() + " percent alcohol by volume and sugar";
-        }
-        return "Tea " + name + " with " + t.getAlcoholPercent() + " percent alcohol by volume without sugar";
+    public String toString() {
+        String text = "This tea is from sort " + name + " with";
+        if (sugar && milk) {
+            text += " sugar and milk";
+        } else if (sugar) {
+            text += " sugar";
+        } else if (milk) {
+            text += " milk";
+        }else{text+="out milk or sugar";}
+
+
+        return text;
     }
+
 }

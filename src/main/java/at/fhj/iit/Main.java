@@ -17,11 +17,11 @@ public class Main {
 
         SoftDrink softDrink = new SoftDrink("Orange juice", 0.5, Brand.COCA_COLA);
         System.out.println(softDrink);
-
+        System.out.println("-".repeat(80));
         Liquid w= new Liquid("Water", 0.3, 0);
-        System.out.println(w.getName());
-        System.out.println(w.getVolume());
-        Drink t = new Tea("Early Grey", w, false);
+        boolean sugar=true;
+        boolean milk=true;
+        Drink t = new Tea("Early Grey", w, sugar, milk);
         System.out.println(t);
     }
 }
