@@ -13,7 +13,7 @@ public class Tea extends Drink {
      * Creates a Tea object with given name and liquid
      *
      * @param name name of drink
-     * @param t    only one liquid in drink, because it's a simple drink an not e.g. a cocktail
+     * @param t    only one liquid(water) in drink
      */
     Tea(String name, Liquid t) {
         super(name);
@@ -24,7 +24,7 @@ public class Tea extends Drink {
      * Creates a Tea object with given name, liquid and sugar
      *
      * @param name  name of drink
-     * @param t     only one liquid in drink, because it's a simple drink an not e.g. a cocktail
+     * @param t     only one liquid(water) in drink, because it's a tea
      * @param sugar tells if the tea is with or without sugar
      * @param milk  tells if the tea is with or without milk
      */
@@ -34,19 +34,24 @@ public class Tea extends Drink {
         this.sugar = sugar;
         this.milk = milk;
     }
+    /**
+     * Tells if the tea has milk or not
+     * @return true, if there is milk in the tea
+     */
+    public boolean getMilk() {
+        return sugar;
+    }
 
     /**
-     * Returns volume of liquid l
-     *
-     * @return the volume of drink in litre
+     * Tells if the tea has sugar or not
+     * @return true, if there is sugar in the tea
      */
     public boolean getSugar() {
         return sugar;
     }
 
     /**
-     * Returns volume of liquid l
-     *
+     * Returns volume of liquid
      * @return the volume of drink in litre
      */
     @Override
@@ -59,11 +64,14 @@ public class Tea extends Drink {
         return 0;
     }
 
+    /**
+     * Gives information if drink is alcoholic or not
+     * @return always false, we dont allow tea with "schuss"
+     */
     @Override
     public boolean isAlcoholic() {
         return false;
     }
-
 
     public String toString() {
         String text = "This tea is from sort " + name + " with";
@@ -74,8 +82,6 @@ public class Tea extends Drink {
         } else if (milk) {
             text += " milk";
         }else{text+="out milk or sugar";}
-
-
         return text;
     }
 
