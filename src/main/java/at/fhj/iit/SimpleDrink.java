@@ -3,7 +3,7 @@ package at.fhj.iit;
 /**
  * represents a simple drink liquid which can be used in drinks
  */
-public class SimpleDrink extends Drink{
+public class SimpleDrink extends Drink {
 
     /**
      * uses only one liquid
@@ -14,9 +14,9 @@ public class SimpleDrink extends Drink{
      * Creates a SimpleDrink object with given name and liquid
      *
      * @param name name of drink
-     * @param l only one liquid in drink, because it's a simple drink an not e.g. a cocktail
+     * @param l    only one liquid in drink, because it's a simple drink an not e.g. a cocktail
      */
-    SimpleDrink(String name, Liquid l){
+    SimpleDrink(String name, Liquid l) {
         super(name);
         this.l = l;
     }
@@ -48,13 +48,10 @@ public class SimpleDrink extends Drink{
      */
     @Override
     public boolean isAlcoholic() {
-        if(l.getAlcoholPercent() > 0){
-            return true;
-        }
-        return false;
+        return l.getAlcoholPercent() > 0;
     }
 
-    public String toString(){
+    public String toString() {
         return "Simple Drink called " + name + " with " + l.getAlcoholPercent() + " percent alcohol by volume";
     }
 }
