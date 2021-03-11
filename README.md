@@ -24,7 +24,7 @@ but also to get used to technologies like Maven, etc.
 1. Merged `Main` class over github, but directly inside Intellij
 
 ### Changes of Andreas Steirer
-1. **Commit**: add Brand enum
+1. **Commit**: add Brand enum  
    Add a `Brand` enumeration for future use in our drinks-project.  
    This enum represents a cleaner way of handling different static types in our implementation.  
    **Additional information**:  
@@ -61,8 +61,8 @@ but also to get used to technologies like Maven, etc.
 1. **Commit**: minor changes to toString method of SoftDrink  
    Update the `toString` method in terms of formulation.
    
-1. **Commit**: clean-up in Main class
+1. **Commit**: clean-up in Main class  
    Minor clean-up work to prevent too much code duplication.
    
-1. **Commit**: fix mismatch in SoftDrink toString formulation
+1. **Commit**: fix mismatch in SoftDrink toString formulation  
    Again fix the formulation of SoftDrink method as there were errors.
