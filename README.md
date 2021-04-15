@@ -1,6 +1,5 @@
 # Drinks project of BSD20
 
-
 ## General info
 **Name of the repository**: Konf_B20_Bobik_Steirer  
 **Members**: Lukas Bobik and Andreas Steirer
@@ -25,6 +24,7 @@ but also to get used to technologies like Maven, etc.
 - Fruit
 
 ### Changes of Lukas Bobik
+#### Version 1.0
 1. **Commit**: add new `Tea` class
    Add a new tea and print tea to main method
    Add "sugar" as attribute
@@ -47,18 +47,18 @@ but also to get used to technologies like Maven, etc.
 5. **Commit**: 
     Small readme changes
   
-6. **Commit**: adds a new drink subclass "Smoothie" and a "Fruit" class as ingredients 
-   Add corresponding new Smoothie to main method. 
+6. **Commit**: adds a new drink subclass `Smoothie` and a `Fruit` class as ingredients 
+   Add corresponding new `Smoothie` to main method. 
    (also adds a small gimmick that praises the superiority of milkshakes over normal smoothies if milk is chosen as liquid)
    
 7. **Commit**: update descriptions and format
 
-    
-    
- 
-   
+#### Version 2.0
+
+---
 
 ### Changes of Andreas Steirer
+#### Version 1.0
 1. **Commit**: add Brand enum  
    Add a `Brand` enumeration for future use in our drinks-project.  
    This enum represents a cleaner way of handling different static types in our implementation.  
@@ -112,3 +112,5 @@ but also to get used to technologies like Maven, etc.
    The implementation of the inherited methods uses information of the object
    to compute values such as the total alcohol percentage and the volume of the whole `Cocktail`. 
    It also states if the `Cocktail` includes alcohol or not as a little shortcut.
+
+#### Version 2.0
