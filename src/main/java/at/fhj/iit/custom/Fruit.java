@@ -6,7 +6,7 @@ public class Fruit {
     /**
      * Creates new fruit
      *
-     * @param name name of liquid
+     * @param name name of fruit
      */
     public Fruit(String name) {
         this.name = name;

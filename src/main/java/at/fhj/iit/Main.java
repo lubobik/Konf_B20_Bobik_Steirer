@@ -50,6 +50,13 @@ public class Main {
         boolean sugar = false;
         Smoothie milkshake = new Smoothie("Milkshake", m, smoothieFruits, sugar);
         System.out.println(milkshake);
+
+        printSeparator();
+
+        Liquid a = new Liquid("Vodka", 0.3, 40);
+        SoftDrink filler = new SoftDrink("Cranberry Juice", 0.5, Brand.PEPSI);
+        LongDrink vodkaCranberry = new LongDrink("Vodka Cranberry", a, filler);
+        System.out.println(vodkaCranberry);
     }
 
     private static void printSeparator() {
