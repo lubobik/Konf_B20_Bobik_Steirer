@@ -1,5 +1,7 @@
 package at.fhj.iit.base;
 
+import at.fhj.iit.exception.ValidationException;
+
 /**
  * Represents a <code>Liquid</code> which can be used in drinks.
  *
@@ -47,10 +49,11 @@ public class Liquid {
      * If so, throws a <code>ValidationException</code>.
      *
      * @param volume which should be checked
+     * @throws ValidationException if the volume is below zero or equal to zero.
      */
     private void checkVolume(double volume) {
         if (volume <= 0) {
-            throw new IllegalArgumentException("liquid " + name + " must have a volume > 0");
+            throw new ValidationException("liquid " + name + " must have a volume > 0");
         }
     }
 
@@ -108,4 +111,3 @@ public class Liquid {
         this.alcoholPercent = alcoholPercent;
     }
 }
-
