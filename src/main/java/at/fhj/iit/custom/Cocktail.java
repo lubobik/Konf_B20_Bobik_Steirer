@@ -2,8 +2,11 @@ package at.fhj.iit.custom;
 
 import at.fhj.iit.base.Drink;
 import at.fhj.iit.base.Liquid;
+import at.fhj.iit.exception.ValidationException;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 /**
@@ -30,7 +33,20 @@ public class Cocktail extends Drink {
      */
     public Cocktail(String name, List<Liquid> liquids) {
         super(name);
-        this.liquids = liquids;
+        verifyLiquidAmount(liquids);
+        this.liquids = new ArrayList<>(liquids);
+    }
+
+    /**
+     * Checks if the list of <code>Liquid</code>s is empty.
+     * If so, throws a <code>ValidationException</code>.
+     *
+     * @param liquids which should be checked
+     * @throws ValidationException if the list ist empty
+     */
+    private void verifyLiquidAmount(List<Liquid> liquids) {
+        if (liquids.isEmpty())
+            throw new ValidationException("A cocktail needs at least one liquid.");
     }
 
     /**
@@ -53,13 +69,22 @@ public class Cocktail extends Drink {
      */
     @Override
     public double getAlcoholPercent() {
-        return (isAlcoholic() ?
+        return (getAlcoholVolume() / getVolume()) * 100.0;
+    }
+
+    /**
+     * Retrieves the total alcohol volume of the <code>Cocktail</code>.
+     *
+     * @return alcohol volume in liters
+     */
+    public double getAlcoholVolume() {
+        return isAlcoholic() ?
                 liquids
                         .stream()
                         .filter(liquid -> liquid.getAlcoholPercent() > 0)
                         .mapToDouble(liquid -> (liquid.getVolume() * (liquid.getAlcoholPercent() / 100)))
-                        .sum() / getVolume()
-                : 0.0) * 100.0;
+                        .sum()
+                : 0.0;
     }
 
     /**
@@ -72,6 +97,27 @@ public class Cocktail extends Drink {
         return liquids
                 .stream()
                 .anyMatch(liquid -> liquid.getAlcoholPercent() > 0);
+    }
+
+    /**
+     * Updates the passed Liquid within the list if it exists.
+     *
+     * @param liquid  which should be changed within the list
+     * @param updater function which is responsible for value manipulation / update
+     */
+    public void updateLiquid(Liquid liquid, Consumer<Liquid> updater) {
+        updater.accept(liquid);
+        int foundIndex = liquids.indexOf(liquid);
+        if (foundIndex != -1) liquids.set(foundIndex, liquid);
+    }
+
+    /**
+     * Getter for liquid list
+     *
+     * @return all included liquids
+     */
+    public List<Liquid> getLiquids() {
+        return liquids;
     }
 
     /**
@@ -89,3 +135,4 @@ public class Cocktail extends Drink {
                 formattedLiquidNames + "] with a total alcohol percentage of " + totalAlcoholPercentage + "%.";
     }
 }
+
