@@ -21,6 +21,8 @@ but also to get used to technologies like Maven, etc.
 - SoftDrink
 - Tea
 - Cocktail
+- Smoothie
+- Fruit
 
 ### Changes of Lukas Bobik
 1. **Commit**: add new `Tea` class
