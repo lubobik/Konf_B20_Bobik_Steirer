@@ -1,4 +1,4 @@
-package at.fhj.iit.custom;
+package at.fhj.iit.custom.misc;
 
 /**
  * Specifies a <code>Brand</code> enumeration with an

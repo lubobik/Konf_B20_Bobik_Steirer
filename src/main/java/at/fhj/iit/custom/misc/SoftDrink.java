@@ -1,4 +1,4 @@
-package at.fhj.iit.custom;
+package at.fhj.iit.custom.misc;
 
 import at.fhj.iit.base.Liquid;
 

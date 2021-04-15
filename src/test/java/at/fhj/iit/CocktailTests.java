@@ -1,7 +1,7 @@
 package at.fhj.iit;
 
 import at.fhj.iit.base.Liquid;
-import at.fhj.iit.custom.Cocktail;
+import at.fhj.iit.custom.drink.Cocktail;
 import at.fhj.iit.exception.ValidationException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

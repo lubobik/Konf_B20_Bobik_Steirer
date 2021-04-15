@@ -1,4 +1,4 @@
-package at.fhj.iit.custom;
+package at.fhj.iit.custom.misc;
 
 public class Fruit {
     private String name;

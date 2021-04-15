@@ -1,7 +1,7 @@
 package at.fhj.iit;
 
-import at.fhj.iit.custom.Brand;
-import at.fhj.iit.custom.SoftDrink;
+import at.fhj.iit.custom.misc.Brand;
+import at.fhj.iit.custom.misc.SoftDrink;
 import at.fhj.iit.exception.ValidationException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

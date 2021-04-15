@@ -1,4 +1,5 @@
-package at.fhj.iit.custom;
+package at.fhj.iit.custom.drink;
+
 import at.fhj.iit.base.Drink;
 import at.fhj.iit.base.Liquid;
 
@@ -10,14 +11,14 @@ public class LongDrink extends Drink {
     /**
      * Creates a LongDrink object with a give name, one alcoholic liquid and a softdrink
      *
-     * @param name name of the drink
+     * @param name      name of the drink
      * @param alcoholic the alcoholic liquid of a longdrink
      * @param softdrink the nonalcoholic liquid of a longdrink
      */
     public LongDrink(String name, Liquid alcoholic, Liquid softdrink) {
         super(name);
-        this.alcoholic=alcoholic;
-        this.softdrink=softdrink;
+        this.alcoholic = alcoholic;
+        this.softdrink = softdrink;
     }
 
     /**
@@ -37,7 +38,7 @@ public class LongDrink extends Drink {
      */
     @Override
     public double getAlcoholPercent() {
-        return (alcoholic.getAlcoholPercent()*alcoholic.getVolume()+ softdrink.getAlcoholPercent()* softdrink.getVolume()) / getVolume();
+        return (alcoholic.getAlcoholPercent() * alcoholic.getVolume() + softdrink.getAlcoholPercent() * softdrink.getVolume()) / getVolume();
 
     }
 
@@ -56,6 +57,6 @@ public class LongDrink extends Drink {
      */
     @Override
     public String toString() {
-        return name + " like the name suggests is "+alcoholic.getName()+" and " + softdrink.getName() +" with an alcohol percentage of " + getAlcoholPercent() + "%.";
+        return name + " like the name suggests is " + alcoholic.getName() + " and " + softdrink.getName() + " with an alcohol percentage of " + getAlcoholPercent() + "%.";
     }
 }

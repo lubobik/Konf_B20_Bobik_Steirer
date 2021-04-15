@@ -3,7 +3,13 @@ package at.fhj.iit;
 import at.fhj.iit.base.Drink;
 import at.fhj.iit.base.Liquid;
 import at.fhj.iit.base.SimpleDrink;
-import at.fhj.iit.custom.*;
+import at.fhj.iit.custom.drink.Cocktail;
+import at.fhj.iit.custom.drink.LongDrink;
+import at.fhj.iit.custom.drink.Smoothie;
+import at.fhj.iit.custom.drink.Tea;
+import at.fhj.iit.custom.misc.Brand;
+import at.fhj.iit.custom.misc.Fruit;
+import at.fhj.iit.custom.misc.SoftDrink;
 
 import java.util.List;
 
