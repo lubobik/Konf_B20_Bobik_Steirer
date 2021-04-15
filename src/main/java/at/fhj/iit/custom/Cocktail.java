@@ -6,12 +6,25 @@ import at.fhj.iit.base.Liquid;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Describes a <code>Cocktail</code> object (with data access)
+ * and offers manipulation options.
+ *
+ * @author Andreas Steirer
+ * @version 2.0
+ * @see Drink
+ * @since 1.0
+ */
 public class Cocktail extends Drink {
 
+    /**
+     * All liquids included in the <code>Cocktail</code>
+     */
     private final List<Liquid> liquids;
 
     /**
-     * Creates a Cocktail object with a give name and some included liquids
+     * Creates a <code>Cocktail</code> object with
+     * a given name and some included liquids.
      *
      * @param name name of the drink
      */
@@ -21,9 +34,9 @@ public class Cocktail extends Drink {
     }
 
     /**
-     * Returns the sum of included liquids in liters
+     * Returns the sum of included <code>Liquid</code>s in liters.
      *
-     * @return volume of the cocktail
+     * @return total volume in liters
      */
     @Override
     public double getVolume() {
@@ -34,7 +47,7 @@ public class Cocktail extends Drink {
     }
 
     /**
-     * Retrieves the total alcohol volume in percent
+     * Retrieves the total alcohol volume of the <code>Cocktail</code> in percent.
      *
      * @return alcohol volume percent
      */
@@ -50,7 +63,7 @@ public class Cocktail extends Drink {
     }
 
     /**
-     * States if the cocktail is alcoholic or not
+     * States if the <code>Cocktail</code> is alcoholic or not.
      *
      * @return true when alcoholic liquids are present, otherwise false
      */
