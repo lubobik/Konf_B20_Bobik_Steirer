@@ -17,7 +17,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * @author Andreas Steirer
  * @version 2.0
  * @see SoftDrink
- * @since 1.0
  */
 @DisplayName("Testing Cocktail class")
 public class SoftDrinkTests {
@@ -40,7 +39,7 @@ public class SoftDrinkTests {
         // Phases: Exercise
         String newName = "NewTestDrink";
         softDrink.setName(newName);
-        
+
         // Phases: Verify
         assertEquals(newName, softDrink.getName());
     }

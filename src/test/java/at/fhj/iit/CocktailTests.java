@@ -20,7 +20,6 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Andreas Steirer
  * @version 2.0
  * @see Cocktail
- * @since 1.0
  */
 @DisplayName("Testing Cocktail class")
 public class CocktailTests {
