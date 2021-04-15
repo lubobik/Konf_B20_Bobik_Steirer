@@ -2,16 +2,28 @@ package at.fhj.iit.custom;
 
 import at.fhj.iit.base.Liquid;
 
+/**
+ * Mainly used as a mixing fluid.
+ * Describes a <code>SoftDrink</code> object (with data access)
+ * and offers manipulation options.
+ *
+ * @author Andreas Steirer
+ * @version 1.0
+ * @see Liquid
+ */
 public class SoftDrink extends Liquid {
 
+    /*
+     * Field declaration
+     */
     protected Brand brand;
 
     /**
-     * Creates a new SoftDrink with given name, volume and brand
+     * Creates a new <code>SoftDrink</code> with given name, volume and brand.
      *
      * @param name   a name of a soft drink
      * @param volume a volume of a soft drink
-     * @param brand  a brand of a soft drink
+     * @param brand  a <code>Brand</code> of a soft drink
      */
     public SoftDrink(String name, double volume, Brand brand) {
         super(name, volume, 0.0);
@@ -39,18 +51,18 @@ public class SoftDrink extends Liquid {
     }
 
     /**
-     * Returns the brand of the soft drink
+     * Returns the <code>Brand</code> of the soft drink.
      *
-     * @return the brand enumeration of the soft drink
+     * @return the <code>Brand</code> enumeration of the soft drink
      */
     public Brand getBrand() {
         return brand;
     }
 
     /**
-     * Setter for Brand enumeration
+     * Setter for <code>Brand</code> enumeration
      *
-     * @param brand the new Brand value
+     * @param brand the new <code>Brand</code> value
      */
     public void setBrand(Brand brand) {
         this.brand = brand;
