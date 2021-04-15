@@ -7,32 +7,77 @@ import at.fhj.iit.custom.*;
 
 import java.util.List;
 
+/**
+ * Contains the main application logic.
+ *
+ * @author Andreas Steirer
+ * @author Lukas Bobik
+ * @version 2.0
+ * @see Drink
+ * @since 1.0
+ */
 public class Main {
 
+    /**
+     * Represents the main entry point of a Java application.
+     *
+     * @param args Command line parameters
+     */
     public static void main(String[] args) {
+        printBaseDemonstration();
+        printSeparator();
 
+        System.out.println("END OF ALREADY SPECIFIED CODE");
+        printSeparator();
+
+        printSoftDrinkDemonstration();
+        printSeparator();
+
+        printTeaDemonstration();
+        printSeparator();
+
+        printCocktailDemonstration();
+        printSeparator();
+
+        printSmoothieDemonstration();
+        printSeparator();
+
+        printLongDrinkDemonstration();
+    }
+
+    /**
+     * Demonstrates the base implementation (<code>Liquid</code> and <code>SimpleDrink</code>).
+     */
+    private static void printBaseDemonstration() {
         Liquid l = new Liquid("Wein", 0.125, 13);
         System.out.println(l.getName());
         System.out.println(l.getVolume());
 
         Drink d = new SimpleDrink("Rotwein", l);
         System.out.println(d);
+    }
 
-        printSeparator();
-        System.out.println("END OF ALREADY SPECIFIED CODE");
-        printSeparator();
-
+    /**
+     * Demonstrates the <code>SoftDrink</code> implementation.
+     */
+    private static void printSoftDrinkDemonstration() {
         SoftDrink softDrink = new SoftDrink("Orange juice", 0.5, Brand.COCA_COLA);
         System.out.println(softDrink);
+    }
 
-        printSeparator();
-
+    /**
+     * Demonstrates the <code>Tea</code> implementation.
+     */
+    private static void printTeaDemonstration() {
         Liquid w = new Liquid("Water", 0.3, 0);
         Drink t = new Tea("Early Grey", w, true, true);
         System.out.println(t);
+    }
 
-        printSeparator();
-
+    /**
+     * Demonstrates the <code>Cocktail</code> implementation.
+     */
+    private static void printCocktailDemonstration() {
         List<Liquid> maiTaiLiquids = List.of(
                 new Liquid("Rum", 2.0, 40.0),
                 new Liquid("Cointreau", 0.5, 35.0),
@@ -42,23 +87,36 @@ public class Main {
         );
         Cocktail maiTai = new Cocktail("Mai Tai", maiTaiLiquids);
         System.out.println(maiTai);
+    }
 
-        printSeparator();
+    /**
+     * Demonstrates the <code>Smoothie</code> implementation.
+     */
+    private static void printSmoothieDemonstration() {
+        Liquid milk = new Liquid("Milk", 0.5, 0);
+        List<Fruit> smoothieFruits = List.of(
+                new Fruit("Strawberry"),
+                new Fruit("Banana"),
+                new Fruit("Ananas")
+        );
 
-        List<Fruit> smoothieFruits = List.of(new Fruit("Strawberry"), new Fruit("Banana"), new Fruit("Ananas"));
-        Liquid m = new Liquid("Milk", 0.5, 0);
-        boolean sugar = false;
-        Smoothie milkshake = new Smoothie("Milkshake", m, smoothieFruits, sugar);
+        Smoothie milkshake = new Smoothie("Milkshake", milk, smoothieFruits, false);
         System.out.println(milkshake);
+    }
 
-        printSeparator();
-
-        Liquid a = new Liquid("Vodka", 0.3, 40);
+    /**
+     * Demonstrates the <code>LongDrink</code> implementation.
+     */
+    private static void printLongDrinkDemonstration() {
+        Liquid vodka = new Liquid("Vodka", 0.3, 40);
         SoftDrink filler = new SoftDrink("Cranberry Juice", 0.5, Brand.PEPSI);
-        LongDrink vodkaCranberry = new LongDrink("Vodka Cranberry", a, filler);
+        LongDrink vodkaCranberry = new LongDrink("Vodka Cranberry", vodka, filler);
         System.out.println(vodkaCranberry);
     }
 
+    /**
+     * Prints a dashed line out of 80 characters to the console.
+     */
     private static void printSeparator() {
         System.out.println("-".repeat(80));
     }
