@@ -1,4 +1,4 @@
-package at.fhj.iit;
+package at.fhj.iit.custom;
 
 public enum Brand {
     COCA_COLA("Coca Cola"),

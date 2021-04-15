@@ -1,4 +1,4 @@
-package at.fhj.iit;
+package at.fhj.iit.base;
 
 /**
  * Abstract base class for concrete drink classes
@@ -15,7 +15,7 @@ public abstract class Drink {
      *
      * @param name name of the drink
      */
- 
+
     public Drink(String name) {
         this.name = name;
     }

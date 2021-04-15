@@ -1,4 +1,7 @@
-package at.fhj.iit;
+package at.fhj.iit.custom;
+
+import at.fhj.iit.base.Drink;
+import at.fhj.iit.base.Liquid;
 
 public class Tea extends Drink {
 
@@ -15,7 +18,7 @@ public class Tea extends Drink {
      * @param name name of drink
      * @param t    only one liquid(water) in drink
      */
-    Tea(String name, Liquid t) {
+    public Tea(String name, Liquid t) {
         super(name);
         this.t = t;
     }
@@ -28,7 +31,7 @@ public class Tea extends Drink {
      * @param sugar tells if the tea is with or without sugar
      * @param milk  tells if the tea is with or without milk
      */
-    Tea(String name, Liquid t, Boolean sugar, Boolean milk) {
+    public Tea(String name, Liquid t, Boolean sugar, Boolean milk) {
         super(name);
         this.t = t;
         this.sugar = sugar;

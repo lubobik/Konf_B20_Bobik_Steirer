@@ -1,4 +1,6 @@
-package at.fhj.iit;
+package at.fhj.iit.custom;
+
+import at.fhj.iit.base.Liquid;
 
 public class SoftDrink extends Liquid {
 

@@ -1,4 +1,7 @@
-package at.fhj.iit;
+package at.fhj.iit.custom;
+
+import at.fhj.iit.base.Drink;
+import at.fhj.iit.base.Liquid;
 
 import java.util.List;
 import java.util.stream.Collectors;

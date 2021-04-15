@@ -1,4 +1,7 @@
-package at.fhj.iit;
+package at.fhj.iit.custom;
+
+import at.fhj.iit.base.Drink;
+import at.fhj.iit.base.Liquid;
 
 import java.util.List;
 
@@ -42,21 +45,21 @@ public class Smoothie extends Drink {
      * Formatted output for a Smoothie
      */
     public String toString() {
-        String text = "Here, have a nice Smoothie, it's a mix from " + l.getName() + " and ";
+        StringBuilder text = new StringBuilder("Here, have a nice Smoothie, it's a mix from " + l.getName() + " and ");
         boolean first = true;
         for (Fruit fruit : fruitlist) {
             if (first) {
-                text += fruit.getName();
+                text.append(fruit.getName());
                 first = false;
             } else {
-                text += ", " + fruit.getName();
+                text.append(", ").append(fruit.getName());
             }
         }
-        text += ".";
-        if (sugar) text += "It's even sweetened.";
-        if (l.getName() == "milk" || l.getName() == "Milk")
-            text += "And guess what, as the base is milk, it's even better than a normal smoothie. It's a milkshake!";
-        return text;
+        text.append(".");
+        if (sugar) text.append("It's even sweetened.");
+        if (l.getName().equals("milk") || l.getName().equals("Milk"))
+            text.append("And guess what, as the base is milk, it's even better than a normal smoothie. It's a milkshake!");
+        return text.toString();
     }
 }
 

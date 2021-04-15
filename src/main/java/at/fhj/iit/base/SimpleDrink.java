@@ -1,4 +1,4 @@
-package at.fhj.iit;
+package at.fhj.iit.base;
 
 /**
  * represents a simple drink liquid which can be used in drinks
@@ -16,7 +16,7 @@ public class SimpleDrink extends Drink {
      * @param name name of drink
      * @param l    only one liquid in drink, because it's a simple drink an not e.g. a cocktail
      */
-    SimpleDrink(String name, Liquid l) {
+    public SimpleDrink(String name, Liquid l) {
         super(name);
         this.l = l;
     }

@@ -1,4 +1,4 @@
-package at.fhj.iit;
+package at.fhj.iit.base;
 
 /**
  * represents a liquid which can be used in drinks
@@ -12,7 +12,7 @@ public class Liquid {
      * volume of liquid (in liter)
      */
     private double volume;
- 
+
     /**
      * alcoholPercent of liquid (in percent eg. 42)
      */

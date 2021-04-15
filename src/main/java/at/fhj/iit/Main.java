@@ -1,5 +1,10 @@
 package at.fhj.iit;
 
+import at.fhj.iit.base.Drink;
+import at.fhj.iit.base.Liquid;
+import at.fhj.iit.base.SimpleDrink;
+import at.fhj.iit.custom.*;
+
 import java.util.List;
 
 public class Main {
