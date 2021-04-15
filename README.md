@@ -15,7 +15,9 @@ but also to get used to technologies like Maven, etc.
 
 ## Changelog
 
-### Added classes
+### Version 1.0
+
+#### Added classes
 - Brand
 - SoftDrink
 - Tea
@@ -23,8 +25,8 @@ but also to get used to technologies like Maven, etc.
 - Smoothie
 - Fruit
 
-### Changes of Lukas Bobik
-#### Version 1.0
+#### Changes of Lukas Bobik
+
 1. **Commit**: add new `Tea` class
    Add a new tea and print tea to main method
    Add "sugar" as attribute
@@ -53,14 +55,8 @@ but also to get used to technologies like Maven, etc.
    
 7. **Commit**: update descriptions and format
 
-#### Version 2.0
-1. **Commit**: add LongDrink class that extends Drink class, and contains 1 alcoholic liquid and 1 softdrink
-   fixed a small typo in fruit class
 
----
-
-### Changes of Andreas Steirer
-#### Version 1.0
+#### Changes of Andreas Steirer
 1. **Commit**: add Brand enum  
    Add a `Brand` enumeration for future use in our drinks-project.  
    This enum represents a cleaner way of handling different static types in our implementation.  
@@ -115,4 +111,11 @@ but also to get used to technologies like Maven, etc.
    to compute values such as the total alcohol percentage and the volume of the whole `Cocktail`. 
    It also states if the `Cocktail` includes alcohol or not as a little shortcut.
 
-#### Version 2.0
+---
+
+### Version 2.0
+#### Changes of Lukas Bobik
+1. **Commit**: add LongDrink class that extends Drink class, and contains 1 alcoholic liquid and 1 softdrink
+   fixed a small typo in fruit class
+   
+#### Changes of Andreas Steirer
