@@ -56,6 +56,8 @@ but also to get used to technologies like Maven, etc.
 #### Version 2.0
 1. **Commit**: add LongDrink class that extends Drink class, and contains 1 alcoholic liquid and 1 softdrink
    fixed a small typo in fruit class
+   
+1. **Commit** add and implements a Test class for Tea, and removed an unnecessary constructor from Tea
 
 ---
 
