@@ -17,17 +17,12 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TeaTest {
 
     private Tea tea;
-    private Tea teaSugar;
-    private Tea teaMilk;
-    private Tea teaBoring;
 
     //Setup
     @BeforeEach
     private void setup() {
         tea = new Tea("Test", new Liquid("testliquid", 0.5, 0), true, true);
-        teaMilk = new Tea("Test", new Liquid("testliquid", 0.5, 0), false, true);
-        teaSugar = new Tea("Test", new Liquid("testliquid", 0.5, 0), true, false);
-        teaBoring = new Tea("Test", new Liquid("testliquid", 0.5, 0), false, false);
+
     }
 
     /**
@@ -36,6 +31,9 @@ public class TeaTest {
     @Test
     @DisplayName("Testing toString")
     public void testToString() {
+       Tea teaMilk = new Tea("Test", new Liquid("testliquid", 0.5, 0), false, true);
+       Tea teaSugar = new Tea("Test", new Liquid("testliquid", 0.5, 0), true, false);
+       Tea teaBoring = new Tea("Test", new Liquid("testliquid", 0.5, 0), false, false);
         assertEquals("This tea is from sort Test with sugar and milk", tea.toString());
         assertEquals("This tea is from sort Test with sugar", teaSugar.toString());
         assertEquals("This tea is from sort Test with milk", teaMilk.toString());

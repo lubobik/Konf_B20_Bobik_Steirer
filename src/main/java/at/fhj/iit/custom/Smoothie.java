@@ -28,17 +28,17 @@ public class Smoothie extends Drink {
 
     @Override
     public double getVolume() {
-        return 0;
+        return l.getVolume();
     }
 
     @Override
     public double getAlcoholPercent() {
-        return 0;
+        return l.getAlcoholPercent();
     }
 
     @Override
     public boolean isAlcoholic() {
-        return false;
+        return getAlcoholPercent() > 0;
     }
 
     /**
