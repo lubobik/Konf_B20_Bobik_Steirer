@@ -12,16 +12,6 @@ public class Tea extends Drink {
     protected Boolean sugar;
     protected Boolean milk;
 
-    /**
-     * Creates a Tea object with given name and liquid
-     *
-     * @param name name of drink
-     * @param t    only one liquid(water) in drink
-     */
-    public Tea(String name, Liquid t) {
-        super(name);
-        this.t = t;
-    }
 
     /**
      * Creates a Tea object with given name, liquid and sugar
