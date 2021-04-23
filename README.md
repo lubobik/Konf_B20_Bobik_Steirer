@@ -9,7 +9,54 @@
 ## Motivation
 This is a simple example project for the subject 'Configuration Mangement' in 2021.  
 The main purpose of it is getting to know GIT and all its commands,  
-but also to get used to technologies like Maven, etc.
+but also to get used to technologies like Maven, Junit etc.
+
+---
+
+## JavDoc CrashCourse
+Javadoc tool is a tool from JDK, for generating documentation in HTML format.<br>
+In order to for the tool to create documentation from .java files, comments inside code have to be written as javadoc comments.<br>
+Javadoc comments are similar to normal comments, but with a second asterisk at the beginning of the first comment line.
+
+         /**
+          *
+          */
+
+JavaDoc comments are written in HTML, placed in front of class, field or method declaration and contain two parts, a description and block tags.
+Description simply means what a class or method does, preferred in a way more descriptive than can be read from the method name.
+Block tags contain important infos and references.
+
+Some common block tags:<br>
+**@author** (Name of the programmer, only for classes and interfaces, multiple @authors should be order chronological)<br>
+**@version** (tells the version of the software, classes and interfaces only)<br>
+**@param** (what parameters are used in a method, methods and constructors only, should be listed as in the argument's order)<br>
+**@return** (what a method returns, methods only)<br>
+**@exception/@throws** explains cases in which an exception is expected)<br>
+**@see** (links or references something)<br>
+**@since** (tells in what version a class or method was added)<br>
+**@deprecated** (tells why code is deprecated and what the alternatives are)<br>
+
+for further infos read:
+https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html
+
+
+---
+
+## Test Coverage
+
+**Cocktail**<br>covered all methods and lines
+
+**LongDrink**<br>covered all methods and lines
+
+**Smoothie**<br>covered all methods and lines
+
+**Fruit**<br>covered all methods and lines
+
+**Tea**<br>covered all methods and lines
+
+**SimpleDrink**<br>covered all methods and lines
+
+**Liquid**<br>covered all methods and lines
 
 ---
 
@@ -130,6 +177,20 @@ but also to get used to technologies like Maven, etc.
 1. **Commit**: add LongDrink class that extends Drink class, and contains 1 alcoholic liquid and 1 softdrink
    fixed a small typo in fruit class
    
-1. **Commit**
+1. **Commit** add tests for Tea, removed unnecessary constructor
+
+1. **Commit** add tests for Smoothie and Fruit classes
+
+1. **Commit** add tests for Longdrink class
+
+1. **commit** add missing javdoc descriptions
+
+1. **commit** merged my test branches to main
+
+1. **commit** add tests for Liquid and SimpleDrink classes
+
+1. **commit** minor change to some test names
+
+1. **commit** changes to readme (Test coverage, Javadocs)
    
 #### Changes of Andreas Steirer
