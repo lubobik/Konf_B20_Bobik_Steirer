@@ -34,7 +34,7 @@ public class SoftDrinkTests {
     // More or less important to test.
     // Normally this is not tested separately.
     @Test
-    @DisplayName("Testing toString implementation")
+    @DisplayName("Testing setName implementation")
     public void changeName() {
         // Phases: Exercise
         String newName = "NewTestDrink";
@@ -47,7 +47,7 @@ public class SoftDrinkTests {
     // More or less important to test.
     // Normally this is not tested separately.
     @Test
-    @DisplayName("Testing toString implementation")
+    @DisplayName("Testing setVolume implementation")
     public void changeVolume() {
         // Phases: Exercise
         double newVolume = 10.0;
@@ -60,7 +60,7 @@ public class SoftDrinkTests {
     // More or less important to test.
     // Normally this is not tested separately.
     @Test
-    @DisplayName("Testing toString implementation")
+    @DisplayName("Testing setBrand implementation")
     public void changeBrand() {
         // Phases: Exercise
         Brand newBrand = Brand.LA_CROIX;
