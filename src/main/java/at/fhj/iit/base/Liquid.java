@@ -1,26 +1,36 @@
 package at.fhj.iit.base;
 
+import at.fhj.iit.exception.ValidationException;
+
 /**
- * represents a liquid which can be used in drinks
+ * Represents a <code>Liquid</code> which can be used in drinks.
+ *
+ * @author Michael Ulm
+ * @author Christian Hofer
+ * @version 2.0
+ * @see Drink
+ * @since 1.0
  */
 public class Liquid {
+
     /**
-     * name of liquid
+     * Name of a <code>Liquid</code>
      */
     private String name;
+
     /**
-     * volume of liquid (in liter)
+     * Volume of a <code>Liquid</code> (in liter)
      */
     private double volume;
 
     /**
-     * alcoholPercent of liquid (in percent eg. 42)
+     * Alcohol percentage of a <code>Liquid</code> (in percent eg. 42)
      */
     private double alcoholPercent;
 
     /**
-     * Creates new liquid with given name, volume and
-     * alcoholPercent
+     * Creates new <code>Liquid</code> with given name, volume and
+     * alcohol percentage
      *
      * @param name           name of liquid
      * @param volume         volume of liquid
@@ -34,17 +44,23 @@ public class Liquid {
         this.alcoholPercent = alcoholPercent;
     }
 
-
+    /**
+     * Checks if the passed volume is lower than or equal to zero.
+     * If so, throws a <code>ValidationException</code>.
+     *
+     * @param volume which should be checked
+     * @throws ValidationException if the volume is below zero or equal to zero.
+     */
     private void checkVolume(double volume) {
         if (volume <= 0) {
-            throw new IllegalArgumentException("liquid " + name + " must have a volume > 0");
+            throw new ValidationException("liquid " + name + " must have a volume > 0");
         }
     }
 
     /**
      * Getter for name
      *
-     * @return name of liquid
+     * @return the name of <code>Liquid</code>
      */
     public String getName() {
         return name;
@@ -53,7 +69,7 @@ public class Liquid {
     /**
      * Setter for name
      *
-     * @param name new name
+     * @param name a new name
      */
     public void setName(String name) {
         this.name = name;
@@ -62,7 +78,7 @@ public class Liquid {
     /**
      * Getter for volume
      *
-     * @return volume of liquid (in liter)
+     * @return the volume of liquid (in liter)
      */
     public double getVolume() {
         return volume;
@@ -71,25 +87,25 @@ public class Liquid {
     /**
      * Setter for volume
      *
-     * @param volume new volume
+     * @param volume a new volume
      */
     public void setVolume(double volume) {
         this.volume = volume;
     }
 
     /**
-     * Getter for alcoholPercent
+     * Getter for alcohol percentage
      *
-     * @return alcoholPercent (e.g. 40)
+     * @return the alcohol percentage (e.g. 40)
      */
     public double getAlcoholPercent() {
         return alcoholPercent;
     }
 
     /**
-     * Setter for alcoholPercent
+     * Setter for alcohol percentage
      *
-     * @param alcoholPercent new alcoholPercent
+     * @param alcoholPercent a new alcohol percentage
      */
     public void setAlcoholPercent(double alcoholPercent) {
         this.alcoholPercent = alcoholPercent;

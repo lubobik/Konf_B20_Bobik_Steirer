@@ -8,13 +8,14 @@ import at.fhj.iit.custom.*;
 import java.util.List;
 
 /**
- * Contains the <code>Main</code> method, to create multiple different drinks
-
+ * Contains the main application logic.
+ *
+ * @author Andreas Steirer
+ * @author Lukas Bobik
  * @version 2.0
+ * @see Drink
  * @since 1.0
  */
-
-
 public class Main {
 
     public static void main(String[] args) {

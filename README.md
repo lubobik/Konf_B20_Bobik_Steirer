@@ -15,7 +15,9 @@ but also to get used to technologies like Maven, etc.
 
 ## Changelog
 
-### Added classes
+### Version 1.0
+
+#### Added classes
 - Brand
 - SoftDrink
 - Tea
@@ -117,4 +119,17 @@ but also to get used to technologies like Maven, etc.
    to compute values such as the total alcohol percentage and the volume of the whole `Cocktail`. 
    It also states if the `Cocktail` includes alcohol or not as a little shortcut.
 
-#### Version 2.0
+---
+
+### Version 2.0
+
+#### Added classes
+- LongDrink
+
+#### Changes of Lukas Bobik
+1. **Commit**: add LongDrink class that extends Drink class, and contains 1 alcoholic liquid and 1 softdrink
+   fixed a small typo in fruit class
+   
+1. **Commit**
+   
+#### Changes of Andreas Steirer

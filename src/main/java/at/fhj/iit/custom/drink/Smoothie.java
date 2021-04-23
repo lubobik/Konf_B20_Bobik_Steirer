@@ -1,7 +1,8 @@
-package at.fhj.iit.custom;
+package at.fhj.iit.custom.drink;
 
 import at.fhj.iit.base.Drink;
 import at.fhj.iit.base.Liquid;
+import at.fhj.iit.custom.misc.Fruit;
 
 import java.util.List;
 /**
