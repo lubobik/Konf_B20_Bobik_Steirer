@@ -15,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @see SimpleDrink
  * @since 2.0
  */
+@DisplayName("Testing SimpleDrink Class")
 class SimpleDrinkTest {
     private SimpleDrink drink;
 

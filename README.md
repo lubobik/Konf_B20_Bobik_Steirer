@@ -13,7 +13,44 @@ but also to get used to technologies like Maven, Junit etc.
 
 ---
 
-## JavDoc CrashCourse
+## Submissions
+
+As base for this project we got a zip file, containing  4 java classe (Drink(abstract), Liquid, SimpleDrink, Main)
+
+### Submission 1
+Each group member had to derive a new class from Drink/SimpleDrink or from the class his/her groupmate created.<br>
+Create an Object from this class in the Main class, and call a method that prints text that includes infos for each drink.<br>
+Merge your files in a github repository.
+
+**Procedure:**<br>
+To extend a class from an abstracted class, all methods from abstract class have to be implemented in the new class.<br>
+The new class needs a constructor, and for every attribute there has to be at least a getter (setter optional, if you set attributes with the constructor and never want to change them).<br>
+In the toString method, you can create a custom message that gets shown if you print the object from main class.
+In the Main class you create one new object from the new class, and print toString.<br>
+Then merge it with your groupmate
+(The code is pretty rudimental, not sure what else i should explain)
+
+### Submission 2
+Each group member had to create a new git branch for every class that he/she created, and implement JUnit tests, and try to get a coverage of 100%,<br>
+adapt all his/her java classes to follow javadoc guidelines, and then push each branch onto the github server before merging it into the main branch.
+
+**Procedure:**<br>
+To start a new test (for example SimpleDrinkTest), you create a new test class (in Intellij, you can autocreate test classes (ALT+Paste, then choose test and mark what methods you want to test) or just create a new class in src/test).
+One test object (simpledrink) acts as attribute, and for every method in the base class there has to be one test method.
+
+'@BeforeEach' indicates a method that is executed before every test.<br>
+'@Test' is used in front of test methods<br>
+'@DisplayName(string)' in front of a testmethod is used to display a different name for a test<br>
+With assertEquals(param, param) you can test if a method return what it should. As first parameter you type what is expected, the second is called by the method. If it's the same, the test gets passed.
+To test methods like setName, you set the name during the test, and call it by getName.
+(thats done for all methods.  The code is pretty easy and self explaining, so I won't explain it in detail for all classes and methods)
+
+
+
+---
+
+
+## JavaDoc CrashCourse
 Javadoc tool is a tool from JDK, for generating documentation in HTML format.<br>
 In order to for the tool to create documentation from .java files, comments inside code have to be written as javadoc comments.<br>
 Javadoc comments are similar to normal comments, but with a second asterisk at the beginning of the first comment line.

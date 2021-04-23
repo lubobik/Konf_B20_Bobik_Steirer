@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @see LongDrink
  * @since 2.0
  */
+@DisplayName("Testing LongDrink Class")
 class LongDrinkTest {
     private LongDrink longDrink;
 

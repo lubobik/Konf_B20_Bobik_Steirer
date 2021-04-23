@@ -13,6 +13,8 @@ import static org.junit.jupiter.api.Assertions.*;
  * @see Liquid
  * @since 2.0
  */
+
+@DisplayName("Testing Liquid Class")
 class LiquidTest {
     private Liquid liquid;
 
