@@ -2,6 +2,14 @@ package at.fhj.iit.custom;
 import at.fhj.iit.base.Drink;
 import at.fhj.iit.base.Liquid;
 
+/**
+ * Describes a <code>LongDrink</code> object, with methods to calculate Volume/alcoholic percentage
+ *
+ * @author Lukas Bobik
+ * @version 2.0
+ * @see Drink
+ * @since 2.0
+ */
 
 public class LongDrink extends Drink {
     protected Liquid alcoholic;

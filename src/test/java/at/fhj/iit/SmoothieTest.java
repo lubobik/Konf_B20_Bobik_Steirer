@@ -15,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Lukas Bobik
  * @version 2.0
  * @see Smoothie
+ * @since 2.0
  */
 
 @DisplayName("Testing Smoothie Class")

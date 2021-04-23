@@ -12,11 +12,14 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Lukas Bobik
  * @version 2.0
  * @see LongDrink
+ * @since 2.0
  */
 class LongDrinkTest {
     private LongDrink longDrink;
 
-    //Setup
+    /**
+     * Setup
+     */
     @BeforeEach
     private void setup() {
         longDrink=new LongDrink("testdrink", new Liquid("testliquid",0.5,20),new Liquid("testjuice",0.3,0));

@@ -2,6 +2,14 @@ package at.fhj.iit.custom;
 
 import at.fhj.iit.base.Drink;
 import at.fhj.iit.base.Liquid;
+/**
+ * Describes a <code>Tea</code> object
+ *
+ * @author Lukas Bobik
+ * @version 2.0
+ * @see Drink
+ * @since 1.0
+ */
 
 public class Tea extends Drink {
 

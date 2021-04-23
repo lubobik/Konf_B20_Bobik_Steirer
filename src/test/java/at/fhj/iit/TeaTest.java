@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Lukas Bobik
  * @version 2.0
  * @see Tea
+ * @since 2.0
  */
 
 @DisplayName("Testing Tea Class")
@@ -18,7 +19,9 @@ public class TeaTest {
 
     private Tea tea;
 
-    //Setup
+    /**
+     * Setup
+     */
     @BeforeEach
     private void setup() {
         tea = new Tea("Test", new Liquid("testliquid", 0.5, 0), true, true);

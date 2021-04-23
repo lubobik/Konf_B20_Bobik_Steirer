@@ -4,6 +4,14 @@ import at.fhj.iit.base.Drink;
 import at.fhj.iit.base.Liquid;
 
 import java.util.List;
+/**
+ * Describes a <code>Smoothie</code> object
+ *
+ * @author Lukas Bobik
+ * @version 2.0
+ * @see Drink
+ * @since 1.0
+ */
 
 public class Smoothie extends Drink {
     protected Liquid l;
