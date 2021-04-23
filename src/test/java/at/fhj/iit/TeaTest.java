@@ -1,6 +1,6 @@
 package at.fhj.iit;
 import at.fhj.iit.base.Liquid;
-import at.fhj.iit.custom.Tea;
+import at.fhj.iit.custom.drink.Tea;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

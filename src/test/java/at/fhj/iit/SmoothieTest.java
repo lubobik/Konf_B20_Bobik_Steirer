@@ -1,7 +1,7 @@
 package at.fhj.iit;
 import at.fhj.iit.base.Liquid;
-import at.fhj.iit.custom.Fruit;
-import at.fhj.iit.custom.Smoothie;
+import at.fhj.iit.custom.misc.Fruit;
+import at.fhj.iit.custom.drink.Smoothie;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

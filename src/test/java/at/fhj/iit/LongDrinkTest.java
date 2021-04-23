@@ -1,7 +1,7 @@
 package at.fhj.iit;
 
 import at.fhj.iit.base.Liquid;
-import at.fhj.iit.custom.LongDrink;
+import at.fhj.iit.custom.drink.LongDrink;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
