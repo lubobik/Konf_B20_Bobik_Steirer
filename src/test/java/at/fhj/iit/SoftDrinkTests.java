@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * @version 2.0
  * @see SoftDrink
  */
-@DisplayName("Testing Cocktail class")
+@DisplayName("Testing SoftDrink class")
 public class SoftDrinkTests {
 
     private SoftDrink softDrink;
@@ -34,7 +34,7 @@ public class SoftDrinkTests {
     // More or less important to test.
     // Normally this is not tested separately.
     @Test
-    @DisplayName("Testing setName implementation")
+    @DisplayName("Testing change of name")
     public void changeName() {
         // Phases: Exercise
         String newName = "NewTestDrink";
@@ -47,7 +47,7 @@ public class SoftDrinkTests {
     // More or less important to test.
     // Normally this is not tested separately.
     @Test
-    @DisplayName("Testing setVolume implementation")
+    @DisplayName("Testing change of volume")
     public void changeVolume() {
         // Phases: Exercise
         double newVolume = 10.0;
@@ -60,7 +60,7 @@ public class SoftDrinkTests {
     // More or less important to test.
     // Normally this is not tested separately.
     @Test
-    @DisplayName("Testing setBrand implementation")
+    @DisplayName("Testing change of Brand")
     public void changeBrand() {
         // Phases: Exercise
         Brand newBrand = Brand.LA_CROIX;
@@ -76,7 +76,7 @@ public class SoftDrinkTests {
         // Phases: Verify(Exception specification, Exercise)
         assertThrows(
                 ValidationException.class,
-                () -> new SoftDrink("CheckerDrink", 0.0, Brand.COCA_COLA)
+                () -> new SoftDrink("CheckerDrink", 0.0, Brand.OTHER)
         );
     }
 
