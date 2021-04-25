@@ -15,7 +15,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * @author Lukas Bobik
  * @version 2.0
  * @see SimpleDrink
- * @since 2.0
  */
 @DisplayName("Testing SimpleDrink class")
 class SimpleDrinkTest {

@@ -81,7 +81,7 @@ public class CocktailTests {
         }
 
         @Test
-        @DisplayName("Testing total alcohol volumes (with zero)")
+        @DisplayName("Testing total alcohol volumes (zero in total)")
         public void calculateTotalAlcoholVolumeWithZero() {
             // Phases: Verify(Exercise)
             assertEquals(0.0, cocktailNumberOne.getAlcoholVolume());
@@ -95,7 +95,7 @@ public class CocktailTests {
         }
 
         @Test
-        @DisplayName("Testing total alcohol percentages")
+        @DisplayName("Testing total alcohol percentages (zero in total)")
         public void calculateTotalAlcoholPercentageWithZero() {
             // Phases: Verify(Exercise)
             assertEquals(0.0, cocktailNumberOne.getAlcoholPercent());
@@ -131,8 +131,8 @@ public class CocktailTests {
         // More or less important to test.
         // Normally this is very rarely tested separately.
         @Test
-        @DisplayName("Testing total volumes")
-        public void verifyToString() {
+        @DisplayName("Testing toString implementation")
+        public void callToString() {
             // Phases: Verify(Exercise)
             assertEquals(
                     "The 'Mai Tai' includes following ingredients " +

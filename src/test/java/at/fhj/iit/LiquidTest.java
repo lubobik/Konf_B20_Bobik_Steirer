@@ -4,17 +4,18 @@ import at.fhj.iit.base.Liquid;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Contains test cases for the Liquid class
+ * Contains test cases for the <code>Liquid</code> class
+ *
  * @author Lukas Bobik
  * @version 2.0
  * @see Liquid
- * @since 2.0
  */
 
-@DisplayName("Testing Liquid Class")
+@DisplayName("Testing Liquid class")
 class LiquidTest {
     private Liquid liquid;
 
@@ -23,7 +24,7 @@ class LiquidTest {
      */
     @BeforeEach
     private void setup() {
-        liquid=new Liquid("testliquid", 5, 5);
+        liquid = new Liquid("testliquid", 5, 5);
     }
 
     /**
@@ -32,7 +33,7 @@ class LiquidTest {
     @Test
     @DisplayName("Testing getVolume")
     public void getVolume() {
-        assertEquals(5,liquid.getVolume());
+        assertEquals(5, liquid.getVolume());
     }
 
     /**
@@ -41,7 +42,7 @@ class LiquidTest {
     @Test
     @DisplayName("Testing getAlcoholPercent")
     public void getAlcoholPercent() {
-        assertEquals(5,liquid.getAlcoholPercent());
+        assertEquals(5, liquid.getAlcoholPercent());
     }
 
 
@@ -60,7 +61,7 @@ class LiquidTest {
     @Test
     @DisplayName("Testing setName")
     void testSetName() {
-        String testname="test";
+        String testname = "test";
         liquid.setName(testname);
         assertEquals(testname, liquid.getName());
     }
@@ -72,7 +73,7 @@ class LiquidTest {
     @Test
     @DisplayName("Testing setVolume")
     void testSetVolume() {
-        int test=7;
+        int test = 7;
         liquid.setVolume(test);
         assertEquals(test, liquid.getVolume());
     }
@@ -83,7 +84,7 @@ class LiquidTest {
     @Test
     @DisplayName("Testing setAlcoholPercentage")
     void testSetAlcoholPercent() {
-        int test=7;
+        int test = 7;
         liquid.setAlcoholPercent(test);
         assertEquals(test, liquid.getAlcoholPercent());
     }

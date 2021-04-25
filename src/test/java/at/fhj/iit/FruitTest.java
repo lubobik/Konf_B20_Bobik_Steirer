@@ -1,17 +1,20 @@
 package at.fhj.iit;
+
 import at.fhj.iit.custom.misc.Fruit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Contains test cases for the Fruit class
+ * Contains test cases for the <code>Fruit</code> class
+ *
  * @author Lukas Bobik
  * @version 2.0
  * @see Fruit
  */
-@DisplayName("Testing Fruit Class")
+@DisplayName("Testing Fruit class")
 public class FruitTest {
 
     private Fruit fruit;
@@ -19,7 +22,7 @@ public class FruitTest {
     //setup
     @BeforeEach
     public void setup() {
-    fruit=new Fruit("test");
+        fruit = new Fruit("test");
     }
 
     /**
@@ -27,8 +30,8 @@ public class FruitTest {
      */
     @Test
     @DisplayName("Testing getName")
-    public void testGetName(){
-        assertEquals("test",fruit.getName());
+    public void testGetName() {
+        assertEquals("test", fruit.getName());
     }
 
     /**
@@ -36,9 +39,9 @@ public class FruitTest {
      */
     @Test
     @DisplayName("Testing setName")
-    public void testSetName(){
-        String test="test123";
+    public void testSetName() {
+        String test = "test123";
         fruit.setName(test);
-        assertEquals(test,fruit.getName());
+        assertEquals(test, fruit.getName());
     }
 }

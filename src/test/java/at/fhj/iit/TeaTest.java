@@ -1,20 +1,22 @@
 package at.fhj.iit;
+
 import at.fhj.iit.base.Liquid;
 import at.fhj.iit.custom.drink.Tea;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Contains test cases for the Tea class
+ * Contains test cases for the <code>Tea</code> class
+ *
  * @author Lukas Bobik
  * @version 2.0
  * @see Tea
- * @since 2.0
  */
 
-@DisplayName("Testing Tea Class")
+@DisplayName("Testing Tea class")
 public class TeaTest {
 
     private Tea tea;
@@ -34,9 +36,9 @@ public class TeaTest {
     @Test
     @DisplayName("Testing toString")
     public void testToString() {
-       Tea teaMilk = new Tea("Test", new Liquid("testliquid", 0.5, 0), false, true);
-       Tea teaSugar = new Tea("Test", new Liquid("testliquid", 0.5, 0), true, false);
-       Tea teaBoring = new Tea("Test", new Liquid("testliquid", 0.5, 0), false, false);
+        Tea teaMilk = new Tea("Test", new Liquid("testliquid", 0.5, 0), false, true);
+        Tea teaSugar = new Tea("Test", new Liquid("testliquid", 0.5, 0), true, false);
+        Tea teaBoring = new Tea("Test", new Liquid("testliquid", 0.5, 0), false, false);
         assertEquals("This tea is from sort Test with sugar and milk", tea.toString());
         assertEquals("This tea is from sort Test with sugar", teaSugar.toString());
         assertEquals("This tea is from sort Test with milk", teaMilk.toString());

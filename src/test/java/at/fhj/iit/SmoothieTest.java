@@ -1,24 +1,26 @@
 package at.fhj.iit;
+
 import at.fhj.iit.base.Liquid;
-import at.fhj.iit.custom.misc.Fruit;
 import at.fhj.iit.custom.drink.Smoothie;
+import at.fhj.iit.custom.misc.Fruit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 /**
- * Contains test cases for the Smoothie class
+ * Contains test cases for the <code>Smoothie</code> class
+ *
  * @author Lukas Bobik
  * @version 2.0
  * @see Smoothie
- * @since 2.0
  */
 
-@DisplayName("Testing Smoothie Class")
+@DisplayName("Testing Smoothie class")
 public class SmoothieTest {
 
     private Smoothie smoothie;
@@ -50,13 +52,14 @@ public class SmoothieTest {
     public void testGetVolume() {
         assertEquals(1, smoothie.getVolume());
     }
+
     /**
      * Tests getAlcoholPercent
      */
     @Test
     @DisplayName("Testing getAlcoholPercent")
     public void testGetAlcoholPercent() {
-       assertEquals(0,smoothie.getAlcoholPercent());
+        assertEquals(0, smoothie.getAlcoholPercent());
     }
 
     /**
