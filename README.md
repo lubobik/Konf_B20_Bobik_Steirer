@@ -97,7 +97,7 @@ getting to know JavaDoc and documentation process.
 ## JavaDoc crash course
 
 ### General
-JavaDoc is part of the JDK and therefore a tool for generating documentations in HTML format.  
+JavaDoc is part of the JDK (Java Development Kit) and therefore a tool for generating documentations in HTML format.  
 In order to generate a documentation from `.java` files, comments inside the code have to be added complying with the JavaDoc specification.  
 JavaDoc comments are similar to normal comments, but with a second asterisk at the beginning of the first comment line.
 
@@ -328,6 +328,7 @@ Main class is not tested as it basically only
 * **Commits**:  
   1. update structure of README    
   1. re-structure README file and add additional documentation  
+  1. minor changes to README  
   
   Change structure of README file so that changelog is now versioned correctly.
   
