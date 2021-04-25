@@ -62,8 +62,7 @@ public class Main {
 
         List<Fruit> smoothieFruits = List.of(new Fruit("Strawberry"), new Fruit("Banana"), new Fruit("Ananas"));
         Liquid m = new Liquid("Milk", 0.5, 0);
-        boolean sugar = false;
-        Smoothie milkshake = new Smoothie("Milkshake", m, smoothieFruits, sugar);
+        Smoothie milkshake = new Smoothie("Milkshake", m, smoothieFruits, false);
         System.out.println(milkshake);
 
         printSeparator();
@@ -74,6 +73,9 @@ public class Main {
         System.out.println(vodkaCranberry);
     }
 
+    /**
+     * Prints out a separating line consisting out of 80 dashes.
+     */
     private static void printSeparator() {
         System.out.println("-".repeat(80));
     }
