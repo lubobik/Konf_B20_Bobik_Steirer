@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 
 @DisplayName("Testing Liquid class")
-class LiquidTest {
+class LiquidTests {
     private Liquid liquid;
 
     /**

@@ -1,7 +1,7 @@
 package at.fhj.iit;
 
 import at.fhj.iit.base.Liquid;
-import at.fhj.iit.custom.drink.LongDrink;
+import at.fhj.iit.base.SimpleDrink;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -10,23 +10,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Contains test cases for the <code>LongDrink</code> class
+ * Contains test cases for the <code>SimpleDrink</code> class
  *
  * @author Lukas Bobik
  * @version 2.0
- * @see LongDrink
- * @since 2.0
+ * @see SimpleDrink
  */
-@DisplayName("Testing LongDrink class")
-class LongDrinkTest {
-    private LongDrink longDrink;
+@DisplayName("Testing SimpleDrink class")
+class SimpleDrinkTests {
+    private SimpleDrink drink;
 
     /**
      * Setup
      */
     @BeforeEach
     private void setup() {
-        longDrink = new LongDrink("testdrink", new Liquid("testliquid", 0.5, 20), new Liquid("testjuice", 0.3, 0));
+        drink = new SimpleDrink("test", new Liquid("water", 1, 0.1));
     }
 
     /**
@@ -35,7 +34,7 @@ class LongDrinkTest {
     @Test
     @DisplayName("Testing getVolume")
     public void getVolume() {
-        assertEquals(0.8, longDrink.getVolume());
+        assertEquals(1, drink.getVolume());
     }
 
     /**
@@ -44,7 +43,7 @@ class LongDrinkTest {
     @Test
     @DisplayName("Testing getAlcoholPercent")
     public void getAlcoholPercent() {
-        assertEquals(12.5, longDrink.getAlcoholPercent());
+        assertEquals(0.1, drink.getAlcoholPercent());
     }
 
     /**
@@ -53,7 +52,7 @@ class LongDrinkTest {
     @Test
     @DisplayName("Testing isAlcoholic")
     public void isAlcoholic() {
-        assertTrue(longDrink.isAlcoholic());
+        assertTrue(drink.isAlcoholic());
     }
 
     /**
@@ -62,6 +61,6 @@ class LongDrinkTest {
     @Test
     @DisplayName("Testing toString")
     public void testToString() {
-        assertEquals("testdrink like the name suggests is testliquid and testjuice with an alcohol percentage of 12.5%.", longDrink.toString());
+        assertEquals("Simple Drink called test with 0.1 percent alcohol by volume", drink.toString());
     }
 }

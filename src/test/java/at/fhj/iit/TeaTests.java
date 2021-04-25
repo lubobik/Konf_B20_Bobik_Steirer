@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 
 @DisplayName("Testing Tea class")
-public class TeaTest {
+public class TeaTests {
 
     private Tea tea;
 

@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @see Fruit
  */
 @DisplayName("Testing Fruit class")
-public class FruitTest {
+public class FruitTests {
 
     private Fruit fruit;
 

@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
  */
 
 @DisplayName("Testing Smoothie class")
-public class SmoothieTest {
+public class SmoothieTests {
 
     private Smoothie smoothie;
 
