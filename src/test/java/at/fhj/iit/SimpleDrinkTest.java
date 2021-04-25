@@ -2,20 +2,22 @@ package at.fhj.iit;
 
 import at.fhj.iit.base.Liquid;
 import at.fhj.iit.base.SimpleDrink;
-import at.fhj.iit.custom.drink.LongDrink;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 /**
- * Contains test cases for the SimpleDrink class
+ * Contains test cases for the <code>SimpleDrink</code> class
+ *
  * @author Lukas Bobik
  * @version 2.0
  * @see SimpleDrink
  * @since 2.0
  */
-@DisplayName("Testing SimpleDrink Class")
+@DisplayName("Testing SimpleDrink class")
 class SimpleDrinkTest {
     private SimpleDrink drink;
 
@@ -24,16 +26,16 @@ class SimpleDrinkTest {
      */
     @BeforeEach
     private void setup() {
-        drink=new SimpleDrink("test", new Liquid("water",1,0.1));
-
+        drink = new SimpleDrink("test", new Liquid("water", 1, 0.1));
     }
+
     /**
      * Tests getVolume
      */
     @Test
     @DisplayName("Testing getVolume")
     public void getVolume() {
-        assertEquals(1,drink.getVolume());
+        assertEquals(1, drink.getVolume());
     }
 
     /**
@@ -42,8 +44,9 @@ class SimpleDrinkTest {
     @Test
     @DisplayName("Testing getAlcoholPercent")
     public void getAlcoholPercent() {
-        assertEquals(0.1,drink.getAlcoholPercent());
+        assertEquals(0.1, drink.getAlcoholPercent());
     }
+
     /**
      * Tests isAlcoholic
      */
