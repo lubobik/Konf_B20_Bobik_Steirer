@@ -20,7 +20,7 @@ As a base for this project we got a zip file, containing 4 Java classes
 
 ### Submission #1
 
-####General  
+#### General  
 Each group member had to derive a new class from `Drink` / `SimpleDrink` or from a class another group mate has created before.  
 After that each one created objects from their corresponding classes in the Main file to demonstrate their implementations
 (e.g. printing the `String` representation of `Drink`s, which mostly include info about each individual `Drink`).  
@@ -28,7 +28,7 @@ While implementing all the known requirements, each student had to take notes an
 All files were of course checked into the VCS to actually track the changes   
 (without that you would not be here reading this amazing information).  
 
-####Procedure 
+#### Procedure 
 1. To extend a class from an abstract class, all methods and variables from the abstract class have to be (directly or indirectly) 
 implemented in the deriving class.  
 1. The new created class needs at least one constructor and for every field there has to be at least a getter method
@@ -38,13 +38,13 @@ It will be shown when the `toString` method is explicitly (calling by name) or i
 1. As already mentioned above, after implementing some functionality and methods the objects will be tested in the project's `Main` class.
 1. Finishing up, every larger change will be stored and pushed in its own atomic commit + message.
 
-####Lessons learned   
+#### Lessons learned   
 Basic usage of Git as a VCS, deriving classes from abstract classes in Java, 
 implementing some minor business logic and a brief entry into merging files.
 
 ### Submission #2
 
-####General  
+#### General  
 * Each group member had to create a new Git branch for every class that he / she created, 
 implement JUnit tests for their individual implementations and try to reach a test coverage of 100%.  
 * If not already done, adapt all undocumented Java classes with respective comments using JavaDoc.
@@ -53,7 +53,7 @@ push each branch to the GitHub repository before merging it back into the main b
 If a developer gets lucky and no other team member worked on the same lines of code as he did, 
 there should not be the need of an additional merging process.
 
-####Procedure   
+#### Procedure   
 In order to start a new test class (e.g. `SimpleDrinkTests`) a new class needs to be created
 (in IntelliJ, you can auto-generate test classes
 [ALT+PASTE, then choose test and mark what methods you want to test] or just create a new class in `"test / java / packageName"`).
@@ -87,7 +87,7 @@ The general principle of creating a test is always the same
 --> Setup, Exercise, Verify (and Tear-down)  
 (actually all typical unit test kits / frameworks, for all typical languages work in the same way).
 
-####Lessons learned   
+#### Lessons learned   
 Advanced usage of Git as a VCS (branching and merging), deriving classes from abstract classes in Java, 
 implementing some small business logic, creating unit tests with a focus on 100% line coverage, 
 getting to know JavaDoc and documentation process.
@@ -113,7 +113,7 @@ Description simply means what a class or method does, preferred in a way more de
  than what can be read from the method name.
 Each block tag contains individual important info or references.
 
-####Most important block tags:  
+#### Most important block tags:  
 * `@author` - Name of the programmer(s). Only for classes, interfaces and enumerations.  
 Ideally: Multiple `@authors` should be ordered in chronological way.
 * `@version` - Represents the version of the software (or file, some organizations might miss-use it).   
@@ -139,7 +139,7 @@ Please consult the reference for further information about them.
 
 ## Test Coverage
 
-###General information / opinion
+### General information / opinion
 Tests should only be written for more complex use cases 
 (especially if there are many edge cases and a complicated business logic is implemented).  
 Writing tests for every little method, which will always return a valid outcome, 
