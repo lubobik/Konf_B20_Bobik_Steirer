@@ -1,4 +1,4 @@
-package at.fhj.iit;
+package at.fhj.iit.custom.misc;
 
 import at.fhj.iit.custom.misc.Brand;
 import at.fhj.iit.custom.misc.SoftDrink;

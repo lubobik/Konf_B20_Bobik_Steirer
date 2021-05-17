@@ -1,4 +1,4 @@
-package at.fhj.iit;
+package at.fhj.iit.custom.drink;
 
 import at.fhj.iit.base.Liquid;
 import at.fhj.iit.custom.drink.Tea;

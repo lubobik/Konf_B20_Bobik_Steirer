@@ -1,4 +1,4 @@
-package at.fhj.iit;
+package at.fhj.iit.base;
 
 import at.fhj.iit.base.Liquid;
 import org.junit.jupiter.api.BeforeEach;
