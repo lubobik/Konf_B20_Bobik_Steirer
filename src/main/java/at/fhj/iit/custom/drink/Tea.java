@@ -2,6 +2,7 @@ package at.fhj.iit.custom.drink;
 
 import at.fhj.iit.base.Drink;
 import at.fhj.iit.base.Liquid;
+
 /**
  * Describes a <code>Tea</code> object
  *
@@ -10,7 +11,6 @@ import at.fhj.iit.base.Liquid;
  * @see Drink
  * @since 1.0
  */
-
 public class Tea extends Drink {
 
     /**
@@ -93,4 +93,9 @@ public class Tea extends Drink {
         return text;
     }
 
+    @Override
+    public double calculatePrice() {
+        double multiplier = 1 + (sugar ? 1 : 0) + (milk ? 1 : 0);
+        return getVolume() * (1.0 + (getAlcoholPercent() / 100.0)) * multiplier;
+    }
 }

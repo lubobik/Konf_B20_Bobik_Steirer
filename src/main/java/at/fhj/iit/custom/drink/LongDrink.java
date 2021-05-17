@@ -66,4 +66,9 @@ public class LongDrink extends Drink {
     public String toString() {
         return name + " like the name suggests is " + alcoholic.getName() + " and " + softLiquid.getName() + " with an alcohol percentage of " + getAlcoholPercent() + "%.";
     }
+
+    @Override
+    public double calculatePrice() {
+        return getVolume() * (1.0 + (getAlcoholPercent() / 100.0)) * 2.0;
+    }
 }

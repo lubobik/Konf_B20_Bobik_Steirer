@@ -131,8 +131,13 @@ public class Cocktail extends Drink {
                 .collect(Collectors.joining(", "));
         String totalAlcoholPercentage = String.format("%.2f", getAlcoholPercent());
 
-        return "The '" + name + "' includes following ingredients [" +
+        return "The '" + name + "' includes following ingredients\n[" +
                 formattedLiquidNames + "] with a total alcohol percentage of " + totalAlcoholPercentage + "%.";
+    }
+
+    @Override
+    public double calculatePrice() {
+        return getVolume() * (1.0 + (getAlcoholPercent() / 100.0)) * this.liquids.size();
     }
 }
 

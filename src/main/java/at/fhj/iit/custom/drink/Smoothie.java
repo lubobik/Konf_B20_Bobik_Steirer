@@ -5,6 +5,7 @@ import at.fhj.iit.base.Liquid;
 import at.fhj.iit.custom.misc.Fruit;
 
 import java.util.List;
+
 /**
  * Describes a <code>Smoothie</code> object
  *
@@ -13,7 +14,6 @@ import java.util.List;
  * @see Drink
  * @since 1.0
  */
-
 public class Smoothie extends Drink {
     protected Liquid l;
     protected Boolean sugar;
@@ -24,8 +24,8 @@ public class Smoothie extends Drink {
      *
      * @param name        name of drink
      * @param baseliquid, tells us the base of the smoothie (eg milk, juice...)
-     * @param sweetener   tells if the smoothie is sweetened
      * @param fruitlist   is a list from fruits that are mixed together
+     * @param sweetener   tells if the smoothie is sweetened
      */
     public Smoothie(String name, Liquid baseliquid, List<Fruit> fruitlist, boolean sweetener) {
         super(name);
@@ -33,7 +33,6 @@ public class Smoothie extends Drink {
         this.l = baseliquid;
         this.sugar = sweetener;
     }
-
 
     @Override
     public double getVolume() {
@@ -67,8 +66,14 @@ public class Smoothie extends Drink {
         text.append(".");
         if (sugar) text.append("It's even sweetened.");
         if (l.getName().equals("milk") || l.getName().equals("Milk"))
-            text.append("And guess what, as the base is milk, it's even better than a normal smoothie. It's a milkshake!");
+            text.append("\nAnd guess what, as the base is milk, it's even better than a normal smoothie. It's a milkshake!");
         return text.toString();
+    }
+
+    @Override
+    public double calculatePrice() {
+        double multiplier = 1 + (sugar ? 1 : 0) + fruitlist.size();
+        return getVolume() * (1.0 + (getAlcoholPercent() / 100.0)) * multiplier;
     }
 }
 

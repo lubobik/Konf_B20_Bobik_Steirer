@@ -1,6 +1,8 @@
 package at.fhj.iit.base;
 
 
+import at.fhj.iit.misc.IDrinkSpecification;
+
 /**
  * Abstract base class for concrete <code>Drink</code> classes.
  *
@@ -10,7 +12,7 @@ package at.fhj.iit.base;
  * @see Drink
  * @since 1.0
  */
-public abstract class Drink {
+public abstract class Drink implements IDrinkSpecification {
 
     /**
      * name of the drink, so it's easier to identify drink

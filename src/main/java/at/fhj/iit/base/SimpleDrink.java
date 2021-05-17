@@ -65,4 +65,9 @@ public class SimpleDrink extends Drink {
     public String toString() {
         return "Simple Drink called " + name + " with " + l.getAlcoholPercent() + " percent alcohol by volume";
     }
+
+    @Override
+    public double calculatePrice() {
+        return getVolume() * (1.0 + (getAlcoholPercent() / 100.0));
+    }
 }
