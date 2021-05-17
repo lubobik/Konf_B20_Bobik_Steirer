@@ -1,7 +1,7 @@
 package at.fhj.iit.util;
 
 import at.fhj.iit.base.Liquid;
-import at.fhj.iit.custom.CashRegister;
+import at.fhj.iit.custom.CashRegisterManagement;
 import at.fhj.iit.custom.DrinkSale;
 import at.fhj.iit.custom.Operator;
 import at.fhj.iit.custom.drink.Cocktail;
@@ -16,24 +16,24 @@ import java.util.List;
 
 public class CashRegisterRandomizer {
 
-    private static CashRegister cashRegister;
+    private static CashRegisterManagement cashRegisterManagement;
     private static final Faker faker = new Faker();
     private static final List<Operator> operators = List.of(
-            new Operator(1, "Andreas", "Steirer"),
-            new Operator(2, "Lukas", "Bobik"),
-            new Operator(3, "Michael", "Ulm"),
-            new Operator(4, "Christian", "Hofer")
+            new Operator("Andreas", "Steirer"),
+            new Operator("Lukas", "Bobik"),
+            new Operator("Michael", "Ulm"),
+            new Operator("Christian", "Hofer")
     );
 
-    public static CashRegister generateRandomTestCashRegister() {
-        cashRegister = new CashRegister();
+    public static CashRegisterManagement generateRandomTestCashRegister() {
+        cashRegisterManagement = new CashRegisterManagement();
 
         generateRandomCocktails();
         generateRandomLongDrinks();
         generateRandomSmoothies();
         generateRandomTeas();
 
-        return cashRegister;
+        return cashRegisterManagement;
     }
 
     public static Operator randomOperator() {
@@ -46,7 +46,7 @@ public class CashRegisterRandomizer {
             for (int j = 0; j < faker.number().numberBetween(1, 5); j++) {
                 liquids.add(randomLiquid(faker.random().nextBoolean()));
             }
-            cashRegister.addSale(
+            cashRegisterManagement.addSale(
                     new DrinkSale(
                             new Cocktail(faker.beer().name(), liquids),
                             randomOperator()
@@ -57,7 +57,7 @@ public class CashRegisterRandomizer {
 
     private static void generateRandomLongDrinks() {
         for (int i = 0; i < faker.number().numberBetween(1, 5); i++) {
-            cashRegister.addSale(
+            cashRegisterManagement.addSale(
                     new DrinkSale(
                             new LongDrink(
                                     faker.beer().name(),
@@ -76,7 +76,7 @@ public class CashRegisterRandomizer {
             for (int j = 0; j < faker.number().numberBetween(1, 5); j++) {
                 fruits.add(new Fruit(faker.food().fruit()));
             }
-            cashRegister.addSale(
+            cashRegisterManagement.addSale(
                     new DrinkSale(
                             new Smoothie(
                                     faker.beer().name(),
@@ -92,7 +92,7 @@ public class CashRegisterRandomizer {
 
     private static void generateRandomTeas() {
         for (int i = 0; i < faker.number().numberBetween(1, 5); i++) {
-            cashRegister.addSale(
+            cashRegisterManagement.addSale(
                     new DrinkSale(
                             new Tea(
                                     faker.beer().name(),
