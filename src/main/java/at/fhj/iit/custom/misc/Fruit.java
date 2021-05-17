@@ -24,7 +24,7 @@ public class Fruit {
     /**
      * Setter for name
      *
-     * @param name fruitname
+     * @param name fruit name
      */
     public void setName(String name) {
         this.name = name;

@@ -34,16 +34,31 @@ public class Smoothie extends Drink {
         this.sugar = sweetener;
     }
 
+    /**
+     * Calculates and returns volume of drink
+     *
+     * @return the volume of drink in liter
+     */
     @Override
     public double getVolume() {
         return l.getVolume();
     }
 
+    /**
+     * Calculates and returns the alcohol percentage
+     *
+     * @return alcohol volume percent (e.g. 50)
+     */
     @Override
     public double getAlcoholPercent() {
         return l.getAlcoholPercent();
     }
 
+    /**
+     * Gives information if drink is alcoholic or not
+     *
+     * @return true when alcoholic liquids are present, otherwise false
+     */
     @Override
     public boolean isAlcoholic() {
         return getAlcoholPercent() > 0;
@@ -52,6 +67,7 @@ public class Smoothie extends Drink {
     /**
      * Formatted output for a Smoothie
      */
+    @Override
     public String toString() {
         StringBuilder text = new StringBuilder("Here, have a nice Smoothie, it's a mix from " + l.getName() + " and ");
         boolean first = true;
@@ -70,6 +86,12 @@ public class Smoothie extends Drink {
         return text.toString();
     }
 
+    /**
+     * Calculates the price of the drink,
+     * based on its ingredients and specialities.
+     *
+     * @return the calculated price of a specific drink
+     */
     @Override
     public double calculatePrice() {
         double multiplier = 1 + (sugar ? 1 : 0) + fruitlist.size();

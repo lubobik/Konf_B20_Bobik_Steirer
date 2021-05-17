@@ -14,9 +14,9 @@ import at.fhj.iit.base.Liquid;
 public class Tea extends Drink {
 
     /**
-     * uses one liquid, and possibly milk and/or sugar
+     * Uses one liquid, and possibly milk and/or sugar
      */
-    protected Liquid t;
+    protected Liquid water;
     protected Boolean sugar;
     protected Boolean milk;
 
@@ -25,13 +25,13 @@ public class Tea extends Drink {
      * Creates a Tea object with given name, liquid and sugar
      *
      * @param name  name of drink
-     * @param t     only one liquid(water) in drink, because it's a tea
+     * @param water only one liquid(water) in drink, because it's a tea
      * @param sugar tells if the tea is with or without sugar
      * @param milk  tells if the tea is with or without milk
      */
-    public Tea(String name, Liquid t, Boolean sugar, Boolean milk) {
+    public Tea(String name, Liquid water, Boolean sugar, Boolean milk) {
         super(name);
-        this.t = t;
+        this.water = water;
         this.sugar = sugar;
         this.milk = milk;
     }
@@ -61,12 +61,17 @@ public class Tea extends Drink {
      */
     @Override
     public double getVolume() {
-        return t.getVolume();
+        return water.getVolume();
     }
 
+    /**
+     * Calculates and returns the alcohol percentage
+     *
+     * @return alcohol volume percent (e.g. 50)
+     */
     @Override
     public double getAlcoholPercent() {
-        return t.getAlcoholPercent();
+        return water.getAlcoholPercent();
     }
 
     /**
@@ -93,6 +98,12 @@ public class Tea extends Drink {
         return text;
     }
 
+    /**
+     * Calculates the price of the drink,
+     * based on its ingredients and specialities.
+     *
+     * @return the calculated price of a specific drink
+     */
     @Override
     public double calculatePrice() {
         double multiplier = 1 + (sugar ? 1 : 0) + (milk ? 1 : 0);

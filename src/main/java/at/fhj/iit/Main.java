@@ -3,8 +3,8 @@ package at.fhj.iit;
 import at.fhj.iit.base.Drink;
 import at.fhj.iit.base.Liquid;
 import at.fhj.iit.base.SimpleDrink;
-import at.fhj.iit.custom.CashRegisterManagement;
-import at.fhj.iit.custom.Operator;
+import at.fhj.iit.custom.cashRegister.CashRegisterManagement;
+import at.fhj.iit.custom.cashRegister.Operator;
 import at.fhj.iit.custom.drink.Cocktail;
 import at.fhj.iit.custom.drink.LongDrink;
 import at.fhj.iit.custom.drink.Smoothie;
@@ -32,15 +32,12 @@ public class Main {
 
     /**
      * Represents the main entry point of
-     * many applications in different programming languages.
+     * every Java application.
      *
      * @param args Command line parameters
      */
     public static void main(String[] args) {
         printBaseDemonstration();
-        DrinkUtils.printSeparator();
-
-        System.out.println("END OF ALREADY SPECIFIED CODE");
         DrinkUtils.printSeparator();
 
         printSoftLiquidDemonstration();
@@ -58,38 +55,7 @@ public class Main {
         printLongDrinkDemonstration();
         DrinkUtils.printSeparator();
 
-        printCashRegisterDemonstration();
-    }
-
-    private static void printCashRegisterDemonstration() {
-        CashRegisterManagement cashRegisterManagement =
-                CashRegisterRandomizer.generateRandomTestCashRegister();
-
-        DrinkUtils.printFormattedMetric("Total of non alcoholic beverages",
-                cashRegisterManagement.retrieveTotalOfNonAlcoholicBeverages()
-        );
-        DrinkUtils.printFormattedMetric("Total of weak alcoholic beverages",
-                cashRegisterManagement.retrieveTotalOfAlcoholicBeveragesIntense()
-        );
-        DrinkUtils.printFormattedMetric("Total of intense alcoholic beverages",
-                cashRegisterManagement.retrieveTotalOfAlcoholicBeveragesWeak()
-        );
-
-        LocalDate todayDate = LocalDate.now();
-        String today = LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-        Operator operator = CashRegisterRandomizer.randomOperator();
-
-        DrinkUtils.printFormattedMetric("Total of the day '" + today + "'",
-                cashRegisterManagement.retrieveTotalByTimestamp(todayDate)
-        );
-        DrinkUtils.printFormattedMetric("Total of operator '" + operator.getFullName() + "'",
-                cashRegisterManagement.retrieveTotalByOperator(operator)
-        );
-
-        operator = CashRegisterRandomizer.randomOperator();
-        DrinkUtils.printFormattedMetric("Total of the day '" + today + "' and operator '" + operator.getFullName() + "'",
-                cashRegisterManagement.retrieveTotalByOperatorAndTimestamp(todayDate, operator)
-        );
+        printCashRegisterManagementDemonstration();
     }
 
     /**
@@ -102,6 +68,9 @@ public class Main {
 
         Drink redWine = new SimpleDrink("Rotwein", l);
         System.out.println(redWine);
+
+        DrinkUtils.printSeparator();
+        System.out.println("END OF ALREADY SPECIFIED CODE");
     }
 
     /**
@@ -159,5 +128,39 @@ public class Main {
         SoftLiquid filler = new SoftLiquid("Cranberry Juice", 0.5, Brand.PEPSI);
         LongDrink vodkaCranberry = new LongDrink("Vodka Cranberry", vodka, filler);
         System.out.println(vodkaCranberry);
+    }
+
+    /**
+     * Demonstrates the <code>CashRegisterManagement</code> implementation.
+     */
+    private static void printCashRegisterManagementDemonstration() {
+        CashRegisterManagement cashRegisterManagement =
+                CashRegisterRandomizer.generateRandomTestCashRegister();
+
+        DrinkUtils.printFormattedMetric("Total of non alcoholic beverages",
+                cashRegisterManagement.retrieveTotalOfNonAlcoholicBeverages()
+        );
+        DrinkUtils.printFormattedMetric("Total of weak alcoholic beverages",
+                cashRegisterManagement.retrieveTotalOfAlcoholicBeveragesIntense()
+        );
+        DrinkUtils.printFormattedMetric("Total of intense alcoholic beverages",
+                cashRegisterManagement.retrieveTotalOfAlcoholicBeveragesWeak()
+        );
+
+        LocalDate todayDate = LocalDate.now();
+        String today = LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+        Operator operator = CashRegisterRandomizer.retrieveRandomOperator();
+
+        DrinkUtils.printFormattedMetric("Total of the day '" + today + "'",
+                cashRegisterManagement.retrieveTotalByTimestamp(todayDate)
+        );
+        DrinkUtils.printFormattedMetric("Total of operator '" + operator.getFullName() + "'",
+                cashRegisterManagement.retrieveTotalByOperator(operator)
+        );
+
+        operator = CashRegisterRandomizer.retrieveRandomOperator();
+        DrinkUtils.printFormattedMetric("Total of the day '" + today + "' and operator '" + operator.getFullName() + "'",
+                cashRegisterManagement.retrieveTotalByOperatorAndTimestamp(todayDate, operator)
+        );
     }
 }

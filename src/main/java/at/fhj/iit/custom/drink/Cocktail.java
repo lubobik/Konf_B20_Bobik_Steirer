@@ -135,6 +135,12 @@ public class Cocktail extends Drink {
                 formattedLiquidNames + "] with a total alcohol percentage of " + totalAlcoholPercentage + "%.";
     }
 
+    /**
+     * Calculates the price of the drink,
+     * based on its ingredients and specialities.
+     *
+     * @return the calculated price of a specific drink
+     */
     @Override
     public double calculatePrice() {
         return getVolume() * (1.0 + (getAlcoholPercent() / 100.0)) * this.liquids.size();
