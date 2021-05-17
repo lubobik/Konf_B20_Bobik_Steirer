@@ -13,8 +13,9 @@ import at.fhj.iit.base.Liquid;
  */
 public class SoftLiquid extends Liquid {
 
-    /*
-     * Field declaration
+    /**
+     * The particular <code>Brand</code> of
+     * the <code>SoftLiquid</code> implementation.
      */
     protected Brand brand;
 
@@ -30,21 +31,37 @@ public class SoftLiquid extends Liquid {
         this.brand = brand;
     }
 
+    /**
+     * Retrieves the name of the <code>SoftLiquid</code>.
+     *
+     * @return the name of <code>SoftLiquid</code>
+     */
     @Override
     public String getName() {
         return super.getName();
     }
 
+    /**
+     * Sets the name of the <code>SoftLiquid</code>.
+     */
     @Override
     public void setName(String name) {
         super.setName(name);
     }
 
+    /**
+     * Retrieves the volume of the <code>SoftLiquid</code>.
+     *
+     * @return the volume of <code>SoftLiquid</code>
+     */
     @Override
     public double getVolume() {
         return super.getVolume();
     }
 
+    /**
+     * Sets the volume of the <code>SoftLiquid</code>.
+     */
     @Override
     public void setVolume(double volume) {
         super.setVolume(volume);
@@ -68,6 +85,11 @@ public class SoftLiquid extends Liquid {
         this.brand = brand;
     }
 
+    /**
+     * Formatted output for a <code>SoftLiquid</code>.
+     *
+     * @return the String representation of the object
+     */
     @Override
     public String toString() {
         return "The SoftLiquid '" + getName() + "' is manufactured by '" + brand + "' and got a standard volume of " + getVolume() + " liters.";

@@ -4,23 +4,33 @@ import at.fhj.iit.base.Drink;
 import at.fhj.iit.base.Liquid;
 
 /**
- * Describes a <code>LongDrink</code> object, with methods to calculate Volume/alcoholic percentage
+ * Describes a <code>LongDrink</code> object,
+ * with methods to calculate Volume/alcoholic percentage.
  *
  * @author Lukas Bobik
- * @version 2.0
+ * @version 3.0
  * @see Drink
  * @since 2.0
  */
 public class LongDrink extends Drink {
+
+    /**
+     * An alcoholic <code>Liquid</code> for mixing purposes.
+     */
     protected Liquid alcoholic;
+
+    /**
+     * A (maybe) non-alcoholic liquid <code>Liquid</code> for mixing purposes.
+     */
     protected Liquid softLiquid;
 
     /**
-     * Creates a LongDrink object with a give name, one alcoholic liquid and a softLiquid
+     * Creates a <code>LongDrink</code> object with a give name,
+     * one alcoholic <code>Liquid</code> and a <code>SoftLiquid</code>.
      *
      * @param name       name of the drink
-     * @param alcoholic  the alcoholic liquid of a longdrink
-     * @param softLiquid the nonalcoholic liquid of a longdrink
+     * @param alcoholic  the alcoholic liquid of a <code>LongDrink</code>
+     * @param softLiquid the (maybe) non-alcoholic liquid of a <code>LongDrink</code>
      */
     public LongDrink(String name, Liquid alcoholic, Liquid softLiquid) {
         super(name);
@@ -29,7 +39,7 @@ public class LongDrink extends Drink {
     }
 
     /**
-     * Calculates and returns volume of drink
+     * Calculates and returns volume of <code>Drink</code>.
      *
      * @return the volume of drink in liter
      */
@@ -39,7 +49,7 @@ public class LongDrink extends Drink {
     }
 
     /**
-     * Calculates and returns the alcohol percentage
+     * Calculates and returns the alcohol percentage.
      *
      * @return alcohol volume percent (e.g. 50)
      */
@@ -50,9 +60,9 @@ public class LongDrink extends Drink {
     }
 
     /**
-     * Gives information if drink is alcoholic or not
+     * Gives information if <code>Drink</code> is alcoholic or not.
      *
-     * @return true when alcoholic liquids are present, otherwise false
+     * @return true when alcoholic <code>Liquid</code>s are present, otherwise false
      */
     @Override
     public boolean isAlcoholic() {
@@ -60,7 +70,9 @@ public class LongDrink extends Drink {
     }
 
     /**
-     * Formatted output of a Cocktail object
+     * Formatted output of a <code>LongDrink</code> object.
+     *
+     * @return the String representation of the object
      */
     @Override
     public String toString() {
@@ -68,10 +80,10 @@ public class LongDrink extends Drink {
     }
 
     /**
-     * Calculates the price of the drink,
+     * Calculates the price of the <code>Drink</code>,
      * based on its ingredients and specialities.
      *
-     * @return the calculated price of a specific drink
+     * @return the calculated price of a specific <code>Drink</code>
      */
     @Override
     public double calculatePrice() {

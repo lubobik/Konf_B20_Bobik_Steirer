@@ -13,59 +13,68 @@ package at.fhj.iit.base;
 public class SimpleDrink extends Drink {
 
     /**
-     * A single liquid of the drink
+     * A single <code>Liquid</code> of the <code>Drink</code>.
      */
-    protected Liquid l;
+    protected Liquid liquid;
 
     /**
-     * Creates a SimpleDrink object with given name and liquid.
+     * Creates a <code>SimpleDrink</code> object with given name and <code>Liquid</code>.
      *
-     * @param name name of drink
-     * @param l    only one liquid in drink, because it's a simple drink an not e.g. a cocktail
+     * @param name   name of <code>Drink</code>
+     * @param liquid only one <code>Liquid</code> in <code>Drink</code>,
+     *               because it's a <code>SimpleDrink</code> and not e.g. a <code>Cocktail</code>
      */
-    public SimpleDrink(String name, Liquid l) {
+    public SimpleDrink(String name, Liquid liquid) {
         super(name);
-        this.l = l;
+        this.liquid = liquid;
     }
 
     /**
-     * Returns volume of liquid l.
+     * Returns volume of the included <code>Liquid</code>.
      *
      * @return the volume of drink in litre
      */
     @Override
     public double getVolume() {
-        return l.getVolume();
+        return liquid.getVolume();
     }
 
     /**
-     * Returns alcohol volume percent of liquid l.
+     * Returns alcohol volume percent of the included <code>Liquid</code>.
      *
      * @return alcohol volume percent
      */
     @Override
     public double getAlcoholPercent() {
-        return l.getAlcoholPercent();
+        return liquid.getAlcoholPercent();
     }
 
     /**
-     * Gives information if drink is alcoholic or not.
+     * Gives information if <code>Drink</code> is alcoholic or not.
      *
      * @return true when alcoholic liquids are present, otherwise false
      */
     @Override
     public boolean isAlcoholic() {
-        return l.getAlcoholPercent() > 0;
+        return liquid.getAlcoholPercent() > 0;
     }
 
     /**
-     * Formatted output of a Cocktail object
+     * Formatted output of a <code>SimpleDrink</code> object.
+     *
+     * @return the String representation of the object
      */
     @Override
     public String toString() {
-        return "Simple Drink called " + name + " with " + l.getAlcoholPercent() + " percent alcohol by volume";
+        return "Simple Drink called " + name + " with " + liquid.getAlcoholPercent() + " percent alcohol by volume";
     }
 
+    /**
+     * Calculates the price of the <code>Drink</code>,
+     * based on its ingredients and specialities.
+     *
+     * @return the calculated price of a specific <code>Drink</code>
+     */
     @Override
     public double calculatePrice() {
         return getVolume() * (1.0 + (getAlcoholPercent() / 100.0));

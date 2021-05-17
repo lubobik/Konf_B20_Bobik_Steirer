@@ -3,7 +3,7 @@ package at.fhj.iit.base;
 import at.fhj.iit.exception.ValidationException;
 
 /**
- * Represents a <code>Liquid</code> which can be used in drinks.
+ * Represents a <code>Liquid</code> which can be used in <code>Drink</code>s.
  *
  * @author Michael Ulm
  * @author Christian Hofer
@@ -14,27 +14,27 @@ import at.fhj.iit.exception.ValidationException;
 public class Liquid {
 
     /**
-     * Name of a <code>Liquid</code>
+     * Name of a <code>Liquid</code>.
      */
     private String name;
 
     /**
-     * Volume of a <code>Liquid</code> (in liter)
+     * Volume of a <code>Liquid</code> (in liter).
      */
     private double volume;
 
     /**
-     * Alcohol percentage of a <code>Liquid</code> (in percent eg. 42)
+     * Alcohol percentage of a <code>Liquid</code> (in percent eg. 42).
      */
     private double alcoholPercent;
 
     /**
      * Creates new <code>Liquid</code> with given name, volume and
-     * alcohol percentage
+     * alcohol percentage.
      *
-     * @param name           name of liquid
-     * @param volume         volume of liquid
-     * @param alcoholPercent of liquid
+     * @param name           name of <code>Liquid</code>
+     * @param volume         volume of <code>Liquid</code>
+     * @param alcoholPercent of <code>Liquid</code>
      */
     public Liquid(String name, double volume, double alcoholPercent) {
         this.name = name;
@@ -58,7 +58,7 @@ public class Liquid {
     }
 
     /**
-     * Getter for name
+     * Getter for name.
      *
      * @return the name of <code>Liquid</code>
      */
@@ -67,7 +67,7 @@ public class Liquid {
     }
 
     /**
-     * Setter for name
+     * Setter for name.
      *
      * @param name a new name
      */
@@ -76,7 +76,7 @@ public class Liquid {
     }
 
     /**
-     * Getter for volume
+     * Getter for volume.
      *
      * @return the volume of liquid (in liter)
      */
@@ -85,7 +85,7 @@ public class Liquid {
     }
 
     /**
-     * Setter for volume
+     * Setter for volume.
      *
      * @param volume a new volume
      */
@@ -94,7 +94,7 @@ public class Liquid {
     }
 
     /**
-     * Getter for alcohol percentage
+     * Getter for alcohol percentage.
      *
      * @return the alcohol percentage (e.g. 40)
      */
@@ -103,7 +103,7 @@ public class Liquid {
     }
 
     /**
-     * Setter for alcohol percentage
+     * Setter for alcohol percentage.
      *
      * @param alcoholPercent a new alcohol percentage
      */

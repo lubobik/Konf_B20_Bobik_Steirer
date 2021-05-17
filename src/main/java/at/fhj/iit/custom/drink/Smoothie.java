@@ -7,57 +7,70 @@ import at.fhj.iit.custom.misc.Fruit;
 import java.util.List;
 
 /**
- * Describes a <code>Smoothie</code> object
+ * Describes a <code>Smoothie</code> object.
  *
  * @author Lukas Bobik
- * @version 2.0
+ * @version 3.0
  * @see Drink
  * @since 1.0
  */
 public class Smoothie extends Drink {
-    protected Liquid l;
-    protected Boolean sugar;
-    private final List<Fruit> fruitlist;
 
     /**
-     * Creates a Smoothie object with given name, baseliquid, Fruits and sweetener
+     * The base <code>Liquid</code> of the <code>Smoothie</code>.
+     */
+    protected Liquid baseLiquid;
+
+    /**
+     * States if sugar is included or not.
+     */
+    protected Boolean sugar;
+
+    /**
+     * Includes all <code>Fruit</code>s of the <code>Smoothie</code>.
+     */
+    private final List<Fruit> fruitList;
+
+    /**
+     * Creates a <code>Smoothie</code> object with given name,
+     * base <code>Liquid</code>, <code>Fruit</code>s and sweetener.
      *
      * @param name        name of drink
-     * @param baseliquid, tells us the base of the smoothie (eg milk, juice...)
-     * @param fruitlist   is a list from fruits that are mixed together
-     * @param sweetener   tells if the smoothie is sweetened
+     * @param baseLiquid, tells us the base of the <code>Smoothie</code> (eg milk, juice...)
+     * @param fruitList   is a list from <code>Fruit</code>s that are mixed together
+     * @param sweetener   tells if the <code>Smoothie</code> is sweetened
      */
-    public Smoothie(String name, Liquid baseliquid, List<Fruit> fruitlist, boolean sweetener) {
+    public Smoothie(String name, Liquid baseLiquid, List<Fruit> fruitList, boolean sweetener) {
         super(name);
-        this.fruitlist = fruitlist;
-        this.l = baseliquid;
+        this.fruitList = fruitList;
+        this.baseLiquid = baseLiquid;
         this.sugar = sweetener;
     }
 
     /**
-     * Calculates and returns volume of drink
+     * Calculates and returns volume of <code>Drink</code>.
      *
      * @return the volume of drink in liter
      */
     @Override
     public double getVolume() {
-        return l.getVolume();
+        return baseLiquid.getVolume();
     }
 
     /**
-     * Calculates and returns the alcohol percentage
+     * Calculates and returns the alcohol percentage.
      *
      * @return alcohol volume percent (e.g. 50)
      */
     @Override
     public double getAlcoholPercent() {
-        return l.getAlcoholPercent();
+        return baseLiquid.getAlcoholPercent();
     }
 
     /**
-     * Gives information if drink is alcoholic or not
+     * Gives information if <code>Drink</code> is alcoholic or not.
      *
-     * @return true when alcoholic liquids are present, otherwise false
+     * @return true when alcoholic <code>Liquid</code>s are present, otherwise false
      */
     @Override
     public boolean isAlcoholic() {
@@ -65,13 +78,15 @@ public class Smoothie extends Drink {
     }
 
     /**
-     * Formatted output for a Smoothie
+     * Formatted output for a <code>Smoothie</code>
+     *
+     * @return the String representation of the object
      */
     @Override
     public String toString() {
-        StringBuilder text = new StringBuilder("Here, have a nice Smoothie, it's a mix from " + l.getName() + " and ");
+        StringBuilder text = new StringBuilder("Here, have a nice Smoothie, it's a mix from " + baseLiquid.getName() + " and ");
         boolean first = true;
-        for (Fruit fruit : fruitlist) {
+        for (Fruit fruit : fruitList) {
             if (first) {
                 text.append(fruit.getName());
                 first = false;
@@ -81,20 +96,20 @@ public class Smoothie extends Drink {
         }
         text.append(".");
         if (sugar) text.append("It's even sweetened.");
-        if (l.getName().equals("milk") || l.getName().equals("Milk"))
+        if (baseLiquid.getName().equals("milk") || baseLiquid.getName().equals("Milk"))
             text.append("\nAnd guess what, as the base is milk, it's even better than a normal smoothie. It's a milkshake!");
         return text.toString();
     }
 
     /**
-     * Calculates the price of the drink,
+     * Calculates the price of the <code>Drink</code>,
      * based on its ingredients and specialities.
      *
-     * @return the calculated price of a specific drink
+     * @return the calculated price of a specific <code>Drink</code>
      */
     @Override
     public double calculatePrice() {
-        double multiplier = 1 + (sugar ? 1 : 0) + fruitlist.size();
+        double multiplier = 1 + (sugar ? 1 : 0) + fruitList.size();
         return getVolume() * (1.0 + (getAlcoholPercent() / 100.0)) * multiplier;
     }
 }

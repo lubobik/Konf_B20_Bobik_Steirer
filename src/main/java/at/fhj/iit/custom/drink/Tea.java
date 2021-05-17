@@ -4,7 +4,7 @@ import at.fhj.iit.base.Drink;
 import at.fhj.iit.base.Liquid;
 
 /**
- * Describes a <code>Tea</code> object
+ * Describes a <code>Tea</code> object.
  *
  * @author Lukas Bobik
  * @version 2.0
@@ -14,20 +14,28 @@ import at.fhj.iit.base.Liquid;
 public class Tea extends Drink {
 
     /**
-     * Uses one liquid, and possibly milk and/or sugar
+     * Uses one <code>Liquid</code>.
      */
     protected Liquid water;
+
+    /**
+     * Sugar could is optional.
+     */
     protected Boolean sugar;
+
+    /**
+     * Milk could is optional.
+     */
     protected Boolean milk;
 
 
     /**
-     * Creates a Tea object with given name, liquid and sugar
+     * Creates a <code>Tea</code> object with given name, <code>Liquid</code> and sugar.
      *
-     * @param name  name of drink
+     * @param name  name of <code>Liquid</code>
      * @param water only one liquid(water) in drink, because it's a tea
-     * @param sugar tells if the tea is with or without sugar
-     * @param milk  tells if the tea is with or without milk
+     * @param sugar tells if the <code>Tea</code> is with or without sugar
+     * @param milk  tells if the <code>Tea</code> is with or without milk
      */
     public Tea(String name, Liquid water, Boolean sugar, Boolean milk) {
         super(name);
@@ -37,25 +45,25 @@ public class Tea extends Drink {
     }
 
     /**
-     * Tells if the tea has milk or not
+     * Tells if the <code>Tea</code> has milk or not.
      *
-     * @return true, if there is milk in the tea
+     * @return true, if there is milk in the <code>Tea</code>
      */
     public boolean getMilk() {
         return sugar;
     }
 
     /**
-     * Tells if the tea has sugar or not
+     * Tells if the <code>Tea</code> has sugar or not.
      *
-     * @return true, if there is sugar in the tea
+     * @return true, if there is sugar in the <code>Tea</code>
      */
     public boolean getSugar() {
         return sugar;
     }
 
     /**
-     * Returns volume of liquid
+     * Returns volume of <code>Liquid</code>.
      *
      * @return the volume of drink in litre
      */
@@ -65,7 +73,7 @@ public class Tea extends Drink {
     }
 
     /**
-     * Calculates and returns the alcohol percentage
+     * Calculates and returns the alcohol percentage.
      *
      * @return alcohol volume percent (e.g. 50)
      */
@@ -75,15 +83,21 @@ public class Tea extends Drink {
     }
 
     /**
-     * Gives information if drink is alcoholic or not
+     * Gives information if <code>Drink</code> is alcoholic or not.
      *
-     * @return always false, we dont allow tea with "schuss"
+     * @return true when alcoholic <code>Liquid</code>s are present, otherwise false
      */
     @Override
     public boolean isAlcoholic() {
         return false;
     }
 
+    /**
+     * Formatted output for a <code>Tea</code>.
+     *
+     * @return the String representation of the object
+     */
+    @Override
     public String toString() {
         String text = "This tea is from sort " + name + " with";
         if (sugar && milk) {
@@ -99,10 +113,10 @@ public class Tea extends Drink {
     }
 
     /**
-     * Calculates the price of the drink,
+     * Calculates the price of the <code>Drink</code>,
      * based on its ingredients and specialities.
      *
-     * @return the calculated price of a specific drink
+     * @return the calculated price of a specific <code>Drink</code>
      */
     @Override
     public double calculatePrice() {

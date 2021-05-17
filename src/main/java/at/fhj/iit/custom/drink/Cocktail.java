@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class Cocktail extends Drink {
 
     /**
-     * All liquids included in the <code>Cocktail</code>
+     * All <code>Liquid</code>s included in the <code>Cocktail</code>.
      */
     private final List<Liquid> liquids;
 
@@ -63,7 +63,8 @@ public class Cocktail extends Drink {
     }
 
     /**
-     * Retrieves the total alcohol volume of the <code>Cocktail</code> in percent.
+     * Retrieves the total alcohol volume
+     * of the <code>Cocktail</code> in percent.
      *
      * @return alcohol volume percent
      */
@@ -90,7 +91,7 @@ public class Cocktail extends Drink {
     /**
      * States if the <code>Cocktail</code> is alcoholic or not.
      *
-     * @return true when alcoholic liquids are present, otherwise false
+     * @return true when alcoholic <code>Liquid</code>s are present, otherwise false
      */
     @Override
     public boolean isAlcoholic() {
@@ -100,7 +101,7 @@ public class Cocktail extends Drink {
     }
 
     /**
-     * Updates the passed Liquid within the list if it exists.
+     * Updates the passed <code>Liquid</code> within the list if it exists.
      *
      * @param liquid  which should be changed within the list
      * @param updater function which is responsible for value manipulation / update
@@ -112,16 +113,18 @@ public class Cocktail extends Drink {
     }
 
     /**
-     * Getter for liquid list
+     * Getter for <code>Liquid</code> list
      *
-     * @return all included liquids
+     * @return all included <code>Liquid</code>s
      */
     public List<Liquid> getLiquids() {
         return liquids;
     }
 
     /**
-     * Formatted output of a Cocktail object
+     * Formatted output of a <code>Cocktail</code> object.
+     *
+     * @return the String representation of the object
      */
     @Override
     public String toString() {
@@ -136,10 +139,10 @@ public class Cocktail extends Drink {
     }
 
     /**
-     * Calculates the price of the drink,
+     * Calculates the price of the <code>Drink</code>,
      * based on its ingredients and specialities.
      *
-     * @return the calculated price of a specific drink
+     * @return the calculated price of a specific <code>Drink</code>
      */
     @Override
     public double calculatePrice() {

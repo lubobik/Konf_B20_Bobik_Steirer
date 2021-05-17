@@ -12,6 +12,13 @@ package at.fhj.iit.exception;
  * @see IllegalArgumentException
  */
 public class ValidationException extends IllegalArgumentException {
+    
+    /**
+     * Initialises a new <code>ValidationException</code>
+     * with a passed error message.
+     *
+     * @param message a specific error message
+     */
     public ValidationException(String message) {
         super(message);
     }
