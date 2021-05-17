@@ -1,7 +1,5 @@
 package at.fhj.iit.custom.misc;
 
-import at.fhj.iit.custom.misc.Brand;
-import at.fhj.iit.custom.misc.SoftDrink;
 import at.fhj.iit.exception.ValidationException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -12,23 +10,23 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Contains test cases regarding the
- * <code>SoftDrink</code> class and its implementations.
+ * <code>SoftLiquid</code> class and its implementations.
  *
  * @author Andreas Steirer
  * @version 2.0
- * @see SoftDrink
+ * @see SoftLiquid
  */
-@DisplayName("Testing SoftDrink class")
-public class SoftDrinkTests {
+@DisplayName("Testing SoftLiquid class")
+public class SoftLiquidTests {
 
-    private SoftDrink softDrink;
+    private SoftLiquid softLiquid;
 
     /*
      * Phase: Setup
      */
     @BeforeEach
     private void setup() {
-        softDrink = new SoftDrink("TestDrink", 12.45, Brand.NESQUIK);
+        softLiquid = new SoftLiquid("TestDrink", 12.45, Brand.NESQUIK);
     }
 
     // More or less important to test.
@@ -38,10 +36,10 @@ public class SoftDrinkTests {
     public void changeName() {
         // Phases: Exercise
         String newName = "NewTestDrink";
-        softDrink.setName(newName);
+        softLiquid.setName(newName);
 
         // Phases: Verify
-        assertEquals(newName, softDrink.getName());
+        assertEquals(newName, softLiquid.getName());
     }
 
     // More or less important to test.
@@ -51,10 +49,10 @@ public class SoftDrinkTests {
     public void changeVolume() {
         // Phases: Exercise
         double newVolume = 10.0;
-        softDrink.setVolume(newVolume);
+        softLiquid.setVolume(newVolume);
 
         // Phases: Verify
-        assertEquals(newVolume, softDrink.getVolume());
+        assertEquals(newVolume, softLiquid.getVolume());
     }
 
     // More or less important to test.
@@ -64,19 +62,19 @@ public class SoftDrinkTests {
     public void changeBrand() {
         // Phases: Exercise
         Brand newBrand = Brand.LA_CROIX;
-        softDrink.setBrand(newBrand);
+        softLiquid.setBrand(newBrand);
 
         // Phases: Verify
-        assertEquals(newBrand, softDrink.getBrand());
+        assertEquals(newBrand, softLiquid.getBrand());
     }
 
     @Test
-    @DisplayName("Testing fails at SoftDrink creation")
-    public void createInvalidSoftDrink() {
+    @DisplayName("Testing fails at SoftLiquid creation")
+    public void createInvalidSoftLiquid() {
         // Phases: Verify(Exception specification, Exercise)
         assertThrows(
                 ValidationException.class,
-                () -> new SoftDrink("CheckerDrink", 0.0, Brand.OTHER)
+                () -> new SoftLiquid("CheckerDrink", 0.0, Brand.OTHER)
         );
     }
 
@@ -87,8 +85,8 @@ public class SoftDrinkTests {
     public void callToString() {
         // Phases: Verify(Exercise)
         assertEquals(
-                "The SoftDrink 'TestDrink' is manufactured by 'Nesquik' and got a standard volume of 12.45 liters.",
-                softDrink.toString()
+                "The SoftLiquid 'TestDrink' is manufactured by 'Nesquik' and got a standard volume of 12.45 liters.",
+                softLiquid.toString()
         );
     }
 }

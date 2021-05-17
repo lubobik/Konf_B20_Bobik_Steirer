@@ -11,22 +11,21 @@ import at.fhj.iit.base.Liquid;
  * @see Drink
  * @since 2.0
  */
-
 public class LongDrink extends Drink {
     protected Liquid alcoholic;
-    protected Liquid softdrink;
+    protected Liquid softLiquid;
 
     /**
-     * Creates a LongDrink object with a give name, one alcoholic liquid and a softdrink
+     * Creates a LongDrink object with a give name, one alcoholic liquid and a softLiquid
      *
-     * @param name      name of the drink
-     * @param alcoholic the alcoholic liquid of a longdrink
-     * @param softdrink the nonalcoholic liquid of a longdrink
+     * @param name       name of the drink
+     * @param alcoholic  the alcoholic liquid of a longdrink
+     * @param softLiquid the nonalcoholic liquid of a longdrink
      */
-    public LongDrink(String name, Liquid alcoholic, Liquid softdrink) {
+    public LongDrink(String name, Liquid alcoholic, Liquid softLiquid) {
         super(name);
         this.alcoholic = alcoholic;
-        this.softdrink = softdrink;
+        this.softLiquid = softLiquid;
     }
 
     /**
@@ -36,7 +35,7 @@ public class LongDrink extends Drink {
      */
     @Override
     public double getVolume() {
-        return alcoholic.getVolume() + softdrink.getVolume();
+        return alcoholic.getVolume() + softLiquid.getVolume();
     }
 
     /**
@@ -46,7 +45,7 @@ public class LongDrink extends Drink {
      */
     @Override
     public double getAlcoholPercent() {
-        return (alcoholic.getAlcoholPercent() * alcoholic.getVolume() + softdrink.getAlcoholPercent() * softdrink.getVolume()) / getVolume();
+        return (alcoholic.getAlcoholPercent() * alcoholic.getVolume() + softLiquid.getAlcoholPercent() * softLiquid.getVolume()) / getVolume();
 
     }
 
@@ -65,6 +64,6 @@ public class LongDrink extends Drink {
      */
     @Override
     public String toString() {
-        return name + " like the name suggests is " + alcoholic.getName() + " and " + softdrink.getName() + " with an alcohol percentage of " + getAlcoholPercent() + "%.";
+        return name + " like the name suggests is " + alcoholic.getName() + " and " + softLiquid.getName() + " with an alcohol percentage of " + getAlcoholPercent() + "%.";
     }
 }

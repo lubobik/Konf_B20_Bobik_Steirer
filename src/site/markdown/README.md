@@ -373,7 +373,7 @@ Main class is not tested as it basically only
   
 * **Commits**:
   1. add CocktailTests class  
-  2. add SoftLiquidTests class  
+  2. add softLiquidTests class  
   
   In order to achieve 100% test coverage several to all possible test cases are implemented  
   (also some which might not be implemented or really needed in a real environment).
