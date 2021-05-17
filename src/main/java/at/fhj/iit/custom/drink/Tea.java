@@ -16,15 +16,15 @@ public class Tea extends Drink {
     /**
      * Uses one <code>Liquid</code>.
      */
-    protected Liquid water;
+    protected Liquid liquid;
 
     /**
-     * Sugar could is optional.
+     * Sugar is optional.
      */
     protected Boolean sugar;
 
     /**
-     * Milk could is optional.
+     * Milk is optional.
      */
     protected Boolean milk;
 
@@ -32,14 +32,14 @@ public class Tea extends Drink {
     /**
      * Creates a <code>Tea</code> object with given name, <code>Liquid</code> and sugar.
      *
-     * @param name  name of <code>Liquid</code>
-     * @param water only one liquid(water) in drink, because it's a tea
-     * @param sugar tells if the <code>Tea</code> is with or without sugar
-     * @param milk  tells if the <code>Tea</code> is with or without milk
+     * @param name   name of <code>Liquid</code>
+     * @param liquid only one liquid (maybe water) in drink, because it's a tea
+     * @param sugar  tells if the <code>Tea</code> is with or without sugar
+     * @param milk   tells if the <code>Tea</code> is with or without milk
      */
-    public Tea(String name, Liquid water, Boolean sugar, Boolean milk) {
+    public Tea(String name, Liquid liquid, Boolean sugar, Boolean milk) {
         super(name);
-        this.water = water;
+        this.liquid = liquid;
         this.sugar = sugar;
         this.milk = milk;
     }
@@ -69,7 +69,7 @@ public class Tea extends Drink {
      */
     @Override
     public double getVolume() {
-        return water.getVolume();
+        return liquid.getVolume();
     }
 
     /**
@@ -79,7 +79,7 @@ public class Tea extends Drink {
      */
     @Override
     public double getAlcoholPercent() {
-        return water.getAlcoholPercent();
+        return liquid.getAlcoholPercent();
     }
 
     /**
