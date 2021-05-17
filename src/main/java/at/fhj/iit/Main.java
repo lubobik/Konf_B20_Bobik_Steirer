@@ -3,14 +3,20 @@ package at.fhj.iit;
 import at.fhj.iit.base.Drink;
 import at.fhj.iit.base.Liquid;
 import at.fhj.iit.base.SimpleDrink;
+import at.fhj.iit.custom.CashRegisterManagement;
+import at.fhj.iit.custom.Operator;
 import at.fhj.iit.custom.drink.Cocktail;
 import at.fhj.iit.custom.drink.LongDrink;
 import at.fhj.iit.custom.drink.Smoothie;
 import at.fhj.iit.custom.drink.Tea;
 import at.fhj.iit.custom.misc.Brand;
 import at.fhj.iit.custom.misc.Fruit;
-import at.fhj.iit.custom.misc.SoftDrink;
+import at.fhj.iit.custom.misc.SoftLiquid;
+import at.fhj.iit.util.CashRegisterRandomizer;
+import at.fhj.iit.util.DrinkUtils;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
@@ -24,30 +30,101 @@ import java.util.List;
  */
 public class Main {
 
+    /**
+     * Represents the main entry point of
+     * many applications in different programming languages.
+     *
+     * @param args Command line parameters
+     */
     public static void main(String[] args) {
+        printBaseDemonstration();
+        DrinkUtils.printSeparator();
 
+        System.out.println("END OF ALREADY SPECIFIED CODE");
+        DrinkUtils.printSeparator();
+
+        printSoftLiquidDemonstration();
+        DrinkUtils.printSeparator();
+
+        printTeaDemonstration();
+        DrinkUtils.printSeparator();
+
+        printCocktailDemonstration();
+        DrinkUtils.printSeparator();
+
+        printSmoothieDemonstration();
+        DrinkUtils.printSeparator();
+
+        printLongDrinkDemonstration();
+        DrinkUtils.printSeparator();
+
+        printCashRegisterDemonstration();
+    }
+
+    private static void printCashRegisterDemonstration() {
+        CashRegisterManagement cashRegisterManagement =
+                CashRegisterRandomizer.generateRandomTestCashRegister();
+
+        DrinkUtils.printFormattedMetric("Total of non alcoholic beverages",
+                cashRegisterManagement.retrieveTotalOfNonAlcoholicBeverages()
+        );
+        DrinkUtils.printFormattedMetric("Total of weak alcoholic beverages",
+                cashRegisterManagement.retrieveTotalOfAlcoholicBeveragesIntense()
+        );
+        DrinkUtils.printFormattedMetric("Total of intense alcoholic beverages",
+                cashRegisterManagement.retrieveTotalOfAlcoholicBeveragesWeak()
+        );
+
+        LocalDate todayDate = LocalDate.now();
+        String today = LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+        Operator operator = CashRegisterRandomizer.randomOperator();
+
+        DrinkUtils.printFormattedMetric("Total of the day '" + today + "'",
+                cashRegisterManagement.retrieveTotalByTimestamp(todayDate)
+        );
+        DrinkUtils.printFormattedMetric("Total of operator '" + operator.getFullName() + "'",
+                cashRegisterManagement.retrieveTotalByOperator(operator)
+        );
+
+        operator = CashRegisterRandomizer.randomOperator();
+        DrinkUtils.printFormattedMetric("Total of the day '" + today + "' and operator '" + operator.getFullName() + "'",
+                cashRegisterManagement.retrieveTotalByOperatorAndTimestamp(todayDate, operator)
+        );
+    }
+
+    /**
+     * Demonstrates the base implementation (<code>Liquid</code> and <code>SimpleDrink</code>).
+     */
+    private static void printBaseDemonstration() {
         Liquid l = new Liquid("Wein", 0.125, 13);
         System.out.println(l.getName());
         System.out.println(l.getVolume());
 
-        Drink d = new SimpleDrink("Rotwein", l);
-        System.out.println(d);
+        Drink redWine = new SimpleDrink("Rotwein", l);
+        System.out.println(redWine);
+    }
 
-        printSeparator();
-        System.out.println("END OF ALREADY SPECIFIED CODE");
-        printSeparator();
+    /**
+     * Demonstrates the <code>SoftLiquid</code> implementation.
+     */
+    private static void printSoftLiquidDemonstration() {
+        SoftLiquid softLiquid = new SoftLiquid("Orange juice", 0.5, Brand.COCA_COLA);
+        System.out.println(softLiquid);
+    }
 
-        SoftDrink softDrink = new SoftDrink("Orange juice", 0.5, Brand.COCA_COLA);
-        System.out.println(softDrink);
+    /**
+     * Demonstrates the <code>Tea</code> implementation.
+     */
+    private static void printTeaDemonstration() {
+        Liquid water = new Liquid("Water", 0.3, 0);
+        Drink earlyGrey = new Tea("Early Grey", water, true, true);
+        System.out.println(earlyGrey);
+    }
 
-        printSeparator();
-
-        Liquid w = new Liquid("Water", 0.3, 0);
-        Drink t = new Tea("Early Grey", w, true, true);
-        System.out.println(t);
-
-        printSeparator();
-
+    /**
+     * Demonstrates the <code>Cocktail</code> implementation.
+     */
+    private static void printCocktailDemonstration() {
         List<Liquid> maiTaiLiquids = List.of(
                 new Liquid("Rum", 2.0, 40.0),
                 new Liquid("Cointreau", 0.5, 35.0),
@@ -57,26 +134,30 @@ public class Main {
         );
         Cocktail maiTai = new Cocktail("Mai Tai", maiTaiLiquids);
         System.out.println(maiTai);
-
-        printSeparator();
-
-        List<Fruit> smoothieFruits = List.of(new Fruit("Strawberry"), new Fruit("Banana"), new Fruit("Ananas"));
-        Liquid m = new Liquid("Milk", 0.5, 0);
-        Smoothie milkshake = new Smoothie("Milkshake", m, smoothieFruits, false);
-        System.out.println(milkshake);
-
-        printSeparator();
-
-        Liquid a = new Liquid("Vodka", 0.3, 40);
-        SoftDrink filler = new SoftDrink("Cranberry Juice", 0.5, Brand.PEPSI);
-        LongDrink vodkaCranberry = new LongDrink("Vodka Cranberry", a, filler);
-        System.out.println(vodkaCranberry);
     }
 
     /**
-     * Prints out a separating line consisting out of 80 dashes.
+     * Demonstrates the <code>Smoothie</code> implementation.
      */
-    private static void printSeparator() {
-        System.out.println("-".repeat(80));
+    private static void printSmoothieDemonstration() {
+        Liquid milk = new Liquid("Milk", 0.5, 0);
+        List<Fruit> smoothieFruits = List.of(
+                new Fruit("Strawberry"),
+                new Fruit("Banana"),
+                new Fruit("Ananas")
+        );
+
+        Smoothie milkshake = new Smoothie("Milkshake", milk, smoothieFruits, false);
+        System.out.println(milkshake);
+    }
+
+    /**
+     * Demonstrates the <code>LongDrink</code> implementation.
+     */
+    private static void printLongDrinkDemonstration() {
+        Liquid vodka = new Liquid("Vodka", 0.3, 40);
+        SoftLiquid filler = new SoftLiquid("Cranberry Juice", 0.5, Brand.PEPSI);
+        LongDrink vodkaCranberry = new LongDrink("Vodka Cranberry", vodka, filler);
+        System.out.println(vodkaCranberry);
     }
 }
