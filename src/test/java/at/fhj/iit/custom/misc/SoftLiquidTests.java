@@ -19,13 +19,16 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @DisplayName("Testing SoftLiquid class")
 public class SoftLiquidTests {
 
+    /*
+     * Constant / field declaration
+     */
     private SoftLiquid softLiquid;
 
     /*
      * Phase: Setup
      */
     @BeforeEach
-    private void setup() {
+    public void setup() {
         softLiquid = new SoftLiquid("TestDrink", 12.45, Brand.NESQUIK);
     }
 
