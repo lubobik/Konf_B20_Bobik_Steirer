@@ -1,0 +1,20 @@
+<project name="Konfigurationsmanagement Drinks">
+	<publishDate position="left"/>
+	<version position="right"/>
+	<body>
+
+		<menu name="Overview">
+			<item name="Introduction" href="index.html" />
+			<item name="README" href="README.html" />
+			<item name="Design decisions" href="Design decisions.html" />
+			<item name="Test coverage" href="Test coverage.html" />
+            <item name="Tutorial" href="Tutorial.html" />
+		</menu>
+		<menu ref="reports" />
+		<menu ref="parent" />
+		<menu ref="modules" />
+	</body>
+	<poweredBy>
+		<logo name="BSD Konfig" href="https://www.campus02.at/wirtschaftsinformatik/bachelor/bsd/" img="./images/logo.png" width="100px"/>
+	</poweredBy>
+</project>
