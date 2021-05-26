@@ -135,7 +135,7 @@ public class CocktailTests {
         public void callToString() {
             // Phases: Verify(Exercise)
             assertEquals(
-                    "The 'Mai Tai' includes following ingredients " +
+                    "The 'Mai Tai' includes following ingredients\n" +
                             "[Lime juice, Brown rum, Sugar syrup, Almond syrup, Orange liquor, Pineapple syrup] " +
                             "with a total alcohol percentage of 31,88%.",
                     cocktailNumberTwo.toString()

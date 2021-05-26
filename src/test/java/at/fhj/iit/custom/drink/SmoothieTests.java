@@ -40,7 +40,7 @@ public class SmoothieTests {
     @DisplayName("Testing toString")
     public void testToString() {
         Smoothie smoothiemilk = new Smoothie("Milkshake", new Liquid("milk", 1, 0), List.of(new Fruit("test1"), new Fruit("test2")), false);
-        assertEquals("Here, have a nice Smoothie, it's a mix from milk and test1, test2.And guess what, as the base is milk, it's even better than a normal smoothie. It's a milkshake!", smoothiemilk.toString());
+        assertEquals("Here, have a nice Smoothie, it's a mix from milk and test1, test2.\nAnd guess what, as the base is milk, it's even better than a normal smoothie. It's a milkshake!", smoothiemilk.toString());
         assertEquals("Here, have a nice Smoothie, it's a mix from testliquid and test1, test2.", smoothie.toString());
     }
 
