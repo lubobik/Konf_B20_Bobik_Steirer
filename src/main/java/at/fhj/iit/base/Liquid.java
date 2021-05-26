@@ -7,6 +7,7 @@ import at.fhj.iit.exception.ValidationException;
  *
  * @author Michael Ulm
  * @author Christian Hofer
+ * @author Andreas Steirer
  * @version 2.0
  * @see Drink
  * @since 1.0

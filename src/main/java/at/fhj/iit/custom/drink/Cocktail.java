@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
  * and offers manipulation options.
  *
  * @author Andreas Steirer
- * @version 2.0
+ * @version 3.0
  * @see Drink
  * @since 1.0
  */

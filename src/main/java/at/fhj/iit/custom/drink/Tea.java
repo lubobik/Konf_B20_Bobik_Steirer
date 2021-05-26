@@ -7,7 +7,8 @@ import at.fhj.iit.base.Liquid;
  * Describes a <code>Tea</code> object.
  *
  * @author Lukas Bobik
- * @version 2.0
+ * @author Andreas Steirer
+ * @version 3.0
  * @see Drink
  * @since 1.0
  */

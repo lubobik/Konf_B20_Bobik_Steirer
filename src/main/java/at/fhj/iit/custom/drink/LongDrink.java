@@ -8,6 +8,7 @@ import at.fhj.iit.base.Liquid;
  * with methods to calculate Volume/alcoholic percentage.
  *
  * @author Lukas Bobik
+ * @author Andreas Steirer
  * @version 3.0
  * @see Drink
  * @since 2.0

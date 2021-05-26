@@ -10,6 +10,7 @@ import java.util.List;
  * Describes a <code>Smoothie</code> object.
  *
  * @author Lukas Bobik
+ * @author Andreas Steirer
  * @version 3.0
  * @see Drink
  * @since 1.0

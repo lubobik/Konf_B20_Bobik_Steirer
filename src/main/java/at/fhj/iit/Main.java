@@ -24,7 +24,7 @@ import java.util.List;
  *
  * @author Andreas Steirer
  * @author Lukas Bobik
- * @version 2.0
+ * @version 3.0
  * @see Drink
  * @since 1.0
  */

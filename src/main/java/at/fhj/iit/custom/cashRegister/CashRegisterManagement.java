@@ -135,7 +135,10 @@ public class CashRegisterManagement {
     public double retrieveTotalByOperatorAndTimestamp(LocalDate soldAt, Operator soldBy) {
         return DrinkUtils.roundToTwoDecimals(salesHistory
                 .stream()
-                .filter(sale -> sale.getSoldAt().toLocalDate().equals(soldAt) && sale.getOperator().equals(soldBy))
+                .filter(sale ->
+                        sale.getSoldAt().toLocalDate().equals(soldAt)
+                                && sale.getOperator().equals(soldBy)
+                )
                 .mapToDouble(DrinkSale::getPrice)
                 .sum()
         );

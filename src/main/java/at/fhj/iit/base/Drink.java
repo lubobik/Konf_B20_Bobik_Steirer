@@ -8,7 +8,8 @@ import at.fhj.iit.misc.IDrinkSpecification;
  *
  * @author Michael Ulm
  * @author Christian Hofer
- * @version 1.0
+ * @author Andreas Steirer
+ * @version 3.0
  * @see Drink
  * @since 1.0
  */

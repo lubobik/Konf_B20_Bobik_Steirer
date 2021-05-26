@@ -8,8 +8,9 @@ import at.fhj.iit.base.Liquid;
  * and offers manipulation options.
  *
  * @author Andreas Steirer
- * @version 1.0
+ * @version 3.0
  * @see Liquid
+ * @since 1.0
  */
 public class SoftLiquid extends Liquid {
 
