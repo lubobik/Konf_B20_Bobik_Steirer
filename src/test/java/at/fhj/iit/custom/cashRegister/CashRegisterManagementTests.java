@@ -58,10 +58,10 @@ public class CashRegisterManagementTests {
         @Test
         @DisplayName("Testing the addition of a single entry")
         public void addHistoryItem() {
-            // Phases: Exercise
+            // Phase: Exercise
             cashRegisterManagement.addDrinkSale(TEST_SALE);
 
-            // Phases: Verify
+            // Phase: Verify
             assertNotNull(cashRegisterManagement);
             assertEquals(1, cashRegisterManagement.getSalesHistory().size());
         }
@@ -69,12 +69,12 @@ public class CashRegisterManagementTests {
         @Test
         @DisplayName("Testing the addition of multiple entries")
         public void addMultipleHistoryItems() {
-            // Phases: Exercise
+            // Phase: Exercise
             cashRegisterManagement.addMultiDrinkSales(
                     List.of(TEST_SALE, TEST_SALE, TEST_SALE)
             );
 
-            // Phases: Verify
+            // Phase: Verify
             assertNotNull(cashRegisterManagement);
             assertEquals(3, cashRegisterManagement.getSalesHistory().size());
         }
@@ -82,7 +82,7 @@ public class CashRegisterManagementTests {
 
     /*
      * Nested class to prevent unneeded setup phase for test cases.
-     * Note: Use Lifecycle.PER_CLASS will be used to omit static declarations.
+     * Note: Lifecycle.PER_CLASS will be used to omit static declarations.
      */
     @Nested
     @DisplayName("Testing capsuled report tests")
@@ -221,37 +221,39 @@ public class CashRegisterManagementTests {
     }
 
     /*
-     * More or less important to test.
      * Normally this is very rarely tested separately.
      * Typically, only when there are
      * more complex operations happening in there.
+     * Testing value assigning of non-complex ctors is useless /
+     * more or less not important.
      */
     @Test
     @DisplayName("Testing the default constructor")
     public void initNewInstanceEmpty() {
-        // Phases: Exercise
+        // Phase: Exercise
         CashRegisterManagement cashRegisterManagement =
                 new CashRegisterManagement();
 
-        // Phases: Verify
+        // Phase: Verify
         assertNotNull(cashRegisterManagement);
         assertTrue(cashRegisterManagement.getSalesHistory().isEmpty());
     }
 
     /*
-     * More or less important to test.
      * Normally this is very rarely tested separately.
      * Typically, only when there are
      * more complex operations happening in there.
+     * Testing value assigning of non-complex ctors is useless /
+     * more or less not important.
      */
     @Test
     @DisplayName("Testing the history initialization constructor")
     public void initNewInstanceFilled() {
-        // Phases: Exercise
+        // Phase: Exercise
         CashRegisterManagement testManagement =
                 new CashRegisterManagement(List.of(TEST_SALE));
 
-        // Phases: Verify
+        // Phase: Verify
         assertNotNull(testManagement);
         assertEquals(1, testManagement.getSalesHistory().size());
     }

@@ -32,8 +32,11 @@ public class SoftLiquidTests {
         softLiquid = new SoftLiquid("TestDrink", 12.45, Brand.NESQUIK);
     }
 
-    // More or less important to test.
-    // Normally this is not tested separately.
+    /*
+     * Normally this is not tested separately.
+     * Testing value assigning with non-complex setters is useless /
+     * more or less not important.
+     */
     @Test
     @DisplayName("Testing change of name")
     public void changeName() {
@@ -45,8 +48,11 @@ public class SoftLiquidTests {
         assertEquals(newName, softLiquid.getName());
     }
 
-    // More or less important to test.
-    // Normally this is not tested separately.
+    /*
+     * Normally this is not tested separately.
+     * Testing value assigning with non-complex setters is useless /
+     * more or less not important.
+     */
     @Test
     @DisplayName("Testing change of volume")
     public void changeVolume() {
@@ -58,8 +64,11 @@ public class SoftLiquidTests {
         assertEquals(newVolume, softLiquid.getVolume());
     }
 
-    // More or less important to test.
-    // Normally this is not tested separately.
+    /*
+     * Normally this is not tested separately.
+     * Testing value assigning with non-complex setters is useless /
+     * more or less not important.
+     */
     @Test
     @DisplayName("Testing change of Brand")
     public void changeBrand() {
@@ -81,14 +90,17 @@ public class SoftLiquidTests {
         );
     }
 
-    // More or less important to test.
-    // Normally this is very rarely tested separately.
+    /*
+     * More or less important to test.
+     * Normally this is very rarely tested separately.
+     */
     @Test
     @DisplayName("Testing toString implementation")
     public void callToString() {
         // Phases: Verify(Exercise)
         assertEquals(
-                "The SoftLiquid 'TestDrink' is manufactured by 'Nesquik' and got a standard volume of 12.45 liters.",
+                "The SoftLiquid 'TestDrink' is manufactured by 'Nesquik' " +
+                        "and got a standard volume of 12.45 liters.",
                 softLiquid.toString()
         );
     }

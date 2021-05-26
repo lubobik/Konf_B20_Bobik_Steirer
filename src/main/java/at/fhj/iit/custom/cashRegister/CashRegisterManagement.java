@@ -38,8 +38,7 @@ public class CashRegisterManagement {
     public CashRegisterManagement(List<DrinkSale> salesHistory) {
         this.salesHistory = salesHistory;
     }
-
-
+    
     /**
      * Getter to retrieve the current sales history.
      *

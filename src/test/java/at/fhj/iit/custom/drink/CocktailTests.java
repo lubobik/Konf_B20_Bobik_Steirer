@@ -44,6 +44,8 @@ public class CocktailTests {
          * because manipulation throughout multiple tests is considered bad practice).
          * We would need to extract all tests out of the @Nested class though,
          * as the static keyword would be required.
+         * Else we could use Lifecycle.PER_CLASS in front of the
+         * nested class to omit static declarations.
          */
         @BeforeEach
         public void setup() {
@@ -117,18 +119,21 @@ public class CocktailTests {
         @Test
         @DisplayName("Testing update liquid name")
         public void updateLiquidName() {
-            // Phases: Exercise
+            // Phase: (Individual) setup
             String newName = "Lime juice";
             Liquid numberOne = cocktailNumberOne.getLiquids().get(0);
 
+            // Phase: Exercise
             cocktailNumberOne.updateLiquid(numberOne, (it) -> it.setName(newName));
 
-            // Phases: Verify
+            // Phase: Verify
             assertEquals(newName, numberOne.getName());
         }
 
-        // More or less important to test.
-        // Normally this is very rarely tested separately.
+        /*
+         * More or less important to test.
+         * Normally this is very rarely tested separately.
+         */
         @Test
         @DisplayName("Testing toString implementation")
         public void callToString() {

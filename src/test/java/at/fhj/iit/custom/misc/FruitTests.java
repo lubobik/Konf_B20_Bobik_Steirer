@@ -21,7 +21,9 @@ public class FruitTests {
      */
     private Fruit fruit;
 
-    //setup
+    /**
+     * Setup
+     */
     @BeforeEach
     public void setup() {
         fruit = new Fruit("test");
