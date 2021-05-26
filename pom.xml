@@ -44,6 +44,10 @@
                 <role>Student</role>
             </roles>
             <timezone>Europe/Vienna</timezone>
+            <properties>
+                <picUrl>https://avatars.githubusercontent.com/u/80408557</picUrl>
+            </properties>
+
         </developer>
         <developer>
             <id>michaelulm</id>
@@ -114,6 +118,13 @@
             <!-- Needed for reporting purposes -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>3.0.0-M5</version>
+            </plugin>
+
+            <!-- Needed for reporting purposes -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.7.1</version>
             </plugin>
@@ -178,6 +189,13 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>3.0.0</version>
+            </plugin>
+
+            <!-- Surefire Test cases within Maven site documentation-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>3.0.0-M5</version>
             </plugin>
 
             <!-- JavaDoc within Maven site documentation-->
