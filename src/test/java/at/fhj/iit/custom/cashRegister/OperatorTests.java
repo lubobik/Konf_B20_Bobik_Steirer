@@ -15,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  * @version 3.0
  * @see Operator
  */
+@DisplayName("Testing Operator class")
 public class OperatorTests {
 
     /*
