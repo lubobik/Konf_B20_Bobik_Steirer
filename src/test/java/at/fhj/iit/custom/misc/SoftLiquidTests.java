@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * <code>SoftLiquid</code> class and its implementations.
  *
  * @author Andreas Steirer
- * @version 2.0
+ * @version 3.0
  * @see SoftLiquid
  */
 @DisplayName("Testing SoftLiquid class")

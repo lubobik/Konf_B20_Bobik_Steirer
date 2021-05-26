@@ -1,12 +1,11 @@
 package at.fhj.iit.custom.misc;
 
-import at.fhj.iit.custom.misc.Fruit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+ 
 /**
  * Contains test cases for the <code>Fruit</code> class
  *

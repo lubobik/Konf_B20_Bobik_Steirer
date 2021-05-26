@@ -1,6 +1,7 @@
 package at.fhj.iit.custom.cashRegister;
 
 import at.fhj.iit.base.Drink;
+import at.fhj.iit.util.DrinkUtils;
 
 import java.time.LocalDateTime;
 
@@ -47,7 +48,7 @@ public class DrinkSale {
         this.drink = drink;
         this.operator = operator;
         this.soldAt = LocalDateTime.now();
-        this.price = drink.calculatePrice();
+        this.price = DrinkUtils.roundToTwoDecimals(drink.calculatePrice());
     }
 
     /**
