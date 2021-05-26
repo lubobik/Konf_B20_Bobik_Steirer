@@ -22,6 +22,20 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 @DisplayName("Testing DrinkSale class")
 public class DrinkSaleTests {
+
+    /*
+     * Normally this is very rarely tested separately.
+     * Typically, only when there are
+     * more complex operations happening in there.
+     * Testing value assigning of non-complex ctors is useless /
+     * more or less not important.
+     * The same principal applies to non-custom / standard getter
+     * and setter implementations.
+     *
+     * We assign a price and and a timestamp, next to field initialisation,
+     * that makes it a little bit more useful,
+     * but not really in an astonishing way.
+     */
     @Test
     @DisplayName("Testing init and retrieval of DrinkSale values")
     public void initAndRetrieveSaleValues() {
