@@ -152,7 +152,7 @@ public class Main {
         Operator operator = CashRegisterRandomizer.retrieveRandomOperator();
 
         DrinkUtils.printFormattedMetric("Total of the day '" + today + "'",
-                cashRegisterManagement.retrieveTotalByTimestamp(todayDate)
+                cashRegisterManagement.retrieveTotalByDate(todayDate)
         );
         DrinkUtils.printFormattedMetric("Total of operator '" + operator.getFullName() + "'",
                 cashRegisterManagement.retrieveTotalByOperator(operator)
@@ -160,7 +160,7 @@ public class Main {
 
         operator = CashRegisterRandomizer.retrieveRandomOperator();
         DrinkUtils.printFormattedMetric("Total of the day '" + today + "' and operator '" + operator.getFullName() + "'",
-                cashRegisterManagement.retrieveTotalByOperatorAndTimestamp(todayDate, operator)
+                cashRegisterManagement.retrieveTotalByDateAndOperator(todayDate, operator)
         );
     }
 }

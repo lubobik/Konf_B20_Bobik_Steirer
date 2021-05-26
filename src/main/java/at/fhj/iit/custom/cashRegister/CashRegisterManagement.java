@@ -5,6 +5,7 @@ import at.fhj.iit.util.DrinkUtils;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Represents an inventory of a certain <code>DrinkSale</code> history.
@@ -21,13 +22,31 @@ public class CashRegisterManagement {
      * of this particular <code>CashRegisterManagement</code> instance
      * (source of report generation).
      */
-    private final ArrayList<DrinkSale> salesHistory;
+    private final List<DrinkSale> salesHistory;
 
     /**
      * Initialisation of the <code>DrinkSale</code> history.
      */
     public CashRegisterManagement() {
         this.salesHistory = new ArrayList<>();
+    }
+
+    /**
+     * Initialisation of the <code>DrinkSale</code> history,
+     * with an already available history.
+     */
+    public CashRegisterManagement(List<DrinkSale> salesHistory) {
+        this.salesHistory = salesHistory;
+    }
+
+
+    /**
+     * Getter to retrieve the current sales history.
+     *
+     * @return the current <code>DrinkSale</code> history entries.
+     */
+    public List<DrinkSale> getSalesHistory() {
+        return salesHistory;
     }
 
     /**
@@ -38,6 +57,16 @@ public class CashRegisterManagement {
      */
     public void addDrinkSale(DrinkSale drinkSale) {
         salesHistory.add(drinkSale);
+    }
+
+    /**
+     * Adds the passed <code>DrinkSale</code>s list and
+     * therefore its entries to the current <code>DrinkSale</code> history list.
+     *
+     * @param drinkSales specific <code>DrinkSale</code> entries
+     */
+    public void addMultiDrinkSales(List<DrinkSale> drinkSales) {
+        salesHistory.addAll(drinkSales);
     }
 
     /**
@@ -98,7 +127,7 @@ public class CashRegisterManagement {
      * @param soldAt a certain date / day on which the sale occurred
      * @return the total of all <code>Drink</code> sales on the passed date
      */
-    public double retrieveTotalByTimestamp(LocalDate soldAt) {
+    public double retrieveTotalByDate(LocalDate soldAt) {
         return DrinkUtils.roundToTwoDecimals(salesHistory
                 .stream()
                 .filter(sale -> sale.getSoldAt().toLocalDate().equals(soldAt))
@@ -132,7 +161,7 @@ public class CashRegisterManagement {
      * @param soldBy a certain <code>Operator</code> who achieved the sale
      * @return the total of all <code>Drink</code> sales for the passed date and <code>Operator</code>
      */
-    public double retrieveTotalByOperatorAndTimestamp(LocalDate soldAt, Operator soldBy) {
+    public double retrieveTotalByDateAndOperator(LocalDate soldAt, Operator soldBy) {
         return DrinkUtils.roundToTwoDecimals(salesHistory
                 .stream()
                 .filter(sale ->
