@@ -82,7 +82,7 @@ public class CashRegisterManagementTests {
 
     /*
      * Nested class to prevent unneeded setup phase for test cases.
-     * Note: Use Lifecycle.PER_CLASS will be used to omit static declarations.
+     * Note: Lifecycle.PER_CLASS will be used to omit static declarations.
      */
     @Nested
     @DisplayName("Testing capsuled report tests")

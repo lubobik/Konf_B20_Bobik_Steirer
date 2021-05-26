@@ -34,7 +34,7 @@ public class OperatorTests {
         // Phase: Setup
         Operator operator = new Operator("Jon", "Doe");
 
-        // Phases: Exercise(Verify)
+        // Phases: Verify(Exercise)
         assertNotNull(operator);
         assertEquals("Jon Doe", operator.getFullName());
     }

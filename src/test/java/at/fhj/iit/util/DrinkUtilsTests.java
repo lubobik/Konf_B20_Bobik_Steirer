@@ -19,7 +19,7 @@ public class DrinkUtilsTests {
     @Test
     @DisplayName("Testing rounding to utility method")
     public void roundToTwoDecimals() {
-        // Phase: Exercise(Verify)
+        // Phase: Verify(Exercise)
         assertEquals(12.01, DrinkUtils.roundToTwoDecimals(12.01234));
     }
 }
