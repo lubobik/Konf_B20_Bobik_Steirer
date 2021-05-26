@@ -1,4 +1,4 @@
-package at.fhj.iit.misc;
+package at.fhj.iit.extension;
 
 /**
  * Represents a little extension for <code>Drink</code> class(es).

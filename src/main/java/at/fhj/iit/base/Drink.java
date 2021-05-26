@@ -1,7 +1,7 @@
 package at.fhj.iit.base;
 
 
-import at.fhj.iit.misc.IDrinkSpecification;
+import at.fhj.iit.extension.IDrinkSpecification;
 
 /**
  * Abstract base class for concrete <code>Drink</code> classes.
