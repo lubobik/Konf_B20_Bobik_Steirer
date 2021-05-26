@@ -271,39 +271,39 @@ Main class is not tested as it basically only
    to compute values such as the total alcohol percentage and the volume of the whole `Cocktail`. 
    It also states if the `Cocktail` includes alcohol or not as a little shortcut.
    
- ### Version 2.0
+### Version 2.0
  
- #### Added classes
- - LongDrink
- - ValidationException
- - CocktailTests
- - softLiquidTests
- - FruitTests
- - LiquidTests
- - LongDrinkTests
- - SimpleDrinkTests
- - SmoothieTests
- - TeaTests
+#### Added classes
+- LongDrink
+- ValidationException
+- CocktailTests
+- softLiquidTests
+- FruitTests
+- LiquidTests
+- LongDrinkTests
+- SimpleDrinkTests
+- SmoothieTests
+- TeaTests
  
- #### Changes of Lukas Bobik
- 1. **Commit**: add `LongDrink` class that extends `Drink class`, and contains 1 alcoholic `Liquid` and 1 `SoftLiquid`
+#### Changes of Lukas Bobik
+1. **Commit**: add `LongDrink` class that extends `Drink class`, and contains 1 alcoholic `Liquid` and 1 `SoftLiquid`
     fixed a small typo in `Fruit` class
     
- 1. **Commit**: add and implement a test class for `Tea` and removed an unnecessary constructor from `Tea` class
+1. **Commit**: add and implement a test class for `Tea` and removed an unnecessary constructor from `Tea` class
  
- 1. **Commit**: add tests for `Smoothie` and `Fruit` classes
+1. **Commit**: add tests for `Smoothie` and `Fruit` classes
  
- 1. **Commit**: add tests for `LongDrink` class
+1. **Commit**: add tests for `LongDrink` class
  
- 1. **Commit**: add missing javdoc descriptions
+1. **Commit**: add missing javdoc descriptions
  
- 1. **Commit**: merge test branches to main
+1. **Commit**: merge test branches to main
  
- 1. **Commit**: add tests for `Liquid` and `SimpleDrink` classes
+1. **Commit**: add tests for `Liquid` and `SimpleDrink` classes
  
- 1. **Commit**: minor change to some test names
+1. **Commit**: minor change to some test names
  
- 1. **Commit**: changes to readme (test coverage, JavaDoc)
+1. **Commit**: changes to readme (test coverage, JavaDoc)
 
 #### Changes of Andreas Steirer
 * **Commit**: small update to project structure  
@@ -376,4 +376,150 @@ Main class is not tested as it basically only
   2. add SoftLiquidTests class  
   
   In order to achieve 100% test coverage several to all possible test cases are implemented  
-  (also some which might not be implemented or really needed in a real environment).
+  (also some which might not be implemented or really needed in a real environment).  
+  
+  
+### Version 3.0
+ 
+#### Added classes
+- CashRegisterManagement
+- DrinkSale
+- Operator
+- IDrinkSpecification
+- CashRegisterRandomizer
+- DrinkUtils
+ 
+#### Added test classes
+- CashRegisterManagementTests
+- DrinkSaleTests
+- OperatorTests
+- CashRegisterRandomizerTests
+- DrinkUtilsTests
+- MainTests
+ 
+ 
+#### Update to structural model
+Current structure is now as following:
+```
+|-- src                            Source directory for the entire code base
+|   |-- java                       Sources root directory for the entire code base
+|   |   |-- at.fhj.iit             Main package for the entire application code
+|   |   |   |-- base               Base package including the stock code base
+|   |   |   |-- custom             Custom package including the student-engineered code base
+|   |   |   |   |-- cashRegister   CashRegister solution package includes data and mangements classes
+|   |   |   |   |-- drink          Drink package storing all the custom created drink classes
+|   |   |   |   |-- misc           Misc package including different kind of additional classes / interfaces
+|-- test    |   |                  Source directory for code testing
+|   |       |-- exception          Custom exception types are included here
+|   |       |-- extension          Extension package including different extensive classes / interfaces
+|   |       |-- util               Helper package including utility classes / methods for broader usage
+|   |
+|   |-- java                       Test sources root directory for code testing
+|   |   |-- at.fhj.iit             Main test package for code testing  
+|   |   |   |-- base               Base test package including test cases for the stock code base
+|   |   |   |-- custom             Custom test package including tests for the student-engineered code base
+|   |   |   |   |-- cashRegister   CashRegister test package including tests for the cash register feature
+|   |   |   |   |-- drink          Drink test package holds all unit tests regarding the created drink classes
+|   |   |   |   |-- misc           Misc package including different kind of additional classes / interfaces
+```
+
+#### Changes of Lukas Bobik
+* **Commit**: fix package structure for tests  
+!! TODO !!
+ 
+* **Commit**: fix 2 small test cases  
+!! TODO !!
+ 
+* **Commit**: add surefire report plugin for maven site  
+!! TODO !!
+ 
+#### Changes of Andreas Steirer
+* **Commit**: update pom file with site plugins and packages   
+  Update pom.xml file with task specific / required plugins and dependencies 
+  (jacoco, javadoc, project-info-reports, resources, surefire). 
+  Additionally, update JUnit from 5.7.0-M1 to 5.8.0-M1, 
+  add some describing comments and additional artifacts like `scm` and `licences`.
+   
+* **Commit**: rename `SoftDrink` to `SoftLiquid`  
+  Not really an explanation needed :D
+   
+* **Commits**: 
+  1. add DrinkSpecification interface
+  1. implement DrinkSpecification to `Drink` inheritors
+  
+  From now on the abstract `Drink` class implements the `IDrinkSpecification` interface.
+  We do this because every concrete `Drink` should implement the defined `calculatePrice` method. 
+  Alternatively, we could have simply declared the method declaration / head in the abstract class itself.
+  However, we would act against a requirement of the task.
+  Therefore, and for diversification purposes we let all inheritances / heirs  
+  implement the price calculation method.
+  
+  ```
+  Nice-to-know: Java apparently does not specify a (naming) convention, 
+  which prohibits the use of methods starting with 'get' for non-accessor / state only purposes.
+  ```
+  
+* **Commit**: add `DrinkUtils` class with helper methods  
+  To keep application code simple and clean,  
+  we extract smaller utility functions / common code to an own file.
+   
+* **Commits**: 
+  1. add javafaker dependency for testing purposes
+  1. add `CashRegisterRandomizer` for test purposes
+  
+  Implement a helper class for filling the `CashRegisterManagement` (history)
+  implementation with random information. 
+  Mainly for demonstration purposes, but also created out of sheer fun, 
+  as I it is kind of handy and good for random demonstrations :D  
+  
+* **Commits**: 
+  1. add entire `CashRegisterManagement` logic
+  1. implement CashRegister demo, refactoring in Main
+  1. add additional methods to `CashRegisterManagement`
+  1. update `DrinkSale` constructor
+  
+  Implement a `CashRegisterManagement` class, 
+  which is basically equal to the `Registrierkasse` class of the requirements doc.
+  Next to an item / a drink sale history list with additional addition logic, the management / inventory class include
+  all required report queries / metric calculations.
+  We decided to wrap `Drink` objects generated in a sale, 
+  into a new `DrinkSale` object. It also includes information about the exact time on which a sale happens 
+  and by whom it is carried out / executed.
+  
+  To actually use the already mentioned `CashRegisterRandomizer` class, we created a demo in the `Main` class.
+  Apparently the re-structuring of the `Main` file was lost last time, so we re-add it once again. 
+  
+  "Missing" methods like an extra constructor taking a `salesHistory`, 
+  the accessory method for the `salesHistory` and an aggregate addition method for the `salesHistory` are added.
+  
+* **Commits**: 
+  1. add documentation and some restructuring/clean-up
+  1. update javadoc documentation of several classes
+  1. minor changes to docu in `Tea`
+  1. update all javadoc with the latest info
+  1. add missing info in `CashRegisterManagementTests`
+  1. minor changes to `Fruit- and SoftLiquidTests`
+  1. update several documentations in tests
+  1. update documentation for some tests
+  
+  Not much to say about these points. 
+  Mainly adding documentation for the newly created business logic, 
+  additions to old docs and corresponding annotations.
+  
+* **Commits**: 
+  1. add `CashRegisterManagementTests` class
+  1. add `OperatorTests` class
+  1. add `DrinkSaleTests` class
+  1. minor update to several tests (conform to JUnit)
+  1. add `DrinkUtilsTests` class
+  1. add `CashRegisterRandomizerTests` class
+  1. add `MainTests` class
+  1. add missing DisplayName to `OperatorTests`
+  
+  Basically a bump from last's assignment description of implementation / changelog.
+  For additional, more test specific specialities / documentation 
+  please consult the unit tests (documentation) accordingly.
+  ```
+  In order to achieve 100% test coverage several to all possible test cases are implemented  
+  (also some which might not be implemented or really needed in a real environment).  
+  ```
