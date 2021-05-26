@@ -100,7 +100,8 @@ public class CashRegisterManagementTests {
          * Phase: Setup
          *
          * @BeforeAll is used here to prevent redundant initialisation
-         * (only when no manipulation takes place)
+         * (only when no manipulation takes place,
+         * because manipulation throughout multiple tests is considered bad practice).
          */
         @BeforeAll
         public void setupAll() {
