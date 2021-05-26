@@ -1,7 +1,6 @@
 package at.fhj.iit.custom.drink;
 
 import at.fhj.iit.base.Liquid;
-import at.fhj.iit.custom.drink.Tea;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -9,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Contains test cases for the <code>Tea</code> class
+ * Contains test cases for the <code>Tea</code> class.
  *
  * @author Lukas Bobik
  * @version 2.0
@@ -19,13 +18,16 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Testing Tea class")
 public class TeaTests {
 
+    /*
+     * Constant / field declaration
+     */
     private Tea tea;
 
     /**
      * Setup
      */
     @BeforeEach
-    private void setup() {
+    public void setup() {
         tea = new Tea("Test", new Liquid("testliquid", 0.5, 0), true, true);
 
     }

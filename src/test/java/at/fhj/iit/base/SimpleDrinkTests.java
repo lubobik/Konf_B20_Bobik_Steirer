@@ -1,7 +1,5 @@
 package at.fhj.iit.base;
 
-import at.fhj.iit.base.Liquid;
-import at.fhj.iit.base.SimpleDrink;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -10,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Contains test cases for the <code>SimpleDrink</code> class
+ * Contains test cases for the <code>SimpleDrink</code> class.
  *
  * @author Lukas Bobik
  * @version 2.0
@@ -18,13 +16,17 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 @DisplayName("Testing SimpleDrink class")
 class SimpleDrinkTests {
+
+    /*
+     * Constant / field declaration
+     */
     private SimpleDrink drink;
 
     /**
      * Setup
      */
     @BeforeEach
-    private void setup() {
+    public void setup() {
         drink = new SimpleDrink("test", new Liquid("water", 1, 0.1));
     }
 

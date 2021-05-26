@@ -1,6 +1,5 @@
 package at.fhj.iit.base;
 
-import at.fhj.iit.base.Liquid;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -8,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Contains test cases for the <code>Liquid</code> class
+ * Contains test cases for the <code>Liquid</code> class.
  *
  * @author Lukas Bobik
  * @version 2.0
@@ -17,13 +16,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayName("Testing Liquid class")
 class LiquidTests {
+
+    /*
+     * Constant / field declaration
+     */
     private Liquid liquid;
 
     /**
      * Setup
      */
     @BeforeEach
-    private void setup() {
+    public void setup() {
         liquid = new Liquid("testliquid", 5, 5);
     }
 

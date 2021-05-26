@@ -5,9 +5,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
- 
+
 /**
- * Contains test cases for the <code>Fruit</code> class
+ * Contains test cases for the <code>Fruit</code> class.
  *
  * @author Lukas Bobik
  * @version 2.0
@@ -16,6 +16,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @DisplayName("Testing Fruit class")
 public class FruitTests {
 
+    /*
+     * Constant / field declaration
+     */
     private Fruit fruit;
 
     //setup

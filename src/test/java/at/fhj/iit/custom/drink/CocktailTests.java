@@ -1,7 +1,6 @@
 package at.fhj.iit.custom.drink;
 
 import at.fhj.iit.base.Liquid;
-import at.fhj.iit.custom.drink.Cocktail;
 import at.fhj.iit.exception.ValidationException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -47,7 +46,7 @@ public class CocktailTests {
          * as the static keyword would be required.
          */
         @BeforeEach
-        private void setup() {
+        public void setup() {
             cocktailNumberOne = new Cocktail("Magic Sunrise", List.of(
                     new Liquid("Grenadine", 0.4, 0.0),
                     new Liquid("Orange juice", 3.0, 0.0),
@@ -135,7 +134,7 @@ public class CocktailTests {
         public void callToString() {
             // Phases: Verify(Exercise)
             assertEquals(
-                    "The 'Mai Tai' includes following ingredients " +
+                    "The 'Mai Tai' includes following ingredients\n" +
                             "[Lime juice, Brown rum, Sugar syrup, Almond syrup, Orange liquor, Pineapple syrup] " +
                             "with a total alcohol percentage of 31,88%.",
                     cocktailNumberTwo.toString()

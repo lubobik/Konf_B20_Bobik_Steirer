@@ -1,7 +1,6 @@
 package at.fhj.iit.custom.drink;
 
 import at.fhj.iit.base.Liquid;
-import at.fhj.iit.custom.drink.LongDrink;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -10,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Contains test cases for the <code>LongDrink</code> class
+ * Contains test cases for the <code>LongDrink</code> class.
  *
  * @author Lukas Bobik
  * @version 2.0
@@ -19,13 +18,17 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 @DisplayName("Testing LongDrink class")
 class LongDrinkTests {
+
+    /*
+     * Constant / field declaration
+     */
     private LongDrink longDrink;
 
     /**
      * Setup
      */
     @BeforeEach
-    private void setup() {
+    public void setup() {
         longDrink = new LongDrink("testdrink", new Liquid("testliquid", 0.5, 20), new Liquid("testjuice", 0.3, 0));
     }
 
