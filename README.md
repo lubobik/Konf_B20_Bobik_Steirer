@@ -448,11 +448,11 @@ Current structure is now as following:
   1. implement DrinkSpecification to `Drink` inheritors
   
   From now on the abstract `Drink` class implements the `IDrinkSpecification` interface.
-  We do this because every concrete `Drink` should implement the defined `calculatePrice` method. 
-  Alternatively, we could have simply declared the method declaration / head in the abstract class itself.
+  We do this because every `ConcreteDrink` should implement the defined `calculatePrice` method in their own way. 
+  Alternatively, we could have declared the method head in the abstract class itself.
   However, we would act against a requirement of the task.
-  Therefore, and for diversification purposes we let all inheritances / heirs  
-  implement the price calculation method.
+  Therefore, and for diversification purposes we let all 
+  child classes implement the price calculation method.
   
   ```
   Nice-to-know: Java apparently does not specify a (naming) convention, 
