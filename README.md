@@ -160,7 +160,7 @@ Please consult the reference for further information about them.
 
 ---
 
-## Test Coverage
+## Test coverage
 
 ### General information / opinion
 Tests should only be written for more complex use cases 
@@ -168,33 +168,9 @@ Tests should only be written for more complex use cases
 Writing tests for every little method, which will always return a valid outcome, 
 should be minimized as otherwise a lot of time and therefore money will be wasted. 
 
-**Cocktail**  
-covered all methods and lines
-
-**LongDrink**  
-covered all methods and lines
-
-**Smoothie**  
-covered all methods and lines
-
-**Fruit**  
-covered all methods and lines
-
-**Tea**  
-covered all methods and lines
-
-**SimpleDrink**  
-covered all methods and lines
-
-**Liquid**  
-covered all methods and lines
-
-(**ValidationException**   
-covered all methods and lines)
-
-**Main**  
-Main class is not tested as it basically only
- consists out of implementation demonstrations.
+**Note**: This is only a brief introduction to the topic of test coverage.  
+For additional information please consolidate 
+the latest Maven site documentation ('Test coverage info' section).
 
 ---
 
@@ -455,6 +431,9 @@ Current structure is now as following:
  
 * **Commit**: add surefire report plugin for maven site  
 !! TODO !!
+
+* **Commit**: add site.xml and md files for site  
+!! TODO !!
  
 #### Changes of Andreas Steirer
 * **Commit**: update pom file with site plugins and packages   
@@ -528,6 +507,7 @@ Current structure is now as following:
   1. update documentation + behavior of multiple tests
   1. update README file with changelog of version 3.0
   1. update README file with last changes and reference
+  1. update 'Test coverage' section in README
   
   Not much to say about these points. 
   Mainly adding documentation for the newly created business logic, 
