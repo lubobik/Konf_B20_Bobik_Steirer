@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
  * This is very unusual and actually pretty useless.
  * Only created as we should achieve 100% test coverage :D
  * and debug / console output helper methods are also
- * tested with this little help.
+ * """tested""" with this little help.
  * <p>
  * To actually test the debug / console output,
  * you could read from output stream.
@@ -26,7 +26,7 @@ import org.junit.jupiter.api.Test;
 public class MainTests {
     @Test
     @DisplayName("Testing the main method")
-    public void roundToTwoDecimals() {
+    public void runMainMethod() {
         // Phase: Verify(Exercise(Setup))
         Main.main(new String[0]);
     }

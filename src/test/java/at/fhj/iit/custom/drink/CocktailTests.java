@@ -130,6 +130,20 @@ public class CocktailTests {
             assertEquals(newName, numberOne.getName());
         }
 
+        @Test
+        @DisplayName("Testing try to update Liquid name")
+        public void updateLiquidNameNotExistent() {
+            // Phase: (Individual) setup
+            String name = "NotExistent";
+            Liquid numberOne = new Liquid(name, 1.0, 0.5);
+
+            // Phase: Exercise
+            cocktailNumberOne.updateLiquid(numberOne, (it) -> it.setName("Lime juice"));
+
+            // Phase: Verify
+            assertEquals(name, numberOne.getName());
+        }
+
         /*
          * More or less important to test.
          * Normally this is very rarely tested separately.

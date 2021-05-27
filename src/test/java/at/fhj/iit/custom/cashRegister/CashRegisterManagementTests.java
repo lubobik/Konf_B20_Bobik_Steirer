@@ -206,6 +206,10 @@ public class CashRegisterManagementTests {
                     cashRegisterManagement.retrieveTotalByDateAndOperator(
                             LocalDate.now(), operatorTwo)
             );
+            assertEquals(0.0,
+                    cashRegisterManagement.retrieveTotalByDateAndOperator(
+                            LocalDate.now().minusDays(1), operatorTwo)
+            );
         }
 
         /*

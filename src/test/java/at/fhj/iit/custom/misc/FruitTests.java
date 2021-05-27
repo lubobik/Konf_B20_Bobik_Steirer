@@ -21,8 +21,8 @@ public class FruitTests {
      */
     private Fruit fruit;
 
-    /**
-     * Setup
+    /*
+     * Phase: Setup
      */
     @BeforeEach
     public void setup() {
@@ -35,6 +35,7 @@ public class FruitTests {
     @Test
     @DisplayName("Testing getName")
     public void testGetName() {
+        // Phases: Verify(Exercise)
         assertEquals("test", fruit.getName());
     }
 
@@ -44,8 +45,13 @@ public class FruitTests {
     @Test
     @DisplayName("Testing setName")
     public void testSetName() {
+        // Phase: (Individual) setup
         String test = "test123";
+
+        // Phase: Exercise
         fruit.setName(test);
+
+        // Phase: Verify
         assertEquals(test, fruit.getName());
     }
 }

@@ -1,20 +1,25 @@
 package at.fhj.iit.base;
 
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Contains test cases for the <code>SimpleDrink</code> class.
+ * <p>
+ * Note: Lifecycle.PER_CLASS will be used to omit static declarations.
  *
  * @author Lukas Bobik
- * @version 2.0
+ * @author Andreas Steirer
+ * @version 3.0
  * @see SimpleDrink
+ * @since 2.0
  */
 @DisplayName("Testing SimpleDrink class")
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class SimpleDrinkTests {
 
     /*
@@ -22,12 +27,12 @@ class SimpleDrinkTests {
      */
     private SimpleDrink drink;
 
-    /**
-     * Setup
+    /*
+     * Phase: Setup
      */
-    @BeforeEach
+    @BeforeAll
     public void setup() {
-        drink = new SimpleDrink("test", new Liquid("water", 1, 0.1));
+        drink = new SimpleDrink("TestDrink 1", new Liquid("Alcoholic water", 1.0, 0.1));
     }
 
     /**
@@ -36,6 +41,7 @@ class SimpleDrinkTests {
     @Test
     @DisplayName("Testing getVolume")
     public void getVolume() {
+        // Phases: Verify(Exercise)
         assertEquals(1, drink.getVolume());
     }
 
@@ -45,6 +51,7 @@ class SimpleDrinkTests {
     @Test
     @DisplayName("Testing getAlcoholPercent")
     public void getAlcoholPercent() {
+        // Phases: Verify(Exercise)
         assertEquals(0.1, drink.getAlcoholPercent());
     }
 
@@ -54,7 +61,13 @@ class SimpleDrinkTests {
     @Test
     @DisplayName("Testing isAlcoholic")
     public void isAlcoholic() {
+        // Phase: (Individual) setup
+        SimpleDrink nonAlcoholic =
+                new SimpleDrink("TestDrink 2", new Liquid("Water", 1.0, 0.0));
+
+        // Phases: Verify(Exercise)
         assertTrue(drink.isAlcoholic());
+        assertFalse(nonAlcoholic.isAlcoholic());
     }
 
     /**
@@ -63,6 +76,7 @@ class SimpleDrinkTests {
     @Test
     @DisplayName("Testing toString")
     public void testToString() {
-        assertEquals("Simple Drink called test with 0.1 percent alcohol by volume", drink.toString());
+        // Phases: Verify(Exercise)
+        assertEquals("Simple Drink called TestDrink 1 with 0.1 percent alcohol by volume", drink.toString());
     }
 }
