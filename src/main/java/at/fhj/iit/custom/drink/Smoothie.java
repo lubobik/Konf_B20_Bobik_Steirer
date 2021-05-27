@@ -96,8 +96,8 @@ public class Smoothie extends Drink {
             }
         }
         text.append(".");
-        if (sugar) text.append("It's even sweetened.");
-        if (baseLiquid.getName().equals("milk") || baseLiquid.getName().equals("Milk"))
+        if (sugar) text.append(" It's even sweetened.");
+        if (baseLiquid.getName().toLowerCase().equals("milk"))
             text.append("\nAnd guess what, as the base is milk, it's even better than a normal smoothie. It's a milkshake!");
         return text.toString();
     }
