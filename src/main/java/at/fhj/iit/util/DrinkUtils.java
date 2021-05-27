@@ -7,7 +7,13 @@ package at.fhj.iit.util;
  * @author Andreas Steirer
  * @version 3.0
  */
-public class DrinkUtils {
+public final class DrinkUtils {
+
+    /**
+     * Required to reach full Jacoco code coverage.
+     */
+    private DrinkUtils() {
+    }
 
     /**
      * Prints a dashed line out of 110 characters to the console.

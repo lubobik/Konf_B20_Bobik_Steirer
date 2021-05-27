@@ -22,7 +22,7 @@ import java.util.List;
  * @author Andreas Steirer
  * @version 3.0
  */
-public class CashRegisterRandomizer {
+public final class CashRegisterRandomizer {
 
     /**
      * Constant definition
@@ -40,6 +40,12 @@ public class CashRegisterRandomizer {
      * object to prevent unnecessary passing between generation methods.
      */
     private static CashRegisterManagement cashRegisterManagement;
+
+    /**
+     * Required to reach full Jacoco code coverage.
+     */
+    private CashRegisterRandomizer() {
+    }
 
     /**
      * Creates a new instance of the <code>CashRegisterManagement</code> object,

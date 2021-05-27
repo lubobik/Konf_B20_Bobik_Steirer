@@ -28,7 +28,13 @@ import java.util.List;
  * @see Drink
  * @since 1.0
  */
-public class Main {
+public final class Main {
+
+    /**
+     * Required to reach full Jacoco code coverage.
+     */
+    private Main() {
+    }
 
     /**
      * Represents the main entry point of
