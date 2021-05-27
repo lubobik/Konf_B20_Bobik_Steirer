@@ -107,9 +107,11 @@ public class Cocktail extends Drink {
      * @param updater function which is responsible for value manipulation / update
      */
     public void updateLiquid(Liquid liquid, Consumer<Liquid> updater) {
-        updater.accept(liquid);
         int foundIndex = liquids.indexOf(liquid);
-        if (foundIndex != -1) liquids.set(foundIndex, liquid);
+        if (foundIndex != -1) {
+            liquids.set(foundIndex, liquid);
+            updater.accept(liquid);
+        }
     }
 
     /**
