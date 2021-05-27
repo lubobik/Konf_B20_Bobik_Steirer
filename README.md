@@ -92,6 +92,29 @@ Advanced usage of Git as a VCS (branching and merging), deriving classes from ab
 implementing some small business logic, creating unit tests with a focus on 100% line coverage, 
 getting to know JavaDoc and documentation process.
 
+### Submission #3
+
+#### General  
+Dear reader,  
+
+this time we would like to forward you to the latest Maven site documentation.
+Everything included in this release is specified there more precisely.
+It is correct, that we could simply paste the information here once again.
+However, we want to keep the documentation clear and preferably non-redundant.
+
+Please visit the 'Design decisions' section, 
+for more information about all exciting new features of this amazing project.
+
+Kind regards,  
+the developers of this project
+
+#### Lessons learned   
+Advanced usage of Git as a VCS (multi branching and merging), implementing interfaces in Java, 
+updating and extending the code base, creating unit tests with a focus on 100% line coverage, 
+working by best practice principles and 
+getting familiar with new packages such as Jacoco, 
+Surefire or Maven site (supporting our documentation representation).
+
 ---
 
 ## JavaDoc crash course
@@ -477,6 +500,7 @@ Current structure is now as following:
   1. implement CashRegister demo, refactoring in Main
   1. add additional methods to `CashRegisterManagement`
   1. update `DrinkSale` constructor
+  1. relocate `IDrinkSpecification` to 'extension'
   
   Implement a `CashRegisterManagement` class, 
   which is basically equal to the `Registrierkasse` class of the requirements doc.
@@ -501,6 +525,9 @@ Current structure is now as following:
   1. minor changes to `Fruit- and SoftLiquidTests`
   1. update several documentations in tests
   1. update documentation for some tests
+  1. update documentation + behavior of multiple tests
+  1. update README file with changelog of version 3.0
+  1. update README file with last changes and reference
   
   Not much to say about these points. 
   Mainly adding documentation for the newly created business logic, 
@@ -515,6 +542,8 @@ Current structure is now as following:
   1. add `CashRegisterRandomizerTests` class
   1. add `MainTests` class
   1. add missing DisplayName to `OperatorTests`
+  1. update some classes for Jacoco coverage
+  1. minor changes in Smoothie class
   
   Basically a bump from last's assignment description of implementation / changelog.
   For additional, more test specific specialities / documentation 
@@ -523,3 +552,24 @@ Current structure is now as following:
   In order to achieve 100% test coverage several to all possible test cases are implemented  
   (also some which might not be implemented or really needed in a real environment).  
   ```
+  
+* **Commit**: fix a problem in Cocktail's update method  
+  There was a problem in the implementation leading to unwanted changes.
+  This behavior has been fixed now.
+  
+* **Commits**: 
+  1. rename two site markup files
+  1. remove README.md from site markdow
+  1. add generated / copied site README file to .gitignore
+  1. update site.xml and image resources
+  1. add 'design decisions' site documentation
+  
+  Introducing two new Maven sites. 
+  The first one features thoughts and ideas behind 
+  our cash register management functionality.
+  The second one dives in and explains the achieved 
+  percentages, the meaning of test coverage and 
+  unit test procedures in general.
+  
+  
+  

@@ -4,9 +4,9 @@
     <body>
         <menu name="Overview">
             <item name="Introduction" href="index.html"/>
+            <item name="Tutorial" href="tutorial.html"/>
             <item name="Design decisions" href="design_decisions.html"/>
             <item name="Test coverage info" href="test_coverage_info.html"/>
-            <item name="Tutorial" href="tutorial.html"/>
             <item name="README" href="README.html"/>
         </menu>
         <menu ref="reports"/>
