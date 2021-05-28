@@ -5,12 +5,13 @@ import at.fhj.iit.util.DrinkUtils;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 /**
  * Represents an inventory of a certain <code>DrinkSale</code> history.
  * Next to managing the sales history (in this case only additions are allowed),
- * there is also the possibility to retrieve reports from sales history.
+ * there is also the possibility to retrieve and print reports from sales history.
  *
  * @author Andreas Steirer
  * @version 3.0
@@ -169,6 +170,112 @@ public class CashRegisterManagement {
                 )
                 .mapToDouble(DrinkSale::getPrice)
                 .sum()
+        );
+    }
+
+    /**
+     * Retrieves the total of all <code>Drink</code>s
+     * sold from the current <code>DrinkSale</code> history.
+     *
+     * @return the total of all <code>Drink</code> sales
+     */
+    public double retrieveTotal() {
+        return DrinkUtils.roundToTwoDecimals(salesHistory
+                .stream()
+                .mapToDouble(DrinkSale::getPrice)
+                .sum()
+        );
+    }
+
+    /**
+     * Prints the total of all <code>Drink</code>s
+     * sold at a specific date and by a specific <code>Operator</code>
+     * from the current <code>DrinkSale</code> history.
+     *
+     * @param date a certain date / day on which the sale occurred
+     * @param soldBy a certain <code>Operator</code> who achieved the sale
+     */
+    public void printOperators(LocalDate date, String soldBy) {
+        HashSet<Operator> operators = new HashSet<>();
+        for (DrinkSale sale : salesHistory) {
+            operators.add(sale.getOperator());
+        }
+        if (soldBy.equals("all")) {
+            for (Operator op : operators) {
+                printDateOrNoDate(date, op);
+            }
+        } else {
+            for (Operator op : operators) {
+                if (op.getFullName().equals(soldBy)) {
+                    printDateOrNoDate(date, op);
+                }
+            }
+        }
+    }
+
+    /**
+     * Prints the total of all <code>Drink</code>s
+     * sold at a specific date and by a specific <code>Operator</code>
+     * from the current <code>DrinkSale</code> history.
+     *
+     * @param date a certain date / day on which the sale occurred
+     * @param soldBy a certain <code>Operator</code> who achieved the sale
+     */
+    public void printDateOrNoDate(LocalDate date, Operator soldBy) {
+
+        if (date != null) {
+            DrinkUtils.printFormattedMetric("Total of the day '" + LocalDate.of(2021, 5, 28) + "' for operator '" + soldBy.getFullName() + "'",
+                    retrieveTotalByDateAndOperator(date, soldBy)
+            );
+        } else {
+            DrinkUtils.printFormattedMetric("Total of operator '" + soldBy.getFullName() + "'",
+                    retrieveTotalByOperator(soldBy));
+        }
+    }
+
+    /**
+     * Prints the total of all <code>Drink</code>s
+     * sold at a specific date or overall if date==null
+     * from the current <code>DrinkSale</code> history.
+     *
+     * @param date a certain date / day on which the sale occurred, null for overall sales
+     */
+    public void printTotal(LocalDate date){
+        if(date==null){
+            DrinkUtils.printFormattedMetric("Total of all times", retrieveTotal());
+
+        }else{
+            DrinkUtils.printFormattedMetric("Total of the day '" + date + "'", retrieveTotalByDate(date));
+        }
+    }
+
+    /**
+     * Prints the total of all non alcoholic <code>Drink</code>s
+     * from the current <code>DrinkSale</code> history.
+     */
+    public void printNonAlcoholic() {
+        DrinkUtils.printFormattedMetric("Total of non alcoholic beverages",
+                retrieveTotalOfNonAlcoholicBeverages()
+        );
+    }
+
+    /**
+     * Prints the total of all intense alcoholic <code>Drink</code>s
+     * from the current <code>DrinkSale</code> history.
+     */
+    public void printAlcoholicIntense() {
+        DrinkUtils.printFormattedMetric("Total of weak alcoholic beverages",
+                retrieveTotalOfAlcoholicBeveragesIntense()
+        );
+    }
+
+    /**
+     * Prints the total of all weak alcoholic <code>Drink</code>s
+     * from the current <code>DrinkSale</code> history.
+     */
+    public void printAlcoholicWeak() {
+        DrinkUtils.printFormattedMetric("Total of intense alcoholic beverages",
+                retrieveTotalOfAlcoholicBeveragesWeak()
         );
     }
 }

@@ -212,6 +212,12 @@ public class CashRegisterManagementTests {
             );
         }
 
+        @Test
+        @DisplayName("Testing report of total")
+        public void retrieveTotal() {
+            // Phases: Verify(Exercise)
+            assertEquals(152.75, cashRegisterManagement.retrieveTotal(), 0.001);
+        }
         /*
          * More or less important to test.
          * Normally this is very rarely tested separately.
