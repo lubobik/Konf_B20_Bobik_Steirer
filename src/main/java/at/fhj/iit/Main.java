@@ -16,7 +16,6 @@ import at.fhj.iit.util.CashRegisterRandomizer;
 import at.fhj.iit.util.DrinkUtils;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
@@ -140,33 +139,29 @@ public final class Main {
      * Demonstrates the <code>CashRegisterManagement</code> implementation.
      */
     private static void printCashRegisterManagementDemonstration() {
-        CashRegisterManagement cashRegisterManagement =
+        CashRegisterManagement cashRegister =
                 CashRegisterRandomizer.generateRandomTestCashRegister();
-
-        DrinkUtils.printFormattedMetric("Total of non alcoholic beverages",
-                cashRegisterManagement.retrieveTotalOfNonAlcoholicBeverages()
-        );
-        DrinkUtils.printFormattedMetric("Total of weak alcoholic beverages",
-                cashRegisterManagement.retrieveTotalOfAlcoholicBeveragesIntense()
-        );
-        DrinkUtils.printFormattedMetric("Total of intense alcoholic beverages",
-                cashRegisterManagement.retrieveTotalOfAlcoholicBeveragesWeak()
-        );
-
         LocalDate todayDate = LocalDate.now();
-        String today = LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         Operator operator = CashRegisterRandomizer.retrieveRandomOperator();
 
-        DrinkUtils.printFormattedMetric("Total of the day '" + today + "'",
-                cashRegisterManagement.retrieveTotalByDate(todayDate)
-        );
-        DrinkUtils.printFormattedMetric("Total of operator '" + operator.getFullName() + "'",
-                cashRegisterManagement.retrieveTotalByOperator(operator)
-        );
+        cashRegister.printAlcoholicIntense();
+        DrinkUtils.printSeparator();
 
-        operator = CashRegisterRandomizer.retrieveRandomOperator();
-        DrinkUtils.printFormattedMetric("Total of the day '" + today + "' and operator '" + operator.getFullName() + "'",
-                cashRegisterManagement.retrieveTotalByDateAndOperator(todayDate, operator)
-        );
+        cashRegister.printNonAlcoholic();
+        DrinkUtils.printSeparator();
+
+        cashRegister.printAlcoholicWeak();
+        DrinkUtils.printSeparator();
+
+        cashRegister.printTotal(todayDate);
+        DrinkUtils.printSeparator();
+        //prints the sum of all sales (is only only the same as the above cos all sales get a timestamp on creation
+        cashRegister.printTotal(null);
+        DrinkUtils.printSeparator();
+        //prints the sum of every operator for a specific day
+        cashRegister.printOperators(todayDate,"all");
+        DrinkUtils.printSeparator();
+        //prints only the sum of a random operator for all days
+        cashRegister.printOperators(null,operator.getFullName());
     }
 }
