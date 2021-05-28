@@ -13,7 +13,7 @@ Additional documentation can be found on the JavaDoc page for [Liquid](apidocs/a
 Fruits are ingredients for smoothies  
 One example to create a new `Strawberry`:  
 `fruit fruit = new Fruit("Strawberry");`  
-[Further infos on the JavaDoc page for Fruit](apidocs/at/fhj/iit/custom/misc/Fruit.html)
+Additional documentation can be found on the JavaDoc page for [Fruit](apidocs/at/fhj/iit/custom/misc/Fruit.html)
 
 **SoftLiquid**  
 SoftLiquid extends Liquid with an alcohol percentage of `0`.  
@@ -57,12 +57,12 @@ Additional documentation can be found on the JavaDoc page for [Tea](apidocs/at/f
 **Operator**
 Operater consists of 2 Strings representing first and last name and getter `getFullName()` that returns the full name.
 `Operator op = new Operator("Lukas", "Bobik");`  
-Additional documentation can be found on the JavaDoc page for [Operator](apidocs/at/fhj/iit/custom/cashRegister/Operator.html)
+Additional documentation can be found on the JavaDoc page for [Operator](apidocs/at/fhj/iit/custom/util/Operator.html)
 
 **DrinkSale**
 DrinkSales are created with an operator `Person` and a `Drink`, additionally at creation `LocalTime` gets set as timestap for the sale and the price of the drink is automatically computed with`calculatePrize()`.
 `DrinkSale sale = new Drinksale(Person,Drink);`  
-Additional documentation can be found on the JavaDoc page for [DrinkSale](apidocs/at/fhj/iit/custom/cashRegister/DrinkSale.html)
+Additional documentation can be found on the JavaDoc page for [DrinkSale](apidocs/at/fhj/iit/custom/util/DrinkSale.html)
 
 
 **Cash Register Management**

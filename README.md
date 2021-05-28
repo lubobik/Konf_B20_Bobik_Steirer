@@ -424,17 +424,35 @@ Current structure is now as following:
 
 #### Changes of Lukas Bobik
 * **Commit**: fix package structure for tests  
-!! TODO !!
- 
-* **Commit**: fix 2 small test cases  
-!! TODO !!
+    fix the package structure for `test`, to mirror the structure of `main`
  
 * **Commit**: add surefire report plugin for maven site  
-!! TODO !!
+  Add surefire plugin for maven site in pom.xml. 
+  The surefire plugin creates a report that shows the result of all implemented test
 
 * **Commit**: add site.xml and md files for site  
-!! TODO !!
- 
+  add basic `site.xml` and some placeholder markdown files
+
+* **Commit**: update Maven-Site Plugin and changed site skin
+  update maven site to 3.9.1 to get compatibility for a better skin.
+  change to site.xml to change the skin of maven site to "Apache Maven Fluido Skin", to look better.
+  Docu for the skin can be found [here](https://maven.apache.org/skins/maven-fluido-skin/)
+
+* **Commit**: change site.xml
+  change site.xml to a Topbar instead of sidebar, add a drink icon to the navbar and a github ribbon that leads to our github repository and a few other design changes.
+
+* **Commit**: Add retrieveTotal() and print methods for CashRegisterManagement
+    retrieveTotal() not needed per exercise instructions, but kind of obvious to add to a cash register
+    Implemented print methods to the cash register print the results to console, depending on what the parameters are.
+
+* **Commit** Added Link to jacoco report
+  Add a link in test_coverage_info.md to lead to the jococo test coverage.
+  
+* **Commit**: add Tutorial.md
+  Add a huge wall of text to the developer tutorial `tutorial.md`. Explains classes, and methods und usage of our project.
+    
+* **Commit**: small changes to fix typos, version and commits in readme
+      
 #### Changes of Andreas Steirer
 * **Commit**: update pom file with site plugins and packages   
   Update pom.xml file with task specific / required plugins and dependencies 

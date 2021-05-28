@@ -8,7 +8,7 @@
     <!-- Project main information -->
     <groupId>at.fhj.iit</groupId>
     <artifactId>Drinks</artifactId>
-    <version>2.0.0</version>
+    <version>3.0.0</version>
     <name>Drinks</name>
     <description>
         This is a simple example project for the subject 'Configuration Management' in 2021.
