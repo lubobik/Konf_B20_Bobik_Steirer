@@ -8,8 +8,20 @@
     </skin>
     <custom>
         <fluidoSkin>
-            <topBarEnabled>false</topBarEnabled>
-            <sideBarEnabled>true</sideBarEnabled>
+            <topBarEnabled>true</topBarEnabled>
+            <topBarContainerStyle>width: 70%;</topBarContainerStyle>
+            <topBarIcon>
+                <name>Drinks</name>
+                <alt>Drinks</alt>
+                <src>/images/icon.png</src>
+                <href>/index.html</href>
+            </topBarIcon>
+            <sideBarEnabled>false</sideBarEnabled>
+            <gitHub>
+                <projectId>lubobik/Konf_B20_Bobik_Steirer</projectId>
+                <ribbonOrientation>left</ribbonOrientation>
+                <ribbonColor>gray</ribbonColor>
+            </gitHub>
         </fluidoSkin>
     </custom>
     <body>
