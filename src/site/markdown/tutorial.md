@@ -1,6 +1,6 @@
 
 #Developer tutorial - How can YOU use our Code
-We created a CashRegister thats logs sales and prices for different drinks and those drinks consist of different Ingredients.
+We created a CashRegister that logs sales and prices for different drinks, those drinks consist of different Ingredients.
 ###Ingredients
 
 **Liquid**  
@@ -86,22 +86,22 @@ Some other methods use above methods to print total sales to the console, depend
 `printNonAlcoholic()` prints the sum of sales of all nonalcoholic drinks  
 `printTotal(LocalDate date)` prints total sales depending on the parameter. If the parameter `LocalDate date` is initialized, this method prints total sales of the specific date, if the parameter is `null` the all-time sum of sales is printed  
 `printOperators(LocalDate date, String fullName)` prints total sales from operatores, depending on the parameter.
-if the paramter is `all` total sales from each Operator are printed, otherwise only the sales from operator `fullName`
+if the parameter is `all` total sales from each Operator are printed, otherwise only the sales from operator `fullName`
 If the parameter `LocalDate date` is initialized, this method prints total sales of the specific date, if the parameter is `null` the all-time sum of sales is printed.  
 Additional documentation can be found on the JavaDoc page for [Cash Register Management](apidocs/at/fhj/iit/custom/cashRegister/CashRegisterManagement.html)
 
 ###Other classes
-Those classes are not a essential part of the CashRegister. They either for utility or for demonstration purpose.  
+Those classes are not an essential part of the CashRegister. They either for utility or for demonstration purpose.  
 
-**CashRegisterRandomizer**
+**CashRegisterRandomizer**  
 Creates a random `CashRegisterManagement` with several random `DrinkSales`
 Further documentation can be found on the JavaDoc page for [CashRegisterRandomizer](apidocs/at/fhj/iit/custom/util/CashRegisterRandomizer.html)
 
-**DrinksUtils**
+**DrinksUtils**  
 Contains utility methods for example to `printSeperatorLines()` or to `roundToTwoDecimals(double value)`.
 Additional documentation can be found on the JavaDoc page for [DrinksUtils](apidocs/at/fhj/iit/custom/util/DrinksUtil.html)
 
-**Main**
+**Main**  
 Contains a demonstration for the implementations of our project.  
 One demonstration for each of our implemented drink-classes,
 Additional documentation can be found on the JavaDoc page for [Main](apidocs/at/fhj/iit/Main.html)
