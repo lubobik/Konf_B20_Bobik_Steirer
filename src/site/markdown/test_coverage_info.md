@@ -42,6 +42,7 @@ which validate different sections of the implemented logic, as possible.
 | DrinkUtils             |             100%              |       100%        |
 | ~ValidationException~  |             100%              |       100%        |
 | ~Main~                 |             100%              |       100%        |
+More detailed infos can we found at the [Jacoco Report](jacoco/index.html)
 
 #### Concrete statement
 In order to achieve 100% test coverage on all classes, which are shown above, 
