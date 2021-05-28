@@ -189,11 +189,11 @@ public class CashRegisterManagement {
 
     /**
      * Prints the total of all <code>Drink</code>s
-     * sold at a specific date and by a specific <code>Operator</code>
+     * by a specific <code>Operator</code> (and possibly at a specific date)
      * from the current <code>DrinkSale</code> history.
      *
-     * @param date a certain date / day on which the sale occurred
-     * @param soldBy a certain <code>Operator</code> who achieved the sale
+     * @param date a certain date / day on which the sale occurred, if <code>null</code> overall sales by a Operator gets printed
+     * @param soldBy a certain <code>Operator</code> who achieved the sale. if <code>all</code> all sales from each operator are printed
      */
     public void printOperators(LocalDate date, String soldBy) {
         HashSet<Operator> operators = new HashSet<>();
@@ -215,11 +215,11 @@ public class CashRegisterManagement {
 
     /**
      * Prints the total of all <code>Drink</code>s
-     * sold at a specific date and by a specific <code>Operator</code>
+     * sold by a specific <code>Operator</code> (and possibly at a specific date)
      * from the current <code>DrinkSale</code> history.
      *
-     * @param date a certain date / day on which the sale occurred
-     * @param soldBy a certain <code>Operator</code> who achieved the sale
+     * @param date a certain date / day on which the sale occurred, if <code>null</code> overall sales by a Operator gets printed
+     * @param soldBy a certain <code>Operator</code> who achieved the sales
      */
     public void printDateOrNoDate(LocalDate date, Operator soldBy) {
 
@@ -235,10 +235,10 @@ public class CashRegisterManagement {
 
     /**
      * Prints the total of all <code>Drink</code>s
-     * sold at a specific date or overall if date==null
+     * (possibly at a specific date)
      * from the current <code>DrinkSale</code> history.
      *
-     * @param date a certain date / day on which the sale occurred, null for overall sales
+     * @param date a certain date / day on which the sale occurred, if <code>null</code> all-time sales gets printed
      */
     public void printTotal(LocalDate date){
         if(date==null){
