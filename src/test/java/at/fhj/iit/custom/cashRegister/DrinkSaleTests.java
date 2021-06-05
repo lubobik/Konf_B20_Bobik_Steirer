@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @DisplayName("Testing DrinkSale class")
 public class DrinkSaleTests {
 
-    /*
+    /**
      * Normally this is very rarely tested separately.
      * Typically, only when there are
      * more complex operations happening in there.
@@ -31,7 +31,7 @@ public class DrinkSaleTests {
      * more or less not important.
      * The same principal applies to non-custom / standard getter
      * and setter implementations.
-     *
+     * <p>
      * We assign a price and and a timestamp, next to field initialisation,
      * that makes it a little bit more useful,
      * but not really in an astonishing way.

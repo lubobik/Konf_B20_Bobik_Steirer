@@ -28,7 +28,7 @@ class LongDrinkTests {
      */
     private LongDrink longDrink;
 
-    /*
+    /**
      * Phase: Setup
      */
     @BeforeAll

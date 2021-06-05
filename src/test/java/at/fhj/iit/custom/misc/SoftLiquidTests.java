@@ -24,7 +24,7 @@ public class SoftLiquidTests {
      */
     private SoftLiquid softLiquid;
 
-    /*
+    /**
      * Phase: Setup
      */
     @BeforeEach
@@ -32,7 +32,7 @@ public class SoftLiquidTests {
         softLiquid = new SoftLiquid("TestDrink", 12.45, Brand.NESQUIK);
     }
 
-    /*
+    /**
      * Normally this is not tested separately.
      * Testing value assigning with non-complex setters is useless /
      * more or less not important.
@@ -48,7 +48,7 @@ public class SoftLiquidTests {
         assertEquals(newName, softLiquid.getName());
     }
 
-    /*
+    /**
      * Normally this is not tested separately.
      * Testing value assigning with non-complex setters is useless /
      * more or less not important.
@@ -64,7 +64,7 @@ public class SoftLiquidTests {
         assertEquals(newVolume, softLiquid.getVolume());
     }
 
-    /*
+    /**
      * Normally this is not tested separately.
      * Testing value assigning with non-complex setters is useless /
      * more or less not important.
@@ -90,7 +90,7 @@ public class SoftLiquidTests {
         );
     }
 
-    /*
+    /**
      * More or less important to test.
      * Normally this is very rarely tested separately.
      */

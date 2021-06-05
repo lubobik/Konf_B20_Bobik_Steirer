@@ -21,7 +21,7 @@ public class FruitTests {
      */
     private Fruit fruit;
 
-    /*
+    /**
      * Phase: Setup
      */
     @BeforeEach

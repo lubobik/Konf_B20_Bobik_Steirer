@@ -38,7 +38,7 @@ public class CashRegisterManagementTests {
             new Operator("Jon", "Doe")
     );
 
-    /*
+    /**
      * Nested class to prevent unneeded setup phase for test cases.
      */
     @Nested
@@ -46,10 +46,10 @@ public class CashRegisterManagementTests {
     class AdditionTests {
         private CashRegisterManagement cashRegisterManagement;
 
-        /*
+        /**
          * Phase: Setup
-         *
-         * @BeforeEach is used here as re-init is required.
+         * <p>
+         * "@BeforeEach" is used here as re-init is required.
          */
         @BeforeEach
         public void setupEach() {
@@ -81,7 +81,7 @@ public class CashRegisterManagementTests {
         }
     }
 
-    /*
+    /**
      * Nested class to prevent unneeded setup phase for test cases.
      * Note: Lifecycle.PER_CLASS will be used to omit static declarations.
      */
@@ -97,10 +97,10 @@ public class CashRegisterManagementTests {
         private Operator operatorTwo;
         private CashRegisterManagement cashRegisterManagement;
 
-        /*
+        /**
          * Phase: Setup
-         *
-         * @BeforeAll is used here to prevent redundant initialisation
+         * <p>
+         * "@BeforeAll" is used here to prevent redundant initialisation
          * (only when no manipulation takes place,
          * because manipulation throughout multiple tests is considered bad practice).
          */
@@ -263,7 +263,7 @@ public class CashRegisterManagementTests {
             assertEquals(152.75, cashRegisterManagement.retrieveTotal(), 0.001);
         }
 
-        /*
+        /**
          * More or less important to test.
          * Normally this is very rarely tested separately.
          */
@@ -275,7 +275,7 @@ public class CashRegisterManagementTests {
         }
     }
 
-    /*
+    /**
      * Normally this is very rarely tested separately.
      * Typically, only when there are
      * more complex operations happening in there.
@@ -294,7 +294,7 @@ public class CashRegisterManagementTests {
         assertTrue(cashRegisterManagement.getSalesHistory().isEmpty());
     }
 
-    /*
+    /**
      * Normally this is very rarely tested separately.
      * Typically, only when there are
      * more complex operations happening in there.

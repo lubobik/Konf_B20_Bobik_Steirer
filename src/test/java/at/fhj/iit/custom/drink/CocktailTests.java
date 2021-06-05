@@ -36,10 +36,10 @@ public class CocktailTests {
         private Cocktail cocktailNumberOne;
         private Cocktail cocktailNumberTwo;
 
-        /*
+        /**
          * Phase: Setup
-         *
-         * @BeforeAll could be used here to prevent redundant initialisation
+         * <p>
+         * "@BeforeAll" could be used here to prevent redundant initialisation
          * (only when no manipulation takes place,
          * because manipulation throughout multiple tests is considered bad practice).
          * We would need to extract all tests out of the @Nested class though,
@@ -144,7 +144,7 @@ public class CocktailTests {
             assertEquals(name, numberOne.getName());
         }
 
-        /*
+        /**
          * More or less important to test.
          * Normally this is very rarely tested separately.
          */

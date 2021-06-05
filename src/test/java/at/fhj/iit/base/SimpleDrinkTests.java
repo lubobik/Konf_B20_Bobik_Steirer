@@ -27,7 +27,7 @@ class SimpleDrinkTests {
      */
     private SimpleDrink drink;
 
-    /*
+    /**
      * Phase: Setup
      */
     @BeforeAll

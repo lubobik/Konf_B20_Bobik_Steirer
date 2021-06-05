@@ -31,7 +31,7 @@ public class SmoothieTests {
      */
     private Smoothie smoothie;
 
-    /*
+    /**
      * Phase: Setup
      */
     @BeforeAll
