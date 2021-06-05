@@ -498,6 +498,8 @@ Current structure is now as following:
   1. add additional methods to `CashRegisterManagement`
   1. update `DrinkSale` constructor
   1. relocate `IDrinkSpecification` to 'extension'
+  1. update implementation of CashRegisterManagement
+  1. update final demonstration in Main
   
   Implement a `CashRegisterManagement` class, 
   which is basically equal to the `Registrierkasse` class of the requirements doc.
@@ -526,6 +528,9 @@ Current structure is now as following:
   1. update README file with changelog of version 3.0
   1. update README file with last changes and reference
   1. update 'Test coverage' section in README
+  1. update documentation of CashRegisterManagement
+  1. minor changes to all test docs
+  1. update README with "final" changes to version 3.0
   
   Not much to say about these points. 
   Mainly adding documentation for the newly created business logic, 
@@ -542,6 +547,7 @@ Current structure is now as following:
   1. add missing DisplayName to `OperatorTests`
   1. update some classes for Jacoco coverage
   1. minor changes in Smoothie class
+  1. add fallback tests to CashRegisterManagementTests
   
   Basically a bump from last's assignment description of implementation / changelog.
   For additional, more test specific specialities / documentation 
@@ -561,6 +567,8 @@ Current structure is now as following:
   1. add generated / copied site README file to .gitignore
   1. update site.xml and image resources
   1. add 'design decisions' site documentation
+  1. minor change to test_coverage_info.md
+  1. update tutorial site, fix broken links and typos
   
   Introducing two new Maven sites. 
   The first one features thoughts and ideas behind 
