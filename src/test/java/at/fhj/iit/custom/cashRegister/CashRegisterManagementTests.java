@@ -23,6 +23,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * class and its corresponding implementations.
  *
  * @author Andreas Steirer
+ * @author Lukas Bobik
  * @version 3.0
  * @see CashRegisterManagement
  */
@@ -199,16 +200,59 @@ public class CashRegisterManagementTests {
         }
 
         @Test
+        @DisplayName("Testing fallback of total by date")
+        public void retrieveTotalByDateFallback() {
+            // Phases: Verify(Exercise)
+            assertEquals(152.75, cashRegisterManagement.retrieveTotalByDate(null), 0.001);
+        }
+
+        @Test
+        @DisplayName("Testing fallback of total by Operator")
+        public void retrieveTotalByOperatorFallback() {
+            // Phases: Verify(Exercise)
+            assertEquals(152.75, cashRegisterManagement.retrieveTotalByOperator(null), 0.001);
+        }
+
+        @Test
         @DisplayName("Testing report of total by date and Operator")
         public void retrieveTotalByDateAndOperator() {
+            LocalDate now = LocalDate.now();
+
             // Phases: Verify(Exercise)
             assertEquals(127.45,
                     cashRegisterManagement.retrieveTotalByDateAndOperator(
-                            LocalDate.now(), operatorTwo)
+                            now, operatorTwo)
             );
             assertEquals(0.0,
                     cashRegisterManagement.retrieveTotalByDateAndOperator(
-                            LocalDate.now().minusDays(1), operatorTwo)
+                            now.minusDays(1), operatorTwo)
+            );
+        }
+
+        @Test
+        @DisplayName("Testing fallback overall total of retrieveTotalByDateAndOperator")
+        public void retrieveByDateAndOperatorFallbackOverall() {
+            // Phases: Verify(Exercise)
+            assertEquals(152.75, cashRegisterManagement.
+                    retrieveTotalByDateAndOperator(null, null)
+            );
+        }
+
+        @Test
+        @DisplayName("Testing fallback operator total of retrieveTotalByDateAndOperator")
+        public void retrieveByDateAndOperatorFallbackOperator() {
+            // Phases: Verify(Exercise)
+            assertEquals(127.45, cashRegisterManagement.
+                    retrieveTotalByDateAndOperator(null, operatorTwo)
+            );
+        }
+
+        @Test
+        @DisplayName("Testing fallback date total of retrieveTotalByDateAndOperator")
+        public void retrieveByDateAndOperatorFallbackDate() {
+            // Phases: Verify(Exercise)
+            assertEquals(152.75, cashRegisterManagement.
+                    retrieveTotalByDateAndOperator(LocalDate.now(), null)
             );
         }
 
@@ -218,6 +262,7 @@ public class CashRegisterManagementTests {
             // Phases: Verify(Exercise)
             assertEquals(152.75, cashRegisterManagement.retrieveTotal(), 0.001);
         }
+
         /*
          * More or less important to test.
          * Normally this is very rarely tested separately.
