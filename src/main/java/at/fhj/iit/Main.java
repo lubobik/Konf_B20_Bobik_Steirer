@@ -141,7 +141,8 @@ public final class Main {
     private static void printCashRegisterManagementDemonstration() {
         CashRegisterManagement cashRegister =
                 CashRegisterRandomizer.generateRandomTestCashRegister();
-        LocalDate todayDate = LocalDate.now();
+
+        LocalDate today = LocalDate.now();
         Operator operator = CashRegisterRandomizer.retrieveRandomOperator();
 
         cashRegister.printAlcoholicIntense();
@@ -153,15 +154,56 @@ public final class Main {
         cashRegister.printAlcoholicWeak();
         DrinkUtils.printSeparator();
 
-        cashRegister.printTotal(todayDate);
+        cashRegister.printTotal();
         DrinkUtils.printSeparator();
-        //prints the sum of all sales (is only only the same as the above cos all sales get a timestamp on creation
-        cashRegister.printTotal(null);
+
+        /*
+         * Fallback implementation check:
+         * Equivalent to printTotal()
+         */
+        cashRegister.printTotalByDate(null);
         DrinkUtils.printSeparator();
-        //prints the sum of every operator for a specific day
-        cashRegister.printOperators(todayDate,"all");
+
+        cashRegister.printTotalByDate(today);
         DrinkUtils.printSeparator();
-        //prints only the sum of a random operator for all days
-        cashRegister.printOperators(null,operator.getFullName());
+
+        /*
+         * Fallback implementation check:
+         * Equivalent to printTotal()
+         */
+        cashRegister.printTotalByOperator(null);
+        DrinkUtils.printSeparator();
+
+        cashRegister.printTotalByOperator(operator);
+        DrinkUtils.printSeparator();
+
+        // Prints the sum of each operator
+        cashRegister.printTotalByEachOperator(today);
+        DrinkUtils.printSeparator();
+
+        /*
+         * Fallback implementation check:
+         * Prints the sum of a all operators of all days.
+         * Equivalent to
+         */
+        cashRegister.printTotalByDateAndOperator(null, null);
+        DrinkUtils.printSeparator();
+
+        /*
+         * Fallback implementation check:
+         * Prints the sum of a specific operator for all days
+         */
+        cashRegister.printTotalByDateAndOperator(null, operator);
+        DrinkUtils.printSeparator();
+
+        /*
+         * Fallback implementation check:
+         * Prints the sum of a specific date for all Operators
+         */
+        cashRegister.printTotalByDateAndOperator(today, null);
+        DrinkUtils.printSeparator();
+
+        // Prints the sum of a specific date and Operator
+        cashRegister.printTotalByDateAndOperator(today, operator);
     }
 }
