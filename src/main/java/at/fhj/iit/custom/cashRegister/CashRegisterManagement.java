@@ -5,17 +5,9 @@ import at.fhj.iit.util.DrinkUtils;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
+import java.util.stream.Collectors;
 
-/**
- * Represents an inventory of a certain <code>DrinkSale</code> history.
- * Next to managing the sales history (in this case only additions are allowed),
- * there is also the possibility to retrieve and print reports from sales history.
- *
- * @author Andreas Steirer
- * @version 3.0
- */
 public class CashRegisterManagement {
 
     /**
@@ -69,12 +61,6 @@ public class CashRegisterManagement {
         salesHistory.addAll(drinkSales);
     }
 
-    /**
-     * Retrieves the total of all non alcoholic <code>Drink</code>s
-     * from the current <code>DrinkSale</code> history.
-     *
-     * @return the total of all non alcoholic <code>Drink</code> sales
-     */
     public double retrieveTotalOfNonAlcoholicBeverages() {
         return DrinkUtils.roundToTwoDecimals(salesHistory
                 .stream()
@@ -120,48 +106,34 @@ public class CashRegisterManagement {
         );
     }
 
-    /**
-     * Retrieves the total of all <code>Drink</code>s by a certain date
-     * from the current <code>DrinkSale</code> history.
-     *
-     * @param soldAt a certain date / day on which the sale occurred
-     * @return the total of all <code>Drink</code> sales on the passed date
-     */
     public double retrieveTotalByDate(LocalDate soldAt) {
-        return DrinkUtils.roundToTwoDecimals(salesHistory
+        return soldAt != null ? DrinkUtils.roundToTwoDecimals(salesHistory
                 .stream()
                 .filter(sale -> sale.getSoldAt().toLocalDate().equals(soldAt))
                 .mapToDouble(DrinkSale::getPrice)
                 .sum()
-        );
+        ) : retrieveTotal();
     }
 
-    /**
-     * Retrieves the total of all <code>Drink</code>s sold by a specific <code>Operator</code>
-     * from the current <code>DrinkSale</code> history.
-     *
-     * @param soldBy a certain <code>Operator</code> who achieved the sale
-     * @return the total of all <code>Drink</code> sales for the passed <code>Operator</code>
-     */
     public double retrieveTotalByOperator(Operator soldBy) {
-        return DrinkUtils.roundToTwoDecimals(salesHistory
+        return soldBy != null ? DrinkUtils.roundToTwoDecimals(salesHistory
                 .stream()
                 .filter(sale -> sale.getOperator().equals(soldBy))
                 .mapToDouble(DrinkSale::getPrice)
                 .sum()
-        );
+        ) : retrieveTotal();
     }
 
-    /**
-     * Retrieves the total of all <code>Drink</code>s
-     * sold at a specific date and by a specific <code>Operator</code>
-     * from the current <code>DrinkSale</code> history.
-     *
-     * @param soldAt a certain date / day on which the sale occurred
-     * @param soldBy a certain <code>Operator</code> who achieved the sale
-     * @return the total of all <code>Drink</code> sales for the passed date and <code>Operator</code>
-     */
     public double retrieveTotalByDateAndOperator(LocalDate soldAt, Operator soldBy) {
+        boolean isNoSaleDate = soldAt == null;
+        boolean isNoOperator = soldBy == null;
+
+        if (isNoSaleDate && isNoOperator) return retrieveTotal();
+
+        if (isNoSaleDate) return retrieveTotalByOperator(soldBy);
+
+        if (isNoOperator) return retrieveTotalByDate(soldAt);
+
         return DrinkUtils.roundToTwoDecimals(salesHistory
                 .stream()
                 .filter(sale ->
@@ -173,12 +145,6 @@ public class CashRegisterManagement {
         );
     }
 
-    /**
-     * Retrieves the total of all <code>Drink</code>s
-     * sold from the current <code>DrinkSale</code> history.
-     *
-     * @return the total of all <code>Drink</code> sales
-     */
     public double retrieveTotal() {
         return DrinkUtils.roundToTwoDecimals(salesHistory
                 .stream()
@@ -187,95 +153,75 @@ public class CashRegisterManagement {
         );
     }
 
-    /**
-     * Prints the total of all <code>Drink</code>s
-     * by a specific <code>Operator</code> (and possibly at a specific date)
-     * from the current <code>DrinkSale</code> history.
-     *
-     * @param date a certain date / day on which the sale occurred, if <code>null</code> overall sales by a Operator gets printed
-     * @param soldBy a certain <code>Operator</code> who achieved the sale. if <code>all</code> all sales from each operator are printed
-     */
-    public void printOperators(LocalDate date, String soldBy) {
-        HashSet<Operator> operators = new HashSet<>();
-        for (DrinkSale sale : salesHistory) {
-            operators.add(sale.getOperator());
-        }
-        if (soldBy.equals("all")) {
-            for (Operator op : operators) {
-                printDateOrNoDate(date, op);
-            }
-        } else {
-            for (Operator op : operators) {
-                if (op.getFullName().equals(soldBy)) {
-                    printDateOrNoDate(date, op);
-                }
-            }
-        }
+    public void printTotal() {
+        DrinkUtils.printFormattedMetric(
+                "Total of all operators and days",
+                retrieveTotal()
+        );
     }
 
-    /**
-     * Prints the total of all <code>Drink</code>s
-     * sold by a specific <code>Operator</code> (and possibly at a specific date)
-     * from the current <code>DrinkSale</code> history.
-     *
-     * @param date a certain date / day on which the sale occurred, if <code>null</code> overall sales by a Operator gets printed
-     * @param soldBy a certain <code>Operator</code> who achieved the sales
-     */
-    public void printDateOrNoDate(LocalDate date, Operator soldBy) {
-
-        if (date != null) {
-            DrinkUtils.printFormattedMetric("Total of the day '" + LocalDate.of(2021, 5, 28) + "' for operator '" + soldBy.getFullName() + "'",
-                    retrieveTotalByDateAndOperator(date, soldBy)
-            );
-        } else {
-            DrinkUtils.printFormattedMetric("Total of operator '" + soldBy.getFullName() + "'",
-                    retrieveTotalByOperator(soldBy));
-        }
-    }
-
-    /**
-     * Prints the total of all <code>Drink</code>s
-     * (possibly at a specific date)
-     * from the current <code>DrinkSale</code> history.
-     *
-     * @param date a certain date / day on which the sale occurred, if <code>null</code> all-time sales gets printed
-     */
-    public void printTotal(LocalDate date){
-        if(date==null){
-            DrinkUtils.printFormattedMetric("Total of all times", retrieveTotal());
-
-        }else{
-            DrinkUtils.printFormattedMetric("Total of the day '" + date + "'", retrieveTotalByDate(date));
-        }
-    }
-
-    /**
-     * Prints the total of all non alcoholic <code>Drink</code>s
-     * from the current <code>DrinkSale</code> history.
-     */
     public void printNonAlcoholic() {
-        DrinkUtils.printFormattedMetric("Total of non alcoholic beverages",
+        DrinkUtils.printFormattedMetric("Total of non-alcoholic beverages",
                 retrieveTotalOfNonAlcoholicBeverages()
         );
     }
 
-    /**
-     * Prints the total of all intense alcoholic <code>Drink</code>s
-     * from the current <code>DrinkSale</code> history.
-     */
+    public void printAlcoholicWeak() {
+        DrinkUtils.printFormattedMetric("Total of intense alcoholic beverages",
+                retrieveTotalOfAlcoholicBeveragesWeak()
+        );
+    }
+
     public void printAlcoholicIntense() {
         DrinkUtils.printFormattedMetric("Total of weak alcoholic beverages",
                 retrieveTotalOfAlcoholicBeveragesIntense()
         );
     }
 
-    /**
-     * Prints the total of all weak alcoholic <code>Drink</code>s
-     * from the current <code>DrinkSale</code> history.
-     */
-    public void printAlcoholicWeak() {
-        DrinkUtils.printFormattedMetric("Total of intense alcoholic beverages",
-                retrieveTotalOfAlcoholicBeveragesWeak()
+    public void printTotalByOperator(Operator soldBy) {
+        if (soldBy != null) {
+            DrinkUtils.printFormattedMetric(
+                    "Total of operator '" + soldBy.getFullName() + "'",
+                    retrieveTotalByOperator(soldBy)
+            );
+        } else printTotal();
+    }
+
+    public void printTotalByEachOperator(LocalDate soldAt) {
+        salesHistory
+                .stream()
+                .map(DrinkSale::getOperator)
+                .collect(Collectors.toSet())
+                .forEach(operator -> printTotalByDateAndOperator(soldAt, operator));
+    }
+
+    public void printTotalByDate(LocalDate soldAt) {
+        if (soldAt != null) {
+            DrinkUtils.printFormattedMetric(
+                    "Total of the day '" + soldAt + "'",
+                    retrieveTotalByDate(soldAt)
+            );
+        } else printTotal();
+    }
+
+    public void printTotalByDateAndOperator(LocalDate soldAt, Operator soldBy) {
+        String message;
+        boolean isSaleDate = soldAt != null;
+        boolean isOperator = soldBy != null;
+
+        if (!isSaleDate && !isOperator) {
+            message = "Total of all operators of all time";
+        } else if (isSaleDate && isOperator) {
+            message = "Total of the day '" + soldAt + "' for operator '" + soldBy.getFullName() + "'";
+        } else if (isOperator) {
+            message = "Total of operator and all days '" + soldBy.getFullName() + "'";
+        } else {
+            message = "Total of day '" + soldAt + "' and all operators";
+        }
+
+        DrinkUtils.printFormattedMetric(
+                message,
+                retrieveTotalByDateAndOperator(soldAt, soldBy)
         );
     }
 }
