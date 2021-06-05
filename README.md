@@ -310,19 +310,19 @@ the latest Maven site documentation ('Test coverage info' section).
   
   Current structure is now as following:
   
-    ```
-    |-- src                           Source directory for the entire code base
-    |   |-- java                      Sources root directory for the entire code base
-    |   |   |-- at.fhj.iit            Main package for the entire application code
-    |   |   |   |-- base              Base package including the stock code base
-    |   |   |   |-- custom            Custom package including the student-engineered code base
-    |   |   |   |   |-- drink         Drink package storing all the custom created drink classes
-    |   |   |   |   |-- misc          Misc package including different kind of additional classes
-    |-- test    |   |                 Source directory for code testing
-    |   |       |-- exception         Custom exception types are included here
-    |   |-- java    |                 Test sources root directory for code testing
-    |   |   |-- at.fhj.iit            Main test package for code testing      
-    ```
+  ```
+  |-- src                           Source directory for the entire code base
+  |   |-- java                      Sources root directory for the entire code base
+  |   |   |-- at.fhj.iit            Main package for the entire application code
+  |   |   |   |-- base              Base package including the stock code base
+  |   |   |   |-- custom            Custom package including the student-engineered code base
+  |   |   |   |   |-- drink         Drink package storing all the custom created drink classes
+  |   |   |   |   |-- misc          Misc package including different kind of additional classes
+  |-- test    |   |                 Source directory for code testing
+  |   |       |-- exception         Custom exception types are included here
+  |   |-- java    |                 Test sources root directory for code testing
+  |   |   |-- at.fhj.iit            Main test package for code testing      
+  ```
 
 * **Commits**:  
   1. update structure of README    
@@ -531,6 +531,7 @@ Current structure is now as following:
   1. update documentation of CashRegisterManagement
   1. minor changes to all test docs
   1. update README with "final" changes to version 3.0
+  1. fix some wrong formats in README
   
   Not much to say about these points. 
   Mainly adding documentation for the newly created business logic, 
