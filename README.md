@@ -500,6 +500,7 @@ Current structure is now as following:
   1. relocate `IDrinkSpecification` to 'extension'
   1. update implementation of CashRegisterManagement
   1. update final demonstration in Main
+  1. rename some methods in CashRegisterManagement
   
   Implement a `CashRegisterManagement` class, 
   which is basically equal to the `Registrierkasse` class of the requirements doc.
@@ -532,6 +533,7 @@ Current structure is now as following:
   1. minor changes to all test docs
   1. update README with "final" changes to version 3.0
   1. fix some wrong formats in README
+  1. update README with "final, final" changes
   
   Not much to say about these points. 
   Mainly adding documentation for the newly created business logic, 
@@ -570,6 +572,7 @@ Current structure is now as following:
   1. add 'design decisions' site documentation
   1. minor change to test_coverage_info.md
   1. update tutorial site, fix broken links and typos
+  1. update class diagram with latest additions
   
   Introducing two new Maven sites. 
   The first one features thoughts and ideas behind 
