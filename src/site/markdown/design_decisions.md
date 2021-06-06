@@ -33,7 +33,7 @@ Next to a history typical timestamp,
 the `DrinkSale` data class holds information about the responsible `Operator`, 
 the specific `Drink` and `price` included in the sale. 
 
-<img src="images/cash_register_feature.png" alt="Class diagram of the cash register feature" width="520" height="449"/>
+<img src="images/cash_register_feature.png" alt="Class diagram of the cash register feature" width="2412" height="918"/>
 
 **Note**: The class diagram above does not include the entire project scope. 
 It focuses on the cash register functionality.
