@@ -247,7 +247,7 @@ public class CashRegisterManagement {
      * Prints the total of all non-alcoholic <code>Drink</code>s
      * from the current <code>DrinkSale</code> history.
      */
-    public void printNonAlcoholic() {
+    public void printTotalOfNonAlcoholic() {
         DrinkUtils.printFormattedMetric("Total of non-alcoholic beverages",
                 retrieveTotalOfNonAlcoholicBeverages()
         );
@@ -257,7 +257,7 @@ public class CashRegisterManagement {
      * Prints the total of all weak alcoholic <code>Drink</code>s
      * from the current <code>DrinkSale</code> history.
      */
-    public void printAlcoholicWeak() {
+    public void printTotalOfWeakAlcoholic() {
         DrinkUtils.printFormattedMetric("Total of intense alcoholic beverages",
                 retrieveTotalOfAlcoholicBeveragesWeak()
         );
@@ -267,7 +267,7 @@ public class CashRegisterManagement {
      * Prints the total of all intense alcoholic <code>Drink</code>s
      * from the current <code>DrinkSale</code> history.
      */
-    public void printAlcoholicIntense() {
+    public void printTotalOfIntenseAlcoholic() {
         DrinkUtils.printFormattedMetric("Total of weak alcoholic beverages",
                 retrieveTotalOfAlcoholicBeveragesIntense()
         );

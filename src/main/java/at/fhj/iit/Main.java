@@ -145,13 +145,13 @@ public final class Main {
         LocalDate today = LocalDate.now();
         Operator operator = CashRegisterRandomizer.retrieveRandomOperator();
 
-        cashRegister.printAlcoholicIntense();
+        cashRegister.printTotalOfIntenseAlcoholic();
         DrinkUtils.printSeparator();
 
-        cashRegister.printNonAlcoholic();
+        cashRegister.printTotalOfNonAlcoholic();
         DrinkUtils.printSeparator();
 
-        cashRegister.printAlcoholicWeak();
+        cashRegister.printTotalOfWeakAlcoholic();
         DrinkUtils.printSeparator();
 
         cashRegister.printTotal();

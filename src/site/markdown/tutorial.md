@@ -160,17 +160,17 @@ Returns the sum of sales of `Drink`s for a potential `Operator` and / or of a po
 
 The following methods use above realisations to print total sales in a formatted way to the console, 
 depending on what the parameters are (specific cases are served by fallbacks):  
-- `printTotal()` - Prints total sales of the whole history. 
-- `printNonAlcoholic()` - Prints the sum of sales for all non-alcoholic `Drink`s.  
-- `printAlcoholicWeak()` - Prints the sum of sales for all weak alcoholic `Drink`s.   
-- `printAlcoholicIntense()` - Prints the sum of sales for all hard alcoholic `Drink`s.  
+- `printTotal()` - Prints total sales of the whole history.  
+- `printTotalOfNonAlcoholic()` - Prints the sum of sales for all non-alcoholic `Drink`s.  
+- `printTotalOfWeakAlcoholic()` - Prints the sum of sales for all weak alcoholic `Drink`s.   
+- `printTotalOfIntenseAlcoholic()` - Prints the sum of sales for all hard alcoholic `Drink`s.  
 - `printTotalByOperator(Operator soldBy)` - Prints the sum of sales for all `Drink`s by a potential `Operator`. 
 (Fallback implementation is available.)  
 - `printTotalByEachOperator(LocalDate soldAt)` - Prints the individual sum of sales for all `Drink`s 
 for each selling `Operator` by a potential `soldAt` date. 
 (Fallback implementation is available.)  
 - `printTotalByDate(LocalDate soldAt)` - Prints the sum of sales for all `Drink`s by a potential day / date.  
-(Fallback implementation is available.) 
+(Fallback implementation is available.)  
 - `printTotalByDateAndOperator(LocalDate soldAt, Operator soldBy)` - 
 Prints the total sales based on the passed `soldAt` and `soldBy` parameters. 
 (Fallback implementation is available.)
